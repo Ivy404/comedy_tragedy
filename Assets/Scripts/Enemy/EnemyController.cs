@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         InitializeEnemy();
 
         // DEBUG
-        debugAction = InputSystem.actions.FindAction("Spawn");
+        debugAction = InputSystem.actions.FindAction("Submit");
     }
 
     void InitializeEnemy()
