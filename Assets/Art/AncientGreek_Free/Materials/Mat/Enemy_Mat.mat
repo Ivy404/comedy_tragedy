@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Char_Mat 1
+  m_Name: Enemy_Mat
   m_Shader: {fileID: -6465566751694194690, guid: e06646623d1ffb44887fb09dde4c09ba, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,12 +42,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 6.79
+    - _Damage_Bool: 0
+    - _Enemy1: 1
+    - _FresnelBrightness: 9.74
+    - _FresnelPower: 3.35
+    - _IsLight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Transparency: 1
     m_Colors:
-    - _Color: {r: 0.5719975, g: 0.15340628, b: 0.5472212, a: 1}
-    - _EmissionColor: {r: 11.475151, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.74663067, g: 0.3680687, b: 0.16401722, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 3.0314326, g: 0.01121871, b: 0, a: 1}
+    - _TextureColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TextureColor_Dark: {r: 1, g: 1, b: 1, a: 1}
+    - _TextureColor_Light: {r: 1, g: 1, b: 1, a: 1}
+    - _TransparentEnemyGlow: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6986892318902218076

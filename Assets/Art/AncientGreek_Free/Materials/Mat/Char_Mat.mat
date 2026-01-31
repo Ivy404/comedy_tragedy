@@ -42,10 +42,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Damage_Bool: 0
+    - _Enemy1: 1
+    - _FresnelBrightness: 26.55
+    - _FresnelPower: 1.7
+    - _IsLight: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Transparency: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.36522907, b: 0.36522907, a: 1}
+    - _Color: {r: 1, g: 0.35983825, b: 0.35983825, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.25, g: 0, b: 0.0003592968, a: 1}
+    - _TextureColor: {r: 0.1482479, g: 0.12686983, b: 0.12686983, a: 1}
+    - _TextureColor_Dark: {r: 0.671159, g: 0.064221375, b: 0.07130759, a: 1}
+    - _TextureColor_Light: {r: 1.8794708, g: 1.2905426, b: 0.84854794, a: 1}
+    - _TransparentEnemyGlow: {r: 0, g: 0.293756, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6986892318902218076
