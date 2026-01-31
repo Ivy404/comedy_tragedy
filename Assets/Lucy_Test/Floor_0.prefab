@@ -111,9 +111,9 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &5559769224924887157
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369054123239153333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b83f1a91b383ba943ad8a8f51ccea199, type: 3}
   m_Name: 
@@ -151,8 +151,8 @@ MonoBehaviour:
   - {fileID: 5255709632957894121, guid: e4f0596c1891f504795bc3c99437a742, type: 3}
   - {fileID: 6307260133350185133, guid: e5626913be683934cb804ed7c15b3e01, type: 3}
   - {fileID: 5371224634295323486, guid: c33d46c0aef0d344fae8222c5aa105ae, type: 3}
-  spawnChance: 0
-  manager: {fileID: 0}
+  spawnChance: 50
+  decorOn: 0
 --- !u!54 &6707376531252258156
 Rigidbody:
   m_ObjectHideFlags: 0

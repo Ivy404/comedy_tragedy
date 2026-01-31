@@ -11,10 +11,7 @@ GameObject:
   - component: {fileID: 5327007733775319369}
   - component: {fileID: 1125289175731417765}
   - component: {fileID: 3959889365148672123}
-  - component: {fileID: 5643010942347351800}
-  - component: {fileID: 5652818694679769706}
-  - component: {fileID: 7676678091798329330}
-  - component: {fileID: 7225716780436228512}
+  - component: {fileID: 8387123593177901746}
   m_Layer: 0
   m_Name: DecorSet_1
   m_TagString: Untagged
@@ -55,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6307260133350185133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -97,29 +94,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5643010942347351800
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307260133350185133}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5652818694679769706
+--- !u!114 &8387123593177901746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,58 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6307260133350185133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112327fb40dbcd144b8aa8abb745c572, type: 3}
+  m_Script: {fileID: 11500000, guid: 5545ffb6817f32f4ba4ce0b2a9e0711f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FloorLogic
-  player: {fileID: 0}
-  manager: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
-  distanceX: 0
-  distanceZ: 0
-  maxDis: 0
-  teleDis: 0
---- !u!114 &7676678091798329330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307260133350185133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83f1a91b383ba943ad8a8f51ccea199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DecorSpawner
-  DecorTiles: []
-  spawnChance: 0
-  manager: {fileID: 0}
---- !u!54 &7225716780436228512
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307260133350185133}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  m_EditorClassIdentifier: Assembly-CSharp::DecorLogic
 --- !u!1001 &3627019528440323211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,9 +172,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7268098632404216103, guid: d42259ddbc9274e93b848180cab54597, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2413102718360154909}
-    - targetCorrespondingSourceObject: {fileID: 7268098632404216103, guid: d42259ddbc9274e93b848180cab54597, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5590553118581814689}
   m_SourcePrefab: {fileID: 100100000, guid: d42259ddbc9274e93b848180cab54597, type: 3}
 --- !u!4 &2989521712222956887 stripped
@@ -261,18 +184,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7268098632404216103, guid: d42259ddbc9274e93b848180cab54597, type: 3}
   m_PrefabInstance: {fileID: 3627019528440323211}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2413102718360154909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6235438441876927916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5545ffb6817f32f4ba4ce0b2a9e0711f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DecorLogic
 --- !u!65 &5590553118581814689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -360,9 +271,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8182489779939394196, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4988806485382444948}
-    - targetCorrespondingSourceObject: {fileID: 8182489779939394196, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6675541414891446434}
   m_SourcePrefab: {fileID: 100100000, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
 --- !u!4 &4130386564571667468 stripped
@@ -375,18 +283,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8182489779939394196, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
   m_PrefabInstance: {fileID: 4043438659372937228}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4988806485382444948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5301621952103592600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5545ffb6817f32f4ba4ce0b2a9e0711f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DecorLogic
 --- !u!65 &6675541414891446434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -474,9 +370,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2050343417931750931, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7274408897837239906}
-    - targetCorrespondingSourceObject: {fileID: 2050343417931750931, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7463002867475424639}
   m_SourcePrefab: {fileID: 100100000, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
 --- !u!4 &2788566286819233534 stripped
@@ -489,18 +382,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2050343417931750931, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
   m_PrefabInstance: {fileID: 6926634159455931976}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7274408897837239906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8958804697223057499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5545ffb6817f32f4ba4ce0b2a9e0711f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DecorLogic
 --- !u!65 &7463002867475424639
 BoxCollider:
   m_ObjectHideFlags: 0
