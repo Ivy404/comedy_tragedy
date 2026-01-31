@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 2472979754752891785}
   - component: {fileID: 3679287779810542984}
   - component: {fileID: 6501276589539606337}
+  - component: {fileID: 8685836153475317876}
   m_Layer: 0
   m_Name: Floor_3
   m_TagString: Untagged
@@ -452,3 +453,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8685836153475317876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211466612932771975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112327fb40dbcd144b8aa8abb745c572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorLogic
+  player: {fileID: 0}
+  playerPos: {x: 0, y: 0, z: 0}
+  maxDis: 0
+  teleDis: 0
