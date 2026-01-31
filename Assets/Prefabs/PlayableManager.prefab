@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &726932366227461655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3317720647642937373}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3317720647642937373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726932366227461655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5382996156213979034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4407485642439938253
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +96,7 @@ Transform:
   - {fileID: 164281181060470821}
   - {fileID: 9163685528413336161}
   - {fileID: 3730725024942634545}
+  - {fileID: 3317720647642937373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5208660683116122807
@@ -77,9 +109,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8055314537664459913}
   - component: {fileID: 3227492188735528847}
-  m_Layer: 0
+  - component: {fileID: 541035406078271171}
+  m_Layer: 7
   m_Name: SwordCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +147,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -122,6 +155,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &541035406078271171
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208660683116122807}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6211058694726228259
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4365871481376239700, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: mainCamera
       value: 
@@ -499,6 +563,10 @@ PrefabInstance:
       propertyPath: swordPivot
       value: 
       objectReference: {fileID: 6389334119797336469}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: enemiesObject
+      value: 
+      objectReference: {fileID: 726932366227461655}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: swordCollider
       value: 
@@ -516,8 +584,16 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: comedyMaskData.damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: tragedyMaskData.range
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: tragedyMaskData.damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: tragedyMaskData.attackSpeed
@@ -559,6 +635,10 @@ PrefabInstance:
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 1992045961095825914}
+    - target: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
+      propertyPath: enemiesObject
+      value: 
+      objectReference: {fileID: 726932366227461655}
     - target: {fileID: 5102797438918685728, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
       propertyPath: m_Name
       value: WaveManager

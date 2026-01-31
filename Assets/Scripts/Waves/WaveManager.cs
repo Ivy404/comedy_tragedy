@@ -6,6 +6,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> waves; // Wave data objects
+    [SerializeField] private GameObject enemiesObject;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
     public float spawnRadius = 20f;
@@ -50,6 +51,7 @@ public class WaveManager : MonoBehaviour
                 spawner.spawnerData = wave.spawnersInWave[i];
             }
             spawner.waveManager = this;
+            spawner.enemiesObject = enemiesObject;
             
             // Move spawner
             updateSpawnerPosition(spawner);
