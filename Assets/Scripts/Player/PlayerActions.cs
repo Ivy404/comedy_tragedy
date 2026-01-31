@@ -154,6 +154,12 @@ public class PlayerActions : MonoBehaviour
             SwordVFX.SetFloat("RotationAngle", currentData.arc);
         }
     }
+
+    public string GetMode()
+    {
+        return currentData.maskName;
+    }
+    
     public void Move(Vector2 direction)
     {   
         if (direction != Vector2.zero)
