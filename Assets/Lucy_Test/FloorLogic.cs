@@ -3,9 +3,11 @@ using UnityEngine;
 public class FloorLogic : MonoBehaviour
 {
     public GameObject player;
+    public GameObject manager;
     public Vector3 playerPos;
-    private float distanceX;
-    private float distanceZ;
+
+    public float distanceX;
+    public float distanceZ;
 
     public float maxDis;
     public float teleDis;
@@ -17,7 +19,12 @@ public class FloorLogic : MonoBehaviour
             player = GameObject.FindWithTag("Player");
         }
 
-        maxDis = (gameObject.transform.localScale.x * 10) * 2;
+        if (manager == null)
+        {
+            manager = GameObject.FindWithTag("GameController");
+        }
+
+        maxDis = ((gameObject.transform.localScale.x * 10) + (gameObject.transform.localScale.x * 10) / 2) ;
         teleDis = (gameObject.transform.localScale.x * 10) * 3;
     }
 
@@ -28,8 +35,6 @@ public class FloorLogic : MonoBehaviour
 
         distanceX = Mathf.RoundToInt(gameObject.transform.position.x - playerPos.x);
         distanceZ = Mathf.RoundToInt(gameObject.transform.position.z - playerPos.z);
-
-        Debug.Log(distanceX);
 
         if (distanceX >= maxDis)
         {
