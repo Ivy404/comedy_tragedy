@@ -114,15 +114,21 @@ public class PlayerActions : MonoBehaviour
     {
         // play take damage animation
         currentData.health -= damage;
+        
         if (currentData.health <= 0)
         {
             // TO DO: Inform game manager
             Debug.Log("you lose");
         }
+
+        // Play sound
+
+        //int randomNumber = Random.ange(0, totalWeight);
+        //AudioManager.audioManagerRef.PlaySound
     }
     public void regenHP()
     {
-        if ( currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
+        if (currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
         {
             tragedyMaskData.health = Math.Min(tragedyMaskData.health + tragedyMaskData.hpRegen * Time.deltaTime, tragedyMaskData.maxHealth);
         } else if (currentData.maskName == "tragedy"  && comedyMaskData.health < comedyMaskData.maxHealth)
@@ -200,6 +206,12 @@ public class PlayerActions : MonoBehaviour
             PlayerAnimator.SetTrigger("attack");
             attackTime = 0;
             attacking = true;
+
+            // Play sound
+            if(currentData.maskName == "comedy")
+                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackComedy1");
+            else
+                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackTragedy1");
         }
     }
 
