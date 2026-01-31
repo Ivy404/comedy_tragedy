@@ -16,5 +16,6 @@ MonoBehaviour:
   health: 10
   damage: 2
   speed: 5
-  weight: 15
-  visualPrefab: {fileID: 0}
+  mass: 15
+  xp: 2
+  visualPrefab: {fileID: 6659228165741899827, guid: ff912f87178d84a3ebc88d3773151528, type: 3}
