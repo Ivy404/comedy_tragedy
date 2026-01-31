@@ -192,18 +192,18 @@ MonoBehaviour:
   m_UIInfos: {fileID: 114340500867371532}
   m_CustomAttributes: []
   m_ParameterInfo:
-  - name: IsLight
-    path: IsLight
+  - name: Power
+    path: Power
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_Bool
-    realType: Boolean
+    sheetType: m_Float
+    realType: Single
     defaultValue:
       m_Type:
-        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
+      m_SerializableObject: 13
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -224,22 +224,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Color_Light_Inner
-    path: Color_Light_Inner
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":3.671773910522461,"g":0.5358615517616272,"b":0.5096935033798218,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: RotationSpeed_Light
     path: RotationSpeed_Light
     tooltip: 
@@ -252,22 +236,6 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 5
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: Light_Lifetime
-    path: Light_Lifetime
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.15
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -288,6 +256,38 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: Color_Light_Inner
+    path: Color_Light_Inner
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Vector4f
+    realType: Color
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":3.671773910522461,"g":0.5358615517616272,"b":0.5096935033798218,"a":1.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: IsLight
+    path: IsLight
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Bool
+    realType: Boolean
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: False
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: Color_Dark_Inner
     path: Color_Dark_Inner
     tooltip: 
@@ -304,8 +304,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: RotationSpeed_Dark
-    path: RotationSpeed_Dark
+  - name: Light_Lifetime
+    path: Light_Lifetime
     tooltip: 
     space: -1
     spaceable: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5
+      m_SerializableObject: 0.15
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -336,22 +336,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Power
-    path: Power
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 13
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: ArcShorten
     path: ArcShorten
     tooltip: 
@@ -364,6 +348,22 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 3
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: RotationSpeed_Dark
+    path: RotationSpeed_Dark
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 5
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614590}
   m_ExposedName: Power
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 0
   m_Category: 
   m_Min:
     m_Type:
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614620}
   m_ExposedName: RotationSpeed_Light
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -2583,7 +2583,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614622}
   m_ExposedName: ColorDark
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614628}
   m_ExposedName: Color_Light_Inner
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -3424,7 +3424,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614658}
   m_ExposedName: IsLight
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -3520,7 +3520,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
+      m_SerializableObject: False
     m_Space: -1
   m_Property:
     name: o
@@ -4929,7 +4929,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614726}
   m_ExposedName: Light_Lifetime
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -5278,7 +5278,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1000
+      m_SerializableObject: 1
     m_Space: -1
   m_Property:
     name: LoopCount
@@ -5310,7 +5310,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614736}
   m_ExposedName: ArcShorten
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 9
   m_Category: 
   m_Min:
     m_Type:
@@ -5737,7 +5737,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614898}
   m_ExposedName: RotationSpeed_Dark
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 10
   m_Category: 
   m_Min:
     m_Type:
@@ -6692,7 +6692,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1000
+      m_SerializableObject: 1
     m_Space: -1
   m_Property:
     name: LoopCount
@@ -10207,7 +10207,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.4
+      m_SerializableObject: 0.33
     m_Space: -1
   m_Property:
     name: False
