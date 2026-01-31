@@ -11,25 +11,28 @@ public class FloorSpawn_Manager : MonoBehaviour
     private int tileCount;
 
     public int tileSize;
+    private int tilePos;
 
     void Start()
     {
         tileCount = TileTypes.Length;
         playerPos = player.transform.position;
+        tilePos = tileSize * 10;
 
         // Spawn the 9 tiles
+
         //mid
-        GameObject top = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3 (playerPos.x, 0, playerPos.z + 10), new Quaternion (0,0,0,0)) as GameObject;
+        GameObject top = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3 (playerPos.x, 0, playerPos.z + tilePos), new Quaternion (0,0,0,0)) as GameObject;
         GameObject mid = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x, 0, playerPos.z), new Quaternion(0, 0, 0, 0)) as GameObject;
-        GameObject bot = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x, 0, playerPos.z - 10), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject bot = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x, 0, playerPos.z - tilePos), new Quaternion(0, 0, 0, 0)) as GameObject;
         //right
-        GameObject topR = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3 (playerPos.x + 10, 0, playerPos.z + 10), new Quaternion(0, 0, 0, 0)) as GameObject;
-        GameObject midR = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x + 10, 0, playerPos.z), new Quaternion(0, 0, 0, 0)) as GameObject;
-        GameObject botR =Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x + 10, 0, playerPos.z - 10), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject topR = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3 (playerPos.x + tilePos, 0, playerPos.z + tilePos), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject midR = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x + tilePos, 0, playerPos.z), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject botR = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x + tilePos, 0, playerPos.z - tilePos), new Quaternion(0, 0, 0, 0)) as GameObject;
         //left
-        GameObject topL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - 10, 0, playerPos.z + 10), new Quaternion(0, 0, 0, 0)) as GameObject;
-        GameObject midL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - 10, 0, playerPos.z), new Quaternion(0, 0, 0, 0)) as GameObject;
-        GameObject botL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - 10, 0, playerPos.z - 10), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject topL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - tilePos, 0, playerPos.z + tilePos), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject midL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - tilePos, 0, playerPos.z), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject botL = Instantiate(TileTypes[Random.Range(0, TileTypes.Length)], new Vector3(playerPos.x - tilePos, 0, playerPos.z - tilePos), new Quaternion(0, 0, 0, 0)) as GameObject;
 
         //Set Scale
         top.transform.localScale = new Vector3(tileSize, 1, tileSize);
