@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1913712520337010241, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
-      value: 0.1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1913712520337010241, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
@@ -370,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: tragedyMaskData.range
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: tragedyMaskData.attackSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
