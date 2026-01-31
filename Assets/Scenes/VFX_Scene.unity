@@ -775,6 +775,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword_Slash_VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 65251820603976402, guid: 1b542e58ed208b2459c7b7d11068d0e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340981441830549026, guid: 1b542e58ed208b2459c7b7d11068d0e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6398452034478444268, guid: 1b542e58ed208b2459c7b7d11068d0e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

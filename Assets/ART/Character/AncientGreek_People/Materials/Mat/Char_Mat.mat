@@ -46,7 +46,7 @@ Material:
     - _Enemy1: 1
     - _FresnelBrightness: 26.55
     - _FresnelPower: 1.7
-    - _IsLight: 1
+    - _IsLight: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Transparency: 1
@@ -55,8 +55,8 @@ Material:
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.25, g: 0, b: 0.0003592968, a: 1}
     - _TextureColor: {r: 0.1482479, g: 0.12686983, b: 0.12686983, a: 1}
-    - _TextureColor_Dark: {r: 0.6509804, g: 0.42745098, b: 0.06666667, a: 1}
-    - _TextureColor_Light: {r: 1.6334668, g: 1.0725776, b: 0.16728275, a: 1}
+    - _TextureColor_Dark: {r: 0.06666665, g: 0.16639915, b: 0.6509804, a: 1}
+    - _TextureColor_Light: {r: 0.74901956, g: 0.4918261, b: 0.07670682, a: 1}
     - _TransparentEnemyGlow: {r: 0, g: 0.293756, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
