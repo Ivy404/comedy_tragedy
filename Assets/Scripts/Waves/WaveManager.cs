@@ -8,7 +8,7 @@ public class WaveManager : MonoBehaviour
     public List<WaveData> waves; // Wave data objects
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
-    
+    public float spawnRadius = 20f;
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;
     public int currentWaveIndex
@@ -28,7 +28,7 @@ public class WaveManager : MonoBehaviour
             if(spawners.Count() - 1 < i)
             {
                 // we need to instantiate a new one
-                GameObject spawnerObject = Instantiate(baseSpawner, transform.position, Quaternion.identity);
+                GameObject spawnerObject = Instantiate(baseSpawner, transform.position, Quaternion.identity,gameObject.transform);
                 spawners.Add(spawnerObject.GetComponent<EnemySpawner>());
             }
             EnemySpawner spawner = spawners[i];
@@ -37,9 +37,9 @@ public class WaveManager : MonoBehaviour
                 spawner.spawnerData = wave.spawnersInWave[i];
             }
             spawner.waveManager = this;
+            
             // Move spawner
-            // TO DO: select a random spot around the wave manager
-            // TO DO: update the spawner transform
+            updateSpawnerPosition(spawner);
         }
 
         int spawnCount = 0;
@@ -68,6 +68,24 @@ public class WaveManager : MonoBehaviour
         EndWave();
     }
 
+    private void updateSpawnerPosition(EnemySpawner spawner)
+    {
+        Vector3 randomPos = Random.insideUnitSphere * spawnRadius;
+        randomPos += transform.position;
+        randomPos.y = 0f;
+            
+        Vector3 direction = randomPos - transform.position;
+        direction.Normalize();
+            
+        float dotProduct = Vector3.Dot(transform.forward, direction);
+        float dotProductAngle = Mathf.Acos(dotProduct / transform.forward.magnitude * direction.magnitude);
+            
+        randomPos.x = Mathf.Cos(dotProductAngle) * spawnRadius + transform.position.x;
+        randomPos.z = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * spawnRadius + transform.position.z;
+        
+        spawner.gameObject.transform.position = randomPos;
+        Debug.Log("Update spawner position "+spawner.spawnerData.spawnerName);
+    }
     public void EnemyDied()
     {
         enemiesRemaining--;
