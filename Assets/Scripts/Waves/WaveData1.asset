@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2ab243cf80b400da8494be19d96477, type: 3}
   m_Name: WaveData1
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
-  waveName: 
-  enemiesInWave:
-  - {fileID: 11400000, guid: 84d70fb0ccedd43a6bb90034215314aa, type: 2}
+  waveName: Wave1
+  spawnersInWave:
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
   totalToSpawn: 1
   spawnRate: 5
