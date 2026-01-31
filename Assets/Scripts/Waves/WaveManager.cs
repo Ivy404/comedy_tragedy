@@ -36,6 +36,7 @@ public class WaveManager : MonoBehaviour
             {
                 spawner.spawnerData = wave.spawnersInWave[i];
             }
+            spawner.waveManager = this;
             // Move spawner
             // TO DO: select a random spot around the wave manager
             // TO DO: update the spawner transform

@@ -18,4 +18,4 @@ MonoBehaviour:
   speed: 5
   mass: 15
   xp: 2
-  visualPrefab: {fileID: 6659228165741899827, guid: ff912f87178d84a3ebc88d3773151528, type: 3}
+  visualPrefab: {fileID: 3885656622141045602, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}

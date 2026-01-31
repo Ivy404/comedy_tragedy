@@ -60,9 +60,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
   PlayerTransform: {fileID: 2338081647409185785}
-  maxSpeed: 10
   mainCamera: {fileID: 0}
   PlayerAnimator: {fileID: 3102899926989114609}
+  AuraVFX: {fileID: 4971864472706516279}
+  comedyMaskData:
+    maskName: comedy
+    maxHealth: 100
+    health: 100
+    hpRegen: 0.5
+    speed: 10
+    attackSpeed: 5
+  tragedyMaskData:
+    maskName: tragedy
+    maxHealth: 100
+    health: 100
+    hpRegen: 0.5
+    speed: 8
+    attackSpeed: 1
+  crescendoBuildupRate: 0.01
+  CharacterMaterial: {fileID: 2100000, guid: 46de7efb1f79a2944bfaefc52b979dfa, type: 2}
 --- !u!1001 &2512622495114836202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77,6 +93,10 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 0bda96e5723edd541afa67132d21be20, type: 2}
     - target: {fileID: 707372815677666331, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922819100458880946, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
@@ -131,6 +151,11 @@ PrefabInstance:
 --- !u!95 &3102899926989114609 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 707372815677666331, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+  m_PrefabInstance: {fileID: 2512622495114836202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &4971864472706516279 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 7359230051180035549, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
   m_PrefabInstance: {fileID: 2512622495114836202}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &9074643159286830731 stripped
