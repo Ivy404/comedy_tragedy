@@ -34,6 +34,7 @@ public class PlayerActions : MonoBehaviour
     
     // transition contorl
     private float transitionBuilup;
+    [SerializeField] private Material CharacterMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -95,12 +96,14 @@ public class PlayerActions : MonoBehaviour
             comedyMaskData = currentData;
             currentData = tragedyMaskData;
             transitionBuilup = 0.0f;
+            CharacterMaterial.SetFloat("IsLight", 0);
         } else
         {
             AuraVFX.SetBool("IsComedy", true);
             tragedyMaskData = currentData;
             currentData = comedyMaskData;
             transitionBuilup = 0.0f;
+            CharacterMaterial.SetFloat("IsLight", 1);
         }
     }
     public void Move(Vector2 direction)
