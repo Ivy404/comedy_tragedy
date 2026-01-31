@@ -47,4 +47,4 @@ MonoBehaviour:
   Tile: {fileID: 369054123239153333, guid: 618ab5c130511f44f9c606ad3dc8bf98, type: 3}
   maxCount: 3
   player: {fileID: 0}
-  tileSize: 5
+  tileSize: 2

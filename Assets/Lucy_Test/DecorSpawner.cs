@@ -27,7 +27,7 @@ public class DecorSpawner : MonoBehaviour
 
     public void spawnDecor()
     {
-        if (Physics.CheckSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize))
+        if (Physics.CheckSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize * 3f))
         {
             decorOn = true;
         }
@@ -44,11 +44,13 @@ public class DecorSpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+
         // Draw the sphere.
-        Gizmos.DrawSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize);
+        Gizmos.DrawSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize * 3f);
 
         // Draw wire sphere outline.
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize);
+        Gizmos.DrawWireSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize * 3f);
     }
+
 }
