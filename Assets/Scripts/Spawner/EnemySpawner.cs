@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class EnemySpawner : MonoBehaviour
 {
     public SpawnerData spawnerData;
+    public GameObject enemiesObject;
 
     public WaveManager waveManager;
     // DEGUB
@@ -58,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
         // 4. Instantiate (same as before)
         if (selectedData != null)
         {
-            GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity, enemiesObject.transform);
             // Set the data
             EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
             if (enemyController != null)
