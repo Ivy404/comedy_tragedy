@@ -551,13 +551,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5452788426729610615, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859328610847813217, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,6 +602,14 @@ PrefabInstance:
     - target: {fileID: 6859328610847813217, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359230051180035549, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359230051180035549, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -676,6 +688,10 @@ PrefabInstance:
     - target: {fileID: 4514701055957410264, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816409557007067004, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9218331312610655230, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
       propertyPath: Target
