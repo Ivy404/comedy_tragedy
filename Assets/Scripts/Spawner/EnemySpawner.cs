@@ -6,14 +6,15 @@ using UnityEngine.InputSystem;
 public class EnemySpawner : MonoBehaviour
 {
     public SpawnerData spawnerData;
-    
+
+    public WaveManager waveManager;
     // DEGUB
-     InputAction debugAction;
+     //InputAction debugAction;
 
      public void Start()
     {
         // DEBUG
-        debugAction = InputSystem.actions.FindAction("Spawn");
+        //debugAction = InputSystem.actions.FindAction("Spawn");
     }
 
     public void SpawnWeightedEnemy()
@@ -59,10 +60,16 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity);
             // Set the data
-            EnemyController controller = newEnemy.GetComponent<EnemyController>();
-            if (controller != null)
+            EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
+            if (enemyController != null)
             {
-                controller.data = selectedData;
+                enemyController.data = selectedData;
+                // Update / set the spawner reference
+                enemyController.enemySpawner = this;
+            }
+            else
+            {
+                Debug.LogError("Wrong prefab set to an Enemy Spawner, the prefab needs to have an EnemyController");
             }
         }
     }
@@ -71,6 +78,17 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         // DEBUG
-        if (debugAction.WasPressedThisFrame()) SpawnWeightedEnemy();
+        //if (debugAction.WasPressedThisFrame()) SpawnWeightedEnemy();
+    }
+    public void EnemyDied(EnemyController enemy)
+    {
+        // Notify death
+        if(waveManager != null)
+        {
+            waveManager.EnemyDied();
+        }else
+        {
+            Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
+        }
     }
 }

@@ -331,61 +331,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 462552252}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData
+      propertyPath: CharacterMaterial
       value: 
-      objectReference: {fileID: 11400000, guid: 578a55cb623463f4dbf93f717012f20c, type: 2}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData
-      value: 
-      objectReference: {fileID: 11400000, guid: 83273b81d3cbaad42b1d415cfd9942cc, type: 2}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.hpRegen
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.maskName
-      value: comedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.hpRegen
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.maskName
-      value: tragedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: comedyMaskData.attackSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.attackSpeed
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1975228653}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -635,6 +583,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1975228653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3317380041188264505, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+  m_PrefabInstance: {fileID: 822207319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
