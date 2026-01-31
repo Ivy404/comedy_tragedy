@@ -24,8 +24,10 @@ public class FloorLogic : MonoBehaviour
             manager = GameObject.FindWithTag("GameController");
         }
 
-        maxDis = ((gameObject.transform.localScale.x * 10) + (gameObject.transform.localScale.x * 10) / 2) ;
-        teleDis = (gameObject.transform.localScale.x * 10) * 3;
+        Debug.Log(gameObject.transform.localScale.x);
+
+        maxDis = ((manager.GetComponent<FloorSpawn_Manager>().tileSize * 10) + (manager.GetComponent<FloorSpawn_Manager>().tileSize * 10) / 2) ;
+        teleDis = (manager.GetComponent<FloorSpawn_Manager>().tileSize * 10) * 3;
     }
 
 
