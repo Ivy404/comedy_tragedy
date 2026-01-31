@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
@@ -167,5 +168,17 @@ public class EnemyController : MonoBehaviour
 
         // TO DO: disable the enemy
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            currentHealth = Math.Max(currentHealth-playerRef.getDamageOutput(),0);
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
     }
 }

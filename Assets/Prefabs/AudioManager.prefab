@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8876628123999929917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9151103946503910525}
+  - component: {fileID: 3245501443976983365}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9151103946503910525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876628123999929917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1786995, y: 0, z: -0.8853893}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3245501443976983365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876628123999929917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b247877cae66b4638a1e4339709b0c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: ComedyMusic
+    clip: {fileID: 8300000, guid: e49195401183940b2b7bd0f418a8598f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 7427721350529101861, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: TragedyMusic
+    clip: {fileID: 8300000, guid: 56f5098f7176a47a4b950e90007c7fb9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -7438580139324194020, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: ModeSwitch
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: attackComedy1
+    clip: {fileID: 8300000, guid: e3aa99818a7504736812d05c16e4c3cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: attackTragedy1
+    clip: {fileID: 8300000, guid: 3f0fa3c01fe2a42138c2f6fbf2e197cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}

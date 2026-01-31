@@ -14,6 +14,7 @@ struct maskData {
     public float attackSpeed;
     public float range;
     public float arc;
+    public float damage;
    
 }
 
@@ -31,6 +32,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public float crescendoBuildupRate = 0.01f;
     [SerializeField] public Collider swordCollider;
     [SerializeField] public Transform swordPivot;
+    [SerializeField] public float lockRadius = 5;
+    [SerializeField] public float rotationSpeed = 10;
     private maskData currentData;
 
     //attack control
@@ -40,6 +43,8 @@ public class PlayerActions : MonoBehaviour
 
     private bool colliderDmg;
     private float lifetime;
+    private GameObject closestEnemy;
+    [SerializeField] public GameObject enemiesObject;
     
     
     // transition contorl
@@ -51,6 +56,7 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         attackTime = 0;
+        closestEnemy = null;
         attacking = false;
         currentData = comedyMaskData;
         transitionBuilup = 0;
@@ -63,6 +69,7 @@ public class PlayerActions : MonoBehaviour
         ((CapsuleCollider) swordCollider).height = currentData.range;
         lifetime = SwordVFX.GetFloat("Light_Lifetime");
         SwordVFX.SetFloat("RotationAngle", currentData.arc);
+        
     }
 
     // Update is called once per frame
@@ -81,16 +88,14 @@ public class PlayerActions : MonoBehaviour
 
         if (colliderDmg)
         {
-            Debug.Log("colliderdmg");
             colliderTime+=Time.deltaTime;
-            Vector3 newAngles =new Vector3(0,Mathf.LerpAngle(-currentData.arc/2, currentData.arc/2, colliderTime/lifetime),0);
-            Debug.Log(newAngles);
-            swordPivot.eulerAngles = newAngles;
+            Vector3 newAngles = new Vector3(0,Mathf.LerpAngle(-currentData.arc/2, currentData.arc/2, colliderTime/lifetime),0);
+            swordPivot.localEulerAngles = newAngles;
             if (colliderTime > lifetime)
             {
                 colliderDmg = false;
                 swordCollider.enabled = false;
-                swordPivot.eulerAngles = new Vector3(0,-currentData.arc/2,0);
+                swordPivot.localEulerAngles = new Vector3(0,-currentData.arc/2,0);
             }
         }
 
@@ -101,6 +106,7 @@ public class PlayerActions : MonoBehaviour
             transitionBuilup = Math.Min(1.0f, transitionBuilup+crescendoBuildupRate*Time.deltaTime);
         }
         AuraVFX.SetFloat("GlowSize", 10*transitionBuilup);
+        closestEnemy = getClosestEnemyDirection();
     }
 
 
@@ -108,15 +114,21 @@ public class PlayerActions : MonoBehaviour
     {
         // play take damage animation
         currentData.health -= damage;
+        
         if (currentData.health <= 0)
         {
             // TO DO: Inform game manager
             Debug.Log("you lose");
         }
+
+        // Play sound
+
+        //int randomNumber = Random.ange(0, totalWeight);
+        //AudioManager.audioManagerRef.PlaySound
     }
     public void regenHP()
     {
-        if ( currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
+        if (currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
         {
             tragedyMaskData.health = Math.Min(tragedyMaskData.health + tragedyMaskData.hpRegen * Time.deltaTime, tragedyMaskData.maxHealth);
         } else if (currentData.maskName == "tragedy"  && comedyMaskData.health < comedyMaskData.maxHealth)
@@ -154,6 +166,12 @@ public class PlayerActions : MonoBehaviour
             SwordVFX.SetFloat("RotationAngle", currentData.arc);
         }
     }
+
+    public string GetMode()
+    {
+        return currentData.maskName;
+    }
+    
     public void Move(Vector2 direction)
     {   
         if (direction != Vector2.zero)
@@ -161,7 +179,21 @@ public class PlayerActions : MonoBehaviour
             PlayerAnimator.SetBool("walk", true);
             Vector3 movedir = new Vector3(direction.x, 0, direction.y);
             PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
-            PlayerTransform.rotation = Quaternion.LookRotation(movedir);
+            if (closestEnemy == null)
+                PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
+            else {
+                Vector3 enemyDir = closestEnemy.transform.position - transform.position;
+                enemyDir.y = 0;
+                PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
+            }
+            /**if (!attacking && !colliderDmg || closestEnemy == null)
+                PlayerTransform.rotation = Quaternion.LookRotation(movedir);
+            else {
+                Vector3 enemyDir = closestEnemy.transform.position - transform.position;
+                Debug.Log(enemyDir.normalized);
+                enemyDir.y = 0;
+                PlayerTransform.rotation = Quaternion.LookRotation(enemyDir.normalized);
+            }**/
         } else
         {
             PlayerAnimator.SetBool("walk", false);
@@ -172,7 +204,14 @@ public class PlayerActions : MonoBehaviour
     {
         if (!attacking){
             PlayerAnimator.SetTrigger("attack");
+            attackTime = 0;
             attacking = true;
+
+            // Play sound
+            if(currentData.maskName == "comedy")
+                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackComedy1");
+            else
+                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackTragedy1");
         }
     }
 
@@ -183,6 +222,28 @@ public class PlayerActions : MonoBehaviour
         colliderTime = 0;
         SwordVFX.enabled = true;
         SwordVFX.Play();
+    }
+
+    public float getDamageOutput()
+    {
+        return currentData.damage;
+    }
+
+    private GameObject getClosestEnemyDirection()
+    {
+        float minDist = lockRadius;
+        float enemyDis;
+        GameObject currentEnemy = null;
+        for (int i=0; i<enemiesObject.transform.childCount; i++)
+        {
+            enemyDis = Vector3.Distance(enemiesObject.transform.GetChild(i).transform.position, transform.position);
+            if (enemyDis < minDist)
+            {
+                minDist = enemyDis;
+                currentEnemy = enemiesObject.transform.GetChild(i).gameObject;
+            }
+        }
+        return currentEnemy;
     }
 
 }
