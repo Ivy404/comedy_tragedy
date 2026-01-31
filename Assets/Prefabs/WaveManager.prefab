@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7446145944305024614}
   - component: {fileID: 3795952834499946556}
-  - component: {fileID: 6541920607416096467}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -50,16 +49,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ab03a5aa44cd4ce2b9cac1e8bb371c4, type: 2}
   - {fileID: 11400000, guid: 400216f8ae0344e6288b2aaa3621e2a1, type: 2}
   baseSpawner: {fileID: 3281095269401376510, guid: 504867036cc5c415a9e6d5a7f5b1e84f, type: 3}
---- !u!114 &6541920607416096467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102797438918685728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fca05ffe50954fa49f109b4909167f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  referenceObject: {fileID: 0}
+  spawnRadius: 20
+  playerRef: {fileID: 0}

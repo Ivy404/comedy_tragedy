@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
     public float spawnRadius = 20f;
+    public PlayerActions playerRef;
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;
     public int currentWaveIndex
@@ -18,6 +19,18 @@ public class WaveManager : MonoBehaviour
 
     void Start() => StartCoroutine(PlayWave(waves[_currentWaveIndex]));
 
+    void Update()
+    {
+        // Follow the player
+        if(playerRef != null)
+        {
+            gameObject.transform.position = new Vector3(playerRef.transform.position.x, playerRef.transform.position.y, playerRef.transform.position.z);
+        }
+        else
+        {
+            Debug.LogError("WaveManager is missing the player reference in the scene!");
+        }
+    }
     IEnumerator PlayWave(WaveData wave)
     {
         Debug.Log($"Starting {wave.waveName}!");

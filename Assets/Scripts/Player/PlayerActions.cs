@@ -110,6 +110,7 @@ public class PlayerActions : MonoBehaviour
         currentData.health -= damage;
         if (currentData.health <= 0)
         {
+            // TO DO: Inform game manager
             Debug.Log("you lose");
         }
     }
