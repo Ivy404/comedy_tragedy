@@ -1,5 +1,7 @@
 using System;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [Serializable]
 struct maskData {
@@ -18,16 +20,20 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public Transform PlayerTransform;
     [SerializeField] public Camera mainCamera;
     [SerializeField] public Animator PlayerAnimator;
+    [SerializeField] public VisualEffect AuraVFX;
 
     // character stats
     [SerializeField] private maskData comedyMaskData;
     [SerializeField] private maskData tragedyMaskData;
+    [SerializeField] public float crescendoBuildupRate = 0.01f;
     private maskData currentData;
 
     //attack control
     private bool attacking;
     private float attackTime;
-
+    
+    // transition contorl
+    private float transitionBuilup;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +41,7 @@ public class PlayerActions : MonoBehaviour
         attackTime = 0;
         attacking = false;
         currentData = comedyMaskData;
+        transitionBuilup = 0;
     }
 
     // Update is called once per frame
@@ -51,7 +58,11 @@ public class PlayerActions : MonoBehaviour
         }
 
         regenHP();
-        Debug.Log("comedy hp" + comedyMaskData.health.ToString() + ", tragedy hp" + tragedyMaskData.health.ToString() );
+        if (transitionBuilup < 1.0)
+        {
+            transitionBuilup = Math.Min(1.0f, transitionBuilup+crescendoBuildupRate*Time.deltaTime);
+        }
+        AuraVFX.SetFloat("GlowSize", 10*transitionBuilup);
     }
 
 
@@ -80,12 +91,16 @@ public class PlayerActions : MonoBehaviour
     {
         if ( currentData.maskName == "comedy")
         {
+            AuraVFX.SetBool("IsComedy", false);
             comedyMaskData = currentData;
             currentData = tragedyMaskData;
+            transitionBuilup = 0.0f;
         } else
         {
+            AuraVFX.SetBool("IsComedy", true);
             tragedyMaskData = currentData;
             currentData = comedyMaskData;
+            transitionBuilup = 0.0f;
         }
     }
     public void Move(Vector2 direction)
