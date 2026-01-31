@@ -1,16 +1,23 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] public PlayerActions PlayerActions;
+    InputAction moveAction;
+    private void Start()
     {
+        moveAction = InputSystem.actions.FindAction("Move");
+    }
+
+    void Update()
+    {
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        PlayerActions.Move(moveValue);
+
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
