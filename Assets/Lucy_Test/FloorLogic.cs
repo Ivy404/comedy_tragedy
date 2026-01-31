@@ -39,21 +39,25 @@ public class FloorLogic : MonoBehaviour
         if (distanceX >= maxDis)
         {
             gameObject.transform.position = gameObject.transform.position - new Vector3(teleDis, 0, 0);
+            gameObject.GetComponent<DecorSpawner>().spawnDecor();
         }
 
         if (distanceX <= -maxDis)
         {
             gameObject.transform.position = gameObject.transform.position + new Vector3(teleDis, 0, 0);
+            gameObject.GetComponent<DecorSpawner>().spawnDecor();
         }
 
         if (distanceZ >= maxDis)
         {
             gameObject.transform.position = gameObject.transform.position - new Vector3(0, 0, teleDis);
+            gameObject.GetComponent<DecorSpawner>().spawnDecor();
         }
 
         if (distanceZ <= -maxDis)
         {
             gameObject.transform.position = gameObject.transform.position + new Vector3(0, 0, teleDis);
+            gameObject.GetComponent<DecorSpawner>().spawnDecor();
         }
     }
 }
