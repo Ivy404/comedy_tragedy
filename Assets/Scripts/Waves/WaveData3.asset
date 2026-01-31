@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d2ab243cf80b400da8494be19d96477, type: 3}
-  m_Name: WaveData1
+  m_Name: WaveData3
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
-  waveName: Wave1
+  waveName: Wave3
   spawnersInWave:
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  totalToSpawn: 1
+  - {fileID: 11400000, guid: 9625f4f6a690d48e2adf1f03c5568933, type: 2}
+  - {fileID: 11400000, guid: 47f87dd533aa14f778bc4fc7451ddf00, type: 2}
+  totalToSpawn: 10
   spawnRate: 5
