@@ -171,22 +171,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Color_Light
-    path: Color_Light
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":1.7812131643295289,"g":1.6147745847702027,"b":0.813788652420044,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: RotationSpeed
     path: RotationSpeed
     tooltip: 
@@ -203,8 +187,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: ColorDark
-    path: ColorDark
+  - name: Color_Light
+    path: Color_Light
     tooltip: 
     space: -1
     spaceable: 0
@@ -214,7 +198,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.8851072788238525,"g":1.4050129652023316,"b":4.237094879150391,"a":1.0}'
+      m_SerializableObject: '{"r":1.7812131643295289,"g":1.6147745847702027,"b":0.813788652420044,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -235,6 +219,22 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: Light_Lifetime
+    path: Light_Lifetime
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.15
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: IsLight
     path: IsLight
     tooltip: 
@@ -251,6 +251,22 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: ColorDark
+    path: ColorDark
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Vector4f
+    realType: Color
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":0.8851072788238525,"g":1.4050129652023316,"b":4.237094879150391,"a":1.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: Color_Dark_Inner
     path: Color_Dark_Inner
     tooltip: 
@@ -263,22 +279,6 @@ MonoBehaviour:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"r":0.21832877397537232,"g":0.0,"b":0.007616696413606405,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: Light_Lifetime
-    path: Light_Lifetime
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.15
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 403, y: 922}
+  m_UIPosition: {x: 419, y: 978}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1663,6 +1663,7 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661614654}
+  - {fileID: 8926484042661614770}
 --- !u!114 &8926484042661614589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,7 +1768,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614592}
   m_ExposedName: Color_Light
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -2702,7 +2703,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614620}
   m_ExposedName: RotationSpeed
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -2783,7 +2784,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614622}
   m_ExposedName: ColorDark
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -3000,7 +3001,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614628}
   m_ExposedName: Color_Light_Inner
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -3598,7 +3599,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614780}
 --- !u!114 &8926484042661614657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,8 +3715,8 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 347, y: 677}
-  m_UICollapsed: 1
+  m_UIPosition: {x: 347, y: 662}
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614660}
@@ -4139,7 +4141,8 @@ MonoBehaviour:
       m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_Direction: 1
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614761}
 --- !u!114 &8926484042661614675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4295,7 +4298,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614700}
   m_ExposedName: Color_Dark_Inner
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -4930,7 +4933,8 @@ MonoBehaviour:
       m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_Direction: 1
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614771}
 --- !u!114 &8926484042661614721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5086,7 +5090,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614726}
   m_ExposedName: Light_Lifetime
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -5467,9 +5471,9 @@ MonoBehaviour:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614736}
-      inputSlot: {fileID: 0}
+      inputSlot: {fileID: 8926484042661614767}
     - outputSlot: {fileID: 8926484042661614736}
-      inputSlot: {fileID: 0}
+      inputSlot: {fileID: 8926484042661614777}
     position: {x: 462.2857, y: 852}
     expandedSlots: []
     expanded: 1
@@ -5507,7 +5511,9 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614767}
+  - {fileID: 8926484042661614777}
 --- !u!114 &8926484042661614761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5545,7 +5551,8 @@ MonoBehaviour:
       m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614674}
 --- !u!114 &8926484042661614762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5745,7 +5752,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614736}
 --- !u!114 &8926484042661614768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5771,7 +5779,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 20
     m_Space: -1
   m_Property:
     name: _VoronoiScale
@@ -5805,7 +5813,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 5
     m_Space: -1
   m_Property:
     name: _VoronoiSpeed
@@ -5847,7 +5855,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614588}
 --- !u!114 &8926484042661614771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5885,7 +5894,8 @@ MonoBehaviour:
       m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614720}
 --- !u!114 &8926484042661614772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6085,7 +6095,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614736}
 --- !u!114 &8926484042661614778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6187,4 +6198,5 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661614656}
