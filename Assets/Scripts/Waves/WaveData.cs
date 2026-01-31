@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewWave", menuName = "RogueLike/Wave")]
+[CreateAssetMenu(fileName = "WaveData", menuName = "Comedy Tragedy/WaveData")]
 public class WaveData : ScriptableObject
 {
     public string waveName;

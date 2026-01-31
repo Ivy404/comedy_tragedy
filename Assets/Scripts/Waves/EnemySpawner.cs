@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     {
         debugAction = InputSystem.actions.FindAction("Spawn");
     }
-    public void SpawnRandomEnemy()
+    public void SpawnEnemy()
     {
         if (enemyPool.Count == 0) return;
 
@@ -37,6 +37,6 @@ public class EnemySpawner : MonoBehaviour
     // Quick test: Press Space to spawn
     void Update()
     {
-        if (debugAction.WasPressedThisFrame()) SpawnRandomEnemy();
+        if (debugAction.WasPressedThisFrame()) SpawnEnemy();
     }
 }

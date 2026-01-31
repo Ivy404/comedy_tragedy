@@ -16,6 +16,13 @@ public class EnemyController : MonoBehaviour
         
         // Instantiate the visual model as a child of this object
         Instantiate(data.visualPrefab, transform);
+
+        // Multiply base stats by the current wave index
+        int waveLevel = FindFirstObjectByType<WaveManager>().currentWaveIndex;
+        float difficultyMultiplier = 1f + (waveLevel * 0.2f); // +20% per wave
+
+        //currentHealth = data.health * difficultyMultiplier;
+        // ...
     }
 
     void Update()
