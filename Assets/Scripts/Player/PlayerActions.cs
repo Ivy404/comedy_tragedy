@@ -12,6 +12,8 @@ struct maskData {
     public float hpRegen;
     public float speed;
     public float attackSpeed;
+    public float range;
+    public float arc;
    
 }
 
@@ -27,11 +29,18 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private maskData comedyMaskData;
     [SerializeField] private maskData tragedyMaskData;
     [SerializeField] public float crescendoBuildupRate = 0.01f;
+    [SerializeField] public Collider swordCollider;
+    [SerializeField] public Transform swordPivot;
     private maskData currentData;
 
     //attack control
     private bool attacking;
     private float attackTime;
+    private float colliderTime;
+
+    private bool colliderDmg;
+    private float lifetime;
+    
     
     // transition contorl
     private float transitionBuilup;
@@ -50,6 +59,10 @@ public class PlayerActions : MonoBehaviour
         characterRenderer.material.SetFloat("_IsLight", 1.0f);
         SwordVFX.SetBool("IsLight", true);
         PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
+        colliderDmg = false;
+        ((CapsuleCollider) swordCollider).height = currentData.range;
+        lifetime = SwordVFX.GetFloat("Light_Lifetime");
+        SwordVFX.SetFloat("RotationAngle", currentData.arc);
     }
 
     // Update is called once per frame
@@ -66,6 +79,22 @@ public class PlayerActions : MonoBehaviour
             }
         }
 
+        if (colliderDmg)
+        {
+            Debug.Log("colliderdmg");
+            colliderTime+=Time.deltaTime;
+            Vector3 newAngles =new Vector3(0,Mathf.LerpAngle(-currentData.arc/2, currentData.arc/2, colliderTime/lifetime),0);
+            Debug.Log(newAngles);
+            swordPivot.eulerAngles = newAngles;
+            if (colliderTime > lifetime)
+            {
+                colliderDmg = false;
+                swordCollider.enabled = false;
+                swordPivot.eulerAngles = new Vector3(0,-currentData.arc/2,0);
+            }
+        }
+
+
         regenHP();
         if (transitionBuilup < 1.0)
         {
@@ -81,6 +110,7 @@ public class PlayerActions : MonoBehaviour
         currentData.health -= damage;
         if (currentData.health <= 0)
         {
+            // TO DO: Inform game manager
             Debug.Log("you lose");
         }
     }
@@ -107,6 +137,9 @@ public class PlayerActions : MonoBehaviour
             transitionBuilup = 0.0f;
             characterRenderer.material.SetFloat("_IsLight", 0.0f);
             PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
+            ((CapsuleCollider) swordCollider).height = currentData.range;
+            lifetime = SwordVFX.GetFloat("Dark_Lifetime");
+            SwordVFX.SetFloat("RotationAngle", currentData.arc);
         } else
         {
             AuraVFX.SetBool("IsComedy", true);
@@ -116,6 +149,9 @@ public class PlayerActions : MonoBehaviour
             transitionBuilup = 0.0f;
             characterRenderer.material.SetFloat("_IsLight", 1.0f);
             PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
+            ((CapsuleCollider) swordCollider).height = currentData.range;
+            lifetime = SwordVFX.GetFloat("Light_Lifetime");
+            SwordVFX.SetFloat("RotationAngle", currentData.arc);
         }
     }
     public void Move(Vector2 direction)
@@ -142,6 +178,9 @@ public class PlayerActions : MonoBehaviour
 
     public void performDmg()
     {
+        swordCollider.enabled = true;
+        colliderDmg = true;
+        colliderTime = 0;
         SwordVFX.enabled = true;
         SwordVFX.Play();
     }

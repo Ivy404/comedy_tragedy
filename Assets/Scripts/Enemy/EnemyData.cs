@@ -8,6 +8,8 @@ public class EnemyData : ScriptableObject
     public float damage;
     public float speed;
     public float mass;
+    public float stoppingDistance;
+    public float attackCooldown;
     public int xp;
     public GameObject visualPrefab; // The 3D model or Sprite
 }
