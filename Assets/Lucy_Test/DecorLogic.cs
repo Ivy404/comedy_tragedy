@@ -23,7 +23,7 @@ public class DecorLogic : MonoBehaviour
             manager = GameObject.FindWithTag("GameController");
         }
 
-        maxDis = manager.GetComponent<FloorSpawn_Manager>().tileSize;
+        maxDis = manager.GetComponent<FloorSpawn_Manager>().tileSize * 10;
         spawned = true;
     }
 
@@ -31,7 +31,7 @@ public class DecorLogic : MonoBehaviour
     {
         Debug.Log(maxDis);
         distance = Vector3.Distance(player.transform.position, transform.position);
-        if (distance > maxDis * 4 && spawned == true)
+        if (distance > maxDis && spawned == true)
         {
             foreach (Transform child in transform)
             {
@@ -40,7 +40,7 @@ public class DecorLogic : MonoBehaviour
             spawned = false;
         }
 
-        if(distance < maxDis * 4 && spawned == false)
+        if(distance < maxDis && spawned == false)
         {
             foreach (Transform child in transform)
             {
