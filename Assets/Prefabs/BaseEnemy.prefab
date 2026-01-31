@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03419e9ae4e0045509a1b2613293dfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 84d70fb0ccedd43a6bb90034215314aa, type: 2}

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class EnemySpawner : MonoBehaviour
     
     [Header("The Base Enemy Template")]
     public GameObject enemyPrefab; // A prefab with the EnemyController script on it
+     InputAction debugAction;
 
+     public void Start()
+    {
+        debugAction = InputSystem.actions.FindAction("Spawn");
+    }
     public void SpawnRandomEnemy()
     {
         if (enemyPool.Count == 0) return;
@@ -31,6 +37,6 @@ public class EnemySpawner : MonoBehaviour
     // Quick test: Press Space to spawn
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) SpawnRandomEnemy();
+        if (debugAction.WasPressedThisFrame()) SpawnRandomEnemy();
     }
 }
