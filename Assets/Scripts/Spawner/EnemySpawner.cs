@@ -66,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
                 enemyController.data = selectedData;
                 // Update / set the spawner reference
                 enemyController.enemySpawner = this;
+                enemyController.playerRef = waveManager.playerRef;
             }
             else
             {

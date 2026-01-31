@@ -17,5 +17,7 @@ MonoBehaviour:
   damage: 2
   speed: 5
   mass: 15
+  stoppingDistance: 0.75
+  attackCooldown: 1.5
   xp: 5
   visualPrefab: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
