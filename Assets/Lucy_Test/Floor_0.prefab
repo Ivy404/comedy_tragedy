@@ -131,6 +131,7 @@ MonoBehaviour:
   - {fileID: 5371224634295323486, guid: c33d46c0aef0d344fae8222c5aa105ae, type: 3}
   spawnChance: 50
   decorOn: 0
+  manager: {fileID: 0}
 --- !u!54 &6707376531252258156
 Rigidbody:
   m_ObjectHideFlags: 0
