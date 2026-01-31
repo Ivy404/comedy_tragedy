@@ -11,36 +11,44 @@ public class DecorSpawner : MonoBehaviour
 
     private float randomize;
 
+    public GameObject manager;
+
     private void Awake()
     {
         tileCount = DecorTiles.Length;
 
+        if (manager == null)
+        {
+            manager = GameObject.FindWithTag("GameController");
+        }
+
         spawnDecor();
     }
 
-    private void OnTriggerStay(Collider other)
+    public void spawnDecor()
     {
-
-        if (other.gameObject.tag == "Decor")
+        if (Physics.CheckSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize))
         {
             decorOn = true;
         }
         else
         {
             decorOn = false;
-        }
-    }
-
-    public void spawnDecor()
-    {
-        if (decorOn == false)
-        {
             randomize = Random.Range(0, 100);
-            if(randomize < spawnChance)
+            if (randomize < spawnChance)
             {
                 GameObject deco = Instantiate(DecorTiles[Random.Range(0, DecorTiles.Length)], new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z), new Quaternion(0, 0, 0, 0)) as GameObject;
             }
-            decorOn = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Draw the sphere.
+        Gizmos.DrawSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize);
+
+        // Draw wire sphere outline.
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, manager.GetComponent<FloorSpawn_Manager>().tileSize);
     }
 }

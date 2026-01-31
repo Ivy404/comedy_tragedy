@@ -29,9 +29,8 @@ public class DecorLogic : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(maxDis);
         distance = Vector3.Distance(player.transform.position, transform.position);
-        if (distance > maxDis && spawned == true)
+        if (distance > maxDis * 2 && spawned == true)
         {
             foreach (Transform child in transform)
             {
@@ -40,7 +39,7 @@ public class DecorLogic : MonoBehaviour
             spawned = false;
         }
 
-        if(distance < maxDis && spawned == false)
+        if(distance < maxDis * 2 && spawned == false)
         {
             foreach (Transform child in transform)
             {
