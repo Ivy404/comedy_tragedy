@@ -60,13 +60,17 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity);
             // Set the data
-            EnemyController controller = newEnemy.GetComponent<EnemyController>();
-            if (controller != null)
+            EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
+            if (enemyController != null)
             {
-                controller.data = selectedData;
+                enemyController.data = selectedData;
+                // Update / set the spawner reference
+                enemyController.enemySpawner = this;
             }
-            // Update / set the spawner reference
-            controller.enemySpawner = this;
+            else
+            {
+                Debug.LogError("Wrong prefab set to an Enemy Spawner, the prefab needs to have an EnemyController");
+            }
         }
     }
 
