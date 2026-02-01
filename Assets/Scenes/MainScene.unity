@@ -246,11 +246,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!2083052967 &883407771 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 873784888789123749, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-  m_PrefabInstance: {fileID: 7724409633192831404}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1278950206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,26 +320,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 870372165398294811, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: CrescendoVFX
-      value: 
-      objectReference: {fileID: 883407771}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: crescendoBuildupRate
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2145353134539604883, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2145353134539604883, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5094472139538977347, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Name
       value: PlayableManager
