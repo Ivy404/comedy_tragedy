@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemyBigData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: BigEnemy1
-  health: 10
-  damage: 2
-  speed: 5
+  health: 50
+  damage: 10
+  speed: 2
   rotationSpeed: 10
   mass: 15
   stoppingDistance: 0.75
   attackCooldown: 1.5
-  xp: 5
-  visualPrefab: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+  xp: 100
+  visualPrefab: {fileID: 4319350125171999890, guid: 070eabea1d62147b195cd4fe168d92d5, type: 3}

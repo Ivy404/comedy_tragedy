@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using System.Collections;
 using System;
+using UnityEngine.VFX;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyData data;
     public EnemySpawner enemySpawner;
     public PlayerActions playerRef;
-    public GameObject hitVFX;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -22,10 +23,13 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent agent;
     private float lastAttackTime;
     private float currentHealth;
+    private bool attacking = false;
 
-
-    // DEGUB
-    InputAction debugAction;
+    public bool Attacking
+    {
+        get { return attacking; }
+        set { attacking = value; }
+    }
 
     void Start()
     {
@@ -35,9 +39,6 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         InitializeEnemy();
-
-        // DEBUG
-        debugAction = InputSystem.actions.FindAction("Submit");
     }
 
     void InitializeEnemy()
@@ -71,7 +72,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if(playerRef != null)
+        if(playerRef != null && !attacking)
         {
             MoveAndAvoid();
         }
@@ -138,14 +139,22 @@ public class EnemyController : MonoBehaviour
             else 
                 Debug.LogError("Enemy animator not setup for an enemy!");
 
-            playerRef.takeDamage(data.damage);
-            
-            // Add this inside TryAttack()
-            // Visual "Bump" toward player
-            //transform.position = Vector3.MoveTowards(transform.position, player.position, 0.5f);
+            //attacking = true;
+            //playerRef.takeDamage(data.damage);
             
             lastAttackTime = Time.time;
         }
+    }
+
+    public void TryDamagePlayer()
+    {
+       // Update movement if far or try attacking
+        float distance = Vector3.Distance(transform.position, playerRef.transform.position);
+
+        if (distance < agent.stoppingDistance)
+            playerRef.takeDamage(data.damage);
+
+        //attacking = false;
     }
 
     public void TakeDamage(float amount, Vector3 attackerPosition)
@@ -166,7 +175,6 @@ public class EnemyController : MonoBehaviour
 
         // Otherwise, take damage as normal
         currentHealth -= amount;
-        Instantiate(hitVFX,transform.position + Vector3.up, Quaternion.identity,transform);
 
         //UpdateUI();
         if (currentHealth <= 0) Die();
