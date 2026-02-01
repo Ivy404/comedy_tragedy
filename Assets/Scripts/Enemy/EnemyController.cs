@@ -176,7 +176,7 @@ public class EnemyController : MonoBehaviour
             return; // Exit the function so no damage is taken
         }*/
 
-        Instantiate(hitVFX, transform.position, Quaternion.identity, transform);
+        Instantiate(hitVFX, transform.position+Vector3.up, Quaternion.identity, transform);
         // play take damage animation    
         StartCoroutine(LerpOverTime(1.0f, t =>
         {
