@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
     public float separationForce = 1f;
+    public float playerEscapeDistance = 20f;
 
     [Header("Visuals")]
     public GameObject deathVFXPrefab;
@@ -70,14 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         if(playerRef != null)
         {
-            //float distance = Vector3.Distance(transform.position, playerRef.transform.position);
-            //if (distance > agent.stoppingDistance)
-            //{
-                MoveAndAvoid();
-            //}else
-            //{
-                // TryAttack();
-            //}
+            MoveAndAvoid();
         }
         // DEBUG
         //if (debugAction.WasPressedThisFrame()) Die();
@@ -99,10 +93,19 @@ public class EnemyController : MonoBehaviour
         // Update movement if far or try attacking
         float distance = Vector3.Distance(transform.position, playerRef.transform.position);
         
-        if (distance > agent.stoppingDistance)
+        if (distance > playerEscapeDistance)
+        {
+            enemySpawner.Respawn(this);
+            Debug.Log("Enemy "+data.name +" respawned");
+        }
+        else if (distance > agent.stoppingDistance)
+        {
             transform.position += directionToPlayer * Math.Min(data.speed * Time.deltaTime, distance);
+        }
         else
+        {
             TryAttack();
+        }
 
     }
 
