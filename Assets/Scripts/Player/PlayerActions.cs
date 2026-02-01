@@ -61,6 +61,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect SwordVFX;
     [SerializeField] public VisualEffect CrescendoVFX;
     [SerializeField] public VisualEffect DecrescendoVFX;
+    [SerializeField] public GameObject ComedyAsset;
+    [SerializeField] public GameObject TragedyAsset;
 
     // character stats
     [SerializeField] public maskData comedyMaskData;
@@ -127,6 +129,9 @@ public class PlayerActions : MonoBehaviour
 
         cameraShake = mainCamera.gameObject.GetComponent<CameraShake>();
         AmbientLight.colorTemperature = tempComedy;
+
+        ComedyAsset.SetActive(true);
+        TragedyAsset.SetActive(false);
         
     }
 
@@ -248,7 +253,7 @@ public class PlayerActions : MonoBehaviour
             if (currentData.health <= 0)
             {
                 // TO DO: Inform game manager
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
             // Play sound
@@ -275,6 +280,9 @@ public class PlayerActions : MonoBehaviour
             {
                 AuraVFX.SetBool("IsComedy", false);
                 SwordVFX.SetBool("IsLight", false);
+                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
+                DecrescendoVFX.Play();
+                StartCoroutine(crescendo(transitionBuildUp, transform.position));
                 comedyMaskData = currentData;
                 currentData = tragedyMaskData;
                 transitionBuildUp = 0.0f;
@@ -285,14 +293,13 @@ public class PlayerActions : MonoBehaviour
                 lifetime = SwordVFX.GetFloat("Dark_Lifetime");
                 DecrescendoVFX.enabled = true;
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
-                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
-                DecrescendoVFX.Play();
-                StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
                 }));
+                ComedyAsset.SetActive(false);
+                TragedyAsset.SetActive(true);
             } else
             {
                 AuraVFX.SetBool("IsComedy", true);
@@ -300,6 +307,7 @@ public class PlayerActions : MonoBehaviour
                 CrescendoVFX.enabled = true;
                 CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
                 CrescendoVFX.Play();
+
                 StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 tragedyMaskData = currentData;
@@ -314,6 +322,8 @@ public class PlayerActions : MonoBehaviour
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, t);
                 }));
+                ComedyAsset.SetActive(true);
+                TragedyAsset.SetActive(false);
             }
             lastSwitch = 0;
         }

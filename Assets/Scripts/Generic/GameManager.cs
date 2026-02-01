@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Time.timeScale = 0;
         //upgradeUION();
         Debug.Log("Game start");
         if (player != null)
@@ -68,6 +67,8 @@ public class GameManager : MonoBehaviour
         upgrade2btn = InputSystem.actions.FindAction("UpgradeUp");
         upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
         pauseBtn = InputSystem.actions.FindAction("Pause");
+
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
