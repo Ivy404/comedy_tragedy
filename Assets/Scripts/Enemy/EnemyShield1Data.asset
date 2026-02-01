@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemyShield1Data
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: ShieldEnemy1
-  health: 10
-  damage: 2
-  speed: 2
+  health: 15
+  damage: 5
+  speed: 1.25
   rotationSpeed: 2
   mass: 15
   stoppingDistance: 1
-  attackCooldown: 1
+  attackCooldown: 1.25
   xp: 2
   visualPrefab: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
