@@ -3,9 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using System.Linq;
 
 [Serializable]
 struct maskData {
@@ -34,6 +32,7 @@ public struct statUpgrade {
     public float range;
     public float arc;
     public float damage;
+    public string rarity;
 
     public statUpgrade(string upgradeName, string mask)
     {
@@ -45,6 +44,7 @@ public struct statUpgrade {
         this.range=0;
         this.arc=0;
         this.damage=0;
+        this.rarity="";
     }
    
 }
@@ -164,11 +164,6 @@ public class PlayerActions : MonoBehaviour
         AuraVFX.SetFloat("GlowSize", 10*transitionBuildUp);
         closestEnemy = getClosestEnemyDirection();
         lastDmgTaken += Time.deltaTime;
-        if (InputSystem.actions.FindAction("DebugUpgrade").WasPressedThisFrame())
-        {
-            applyUpgrades();
-            debugDisplayCurrentData();
-        }
     }
 
     public void debugDisplayCurrentData()
