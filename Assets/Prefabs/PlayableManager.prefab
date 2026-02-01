@@ -242,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 8384254599515408985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7466409, y: 0, z: 4.4998}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -676,9 +676,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 662268802033076512}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: CrescendoVFX
+      value: 
+      objectReference: {fileID: 873784888789123749}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: enemiesObject
       value: 
       objectReference: {fileID: 726932366227461655}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: crescendoBuildupRate
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
