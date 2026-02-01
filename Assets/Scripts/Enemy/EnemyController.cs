@@ -230,7 +230,19 @@ public class EnemyController : MonoBehaviour
 
         if(deathVFXPrefab != null)
         {
-             GameObject deathVFX = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
+            GameObject deathVFX = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
+            
+            
+            VisualEffect effect = deathVFX.GetComponent<VisualEffect>();
+            
+            if(effect != null)
+            {
+                Mesh bakedMesh = new Mesh();
+                // Dangerous casting
+                ((SkinnedMeshRenderer)enemyRenderer).BakeMesh(bakedMesh);
+                effect.SetMesh("EnemyMesh", bakedMesh);
+                effect.SetFloat("EnemyAngleY",transform.rotation.y);
+            }
         } else
         {
             Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
