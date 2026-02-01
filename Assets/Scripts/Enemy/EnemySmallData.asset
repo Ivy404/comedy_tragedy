@@ -21,4 +21,4 @@ MonoBehaviour:
   stoppingDistance: 0.75
   attackCooldown: 0.75
   xp: 5
-  visualPrefab: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+  visualPrefab: {fileID: 4319350125171999890, guid: 329c517f0df89457891ed77139a8ad5f, type: 3}
