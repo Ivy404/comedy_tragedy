@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine.Experimental.GlobalIllumination;
 
 [Serializable]
-struct maskData {
+public struct maskData {
     //Variable declaration
     public string maskName;
     public float maxHealth;
@@ -63,8 +63,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect DecrescendoVFX;
 
     // character stats
-    [SerializeField] private maskData comedyMaskData;
-    [SerializeField] private maskData tragedyMaskData;
+    [SerializeField] public maskData comedyMaskData;
+    [SerializeField] public maskData tragedyMaskData;
     [SerializeField] public float crescendoBuildupRate = 0.01f;
     [SerializeField] public Collider swordCollider;
     [SerializeField] public Transform swordPivot;

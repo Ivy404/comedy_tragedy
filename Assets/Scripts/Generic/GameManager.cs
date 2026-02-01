@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public PlayerActions player;
+    public WaveManager waveManager;
     private string mode;
 
     // Audio stuff
@@ -23,6 +25,14 @@ public class GameManager : MonoBehaviour
     private statUpgrade upg1;
     private statUpgrade upg2;
     private statUpgrade upg3;
+
+    private InputAction upgrade1btn;
+    private InputAction upgrade2btn;
+    private InputAction upgrade3btn;
+    private InputAction pauseBtn;
+
+    private bool isShowingUpgrades = false;
+    private bool isPaused=false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,6 +58,11 @@ public class GameManager : MonoBehaviour
             audioMixer.SetFloat("VolMusic1", -80);
             audioMixer.SetFloat("VolMusic2", -80);
         }
+
+        upgrade1btn = InputSystem.actions.FindAction("UpgradeLeft");
+        upgrade2btn = InputSystem.actions.FindAction("UpgradeUp");
+        upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
+        pauseBtn = InputSystem.actions.FindAction("Pause");
     }
 
     // Update is called once per frame
@@ -56,6 +71,28 @@ public class GameManager : MonoBehaviour
         if (player != null && mode != player.GetMode())
         {
             SwitchMode(player.GetMode());
+        }
+        if ( isShowingUpgrades){
+            if (upgrade1btn.WasPressedThisFrame())
+            {
+                SetUpgrade1();
+            }
+            if (upgrade2btn.WasPressedThisFrame())
+            {
+                SetUpgrade2();
+            }
+            if (upgrade3btn.WasPressedThisFrame())
+            {
+                SetUpgrade3();
+            }
+        }
+
+        if (pauseBtn.WasPressedThisFrame())
+        {
+            if (isPaused)
+            PauseGame();
+            else
+            ResumeGame();
         }
     }
 
@@ -86,6 +123,7 @@ public class GameManager : MonoBehaviour
     //Use this to turn on UI Upgrade Screen
     public void upgradeUION()
     {
+        isShowingUpgrades = true;
         Time.timeScale = 0;
         UpgradeScreen.SetActive(true);
 
@@ -134,10 +172,16 @@ public class GameManager : MonoBehaviour
         //HUD.SetActive(true);
         UpgradeScreen.SetActive(false);
         Time.timeScale = 1;
+        if(isShowingUpgrades){
+            waveManager.ContinueAfterUpgrading();
+            isShowingUpgrades=false;
+        }
+        isPaused=false;
     }
 
     public void PauseGame()
     {
+        isPaused=true;
         PauseScreen.SetActive(true);
     }
 }
