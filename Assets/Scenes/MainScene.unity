@@ -283,6 +283,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.1
     rarity: common
+    special: 
   - upgradeName: Damage Boost I
     maskName: tragedy
     maxHealth: 0
@@ -292,6 +293,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.1
     rarity: common
+    special: 
   - upgradeName: Damage Boost II
     maskName: comedy
     maxHealth: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.2
     rarity: uncommon
+    special: 
   - upgradeName: Damage Boost II
     maskName: tragedy
     maxHealth: 0
@@ -310,6 +313,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.2
     rarity: uncommon
+    special: 
   - upgradeName: Damage Boost III
     maskName: comedy
     maxHealth: 0
@@ -319,6 +323,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.5
     rarity: rare
+    special: 
   - upgradeName: Damage Boost III
     maskName: tragedy
     maxHealth: 0
@@ -328,6 +333,7 @@ MonoBehaviour:
     arc: 0
     damage: 0.5
     rarity: rare
+    special: 
   - upgradeName: Attack Speed Boost I
     maskName: comedy
     maxHealth: 0
@@ -337,6 +343,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: common
+    special: 
   - upgradeName: Attack Speed Boost I
     maskName: tragedy
     maxHealth: 0
@@ -346,6 +353,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: common
+    special: 
   - upgradeName: Attack Speed Boost II
     maskName: comedy
     maxHealth: 0
@@ -355,6 +363,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
   - upgradeName: Attack Speed Boost II
     maskName: tragedy
     maxHealth: 0
@@ -364,6 +373,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
   - upgradeName: Attack Speed Boost III
     maskName: comedy
     maxHealth: 0
@@ -373,6 +383,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: rare
+    special: 
   - upgradeName: Attack Speed Boost III
     maskName: tragedy
     maxHealth: 0
@@ -382,6 +393,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: rare
+    special: 
   - upgradeName: Health Boost I
     maskName: comedy
     maxHealth: 0.1
@@ -391,6 +403,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: common
+    special: 
   - upgradeName: Health Boost I
     maskName: tragedy
     maxHealth: 0.1
@@ -400,6 +413,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: common
+    special: 
   - upgradeName: Health Boost II
     maskName: comedy
     maxHealth: 0.2
@@ -409,6 +423,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
   - upgradeName: Health Boost II
     maskName: tragedy
     maxHealth: 0.2
@@ -418,6 +433,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
   - upgradeName: Health Boost III
     maskName: comedy
     maxHealth: 0.5
@@ -427,6 +443,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: rare
+    special: 
   - upgradeName: Health Boost III
     maskName: tragedy
     maxHealth: 0.5
@@ -436,6 +453,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: rare
+    special: 
   - upgradeName: Movement Speed Boost
     maskName: comedy
     maxHealth: 0
@@ -445,6 +463,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
   - upgradeName: Movement Speed Boost
     maskName: tragedy
     maxHealth: 0
@@ -454,6 +473,7 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: uncommon
+    special: 
 --- !u!1001 &7724409633192831404
 PrefabInstance:
   m_ObjectHideFlags: 0
