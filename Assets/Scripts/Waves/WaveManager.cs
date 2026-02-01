@@ -145,13 +145,9 @@ public class WaveManager : MonoBehaviour
     void CheckXPLevelUp()
     {
         // If level up needed show upgrades
-        double toCheck = 100;
-        for (int i = 0; i < currentXPIndex; i++)
-        {
-            toCheck += Math.Pow(i + 1 + 1, XPPowerFactor);
-        }
+        double toCheck = 100*Math.Pow(1.5f, currentXPIndex);
 
-        if(accumulatedXP >  toCheck)//Math.Pow(currentXPIndex + 1, XPPowerFactor))
+        if(accumulatedXP >  toCheck)
         {
 
             Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
