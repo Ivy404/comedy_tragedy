@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
     public float separationForce = 5f;
-    
+    public GameObject deathVFX;
 
     // DEGUB
     InputAction debugAction;
@@ -188,14 +188,9 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Sword")
         {
             TakeDamage(playerRef.getDamageOutput(), other.transform.position);
-            /*currentHealth = Math.Max(currentHealth-playerRef.getDamageOutput(),0);
-            if (currentHealth <= 0)
-            {
-                Die();
-            }*/
         }
     }
 }

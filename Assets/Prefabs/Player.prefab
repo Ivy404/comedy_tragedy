@@ -130,6 +130,7 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 3102899926989114609}
   AuraVFX: {fileID: 4971864472706516279}
   SwordVFX: {fileID: 1913712520337010241}
+  CrescendoVFX: {fileID: 0}
   comedyMaskData:
     maskName: comedy
     maxHealth: 100
@@ -290,9 +291,9 @@ GameObject:
   - component: {fileID: 2114750639952476636}
   - component: {fileID: 1421571550301723495}
   - component: {fileID: 6580195754390713539}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SwordCollider
-  m_TagString: Player
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

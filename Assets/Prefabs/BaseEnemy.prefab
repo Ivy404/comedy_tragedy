@@ -52,6 +52,7 @@ MonoBehaviour:
   playerRef: {fileID: 0}
   separationDistance: 1.5
   separationForce: 5
+  deathVFX: {fileID: 0}
 --- !u!195 &-2009838880938448656
 NavMeshAgent:
   m_ObjectHideFlags: 0
