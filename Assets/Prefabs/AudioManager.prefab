@@ -124,35 +124,35 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: hitComedy1
     clip: {fileID: 8300000, guid: 428159f1bc1064f699f22365ac68da05, type: 3}
-    volume: 1
+    volume: 0.81
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy2
     clip: {fileID: 8300000, guid: 2c305e4bdd4f045a58b544d12e5e2170, type: 3}
-    volume: 1
+    volume: 0.91
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy3
     clip: {fileID: 8300000, guid: 992bd9328c9ff4a638f376b49cd9f31b, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy4
     clip: {fileID: 8300000, guid: 94b963a4ce53c48219b9e5cce3fcd22c, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitTragedy
     clip: {fileID: 8300000, guid: 142c19f50c43e4d56a07e15895732db3, type: 3}
-    volume: 1
+    volume: 0.79
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
