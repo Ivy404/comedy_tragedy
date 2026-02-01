@@ -52,6 +52,7 @@ MonoBehaviour:
   playerRef: {fileID: 0}
   separationDistance: 1.5
   separationForce: 5
+  playerEscapeDistance: 25
   deathVFXPrefab: {fileID: 1182762515801079994, guid: 0c2e91fef862fe047a1cdd7a7bb61627, type: 3}
 --- !u!195 &-2009838880938448656
 NavMeshAgent:

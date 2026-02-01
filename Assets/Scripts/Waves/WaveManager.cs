@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameObject enemiesObject;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
-    public float spawnRadius = 20f;
+    public float spawnRadius = 15f;
     public PlayerActions playerRef;
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using System.Collections;
 using System;
+using UnityEngine.VFX;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class EnemyController : MonoBehaviour
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
     public float separationForce = 1f;
-    public float playerEscapeDistance = 20f;
+    public float playerEscapeDistance = 25f;
 
     [Header("Visuals")]
     public GameObject deathVFXPrefab;
@@ -172,7 +173,7 @@ public class EnemyController : MonoBehaviour
 
         if(deathVFXPrefab != null)
         {
-            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+             GameObject deathVFX = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
         } else
         {
             Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
