@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string comhelth = player.comedyMaskData.health.ToString();
-        string traghelth = player.tragedyMaskData.health.ToString();
+        string comhelth = ((int)player.comedyMaskData.health).ToString();
+        string traghelth = ((int)player.tragedyMaskData.health).ToString();
 
         healthbarTrag.GetComponent<TextMeshProUGUI>().text = traghelth;
         healthBarCom.GetComponent<TextMeshProUGUI>().text = comhelth;
