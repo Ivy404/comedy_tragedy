@@ -60,6 +60,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect AuraVFX;
     [SerializeField] public VisualEffect SwordVFX;
     [SerializeField] public VisualEffect CrescendoVFX;
+    [SerializeField] public VisualEffect DecrescendoVFX;
 
     // character stats
     [SerializeField] private maskData comedyMaskData;
@@ -282,9 +283,10 @@ public class PlayerActions : MonoBehaviour
                 PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
                 ((CapsuleCollider) swordCollider).height = currentData.range;
                 lifetime = SwordVFX.GetFloat("Dark_Lifetime");
+                DecrescendoVFX.enabled = true;
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
-                //CrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
-                //CrescendoVFX.Play();
+                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
+                DecrescendoVFX.Play();
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
@@ -293,6 +295,7 @@ public class PlayerActions : MonoBehaviour
             {
                 AuraVFX.SetBool("IsComedy", true);
                 SwordVFX.SetBool("IsLight", true);
+                CrescendoVFX.enabled = true;
                 CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
                 CrescendoVFX.Play();
                 StartCoroutine(crescendo(transitionBuildUp, transform.position));
@@ -303,7 +306,6 @@ public class PlayerActions : MonoBehaviour
                 characterRenderer.material.SetFloat("_IsLight", 1.0f);
                 PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
                 ((CapsuleCollider) swordCollider).height = currentData.range;
-                CrescendoVFX.enabled = true;
                 lifetime = SwordVFX.GetFloat("Light_Lifetime");
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
                 StartCoroutine(LerpOverTime(0.5f, t =>
@@ -352,11 +354,6 @@ public class PlayerActions : MonoBehaviour
             attackTime = 0;
             attacking = true;
 
-            // Play sound
-            if(currentData.maskName == "comedy")
-                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackComedy1");
-            else
-                AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackTragedy1");
         }
     }
 
@@ -391,6 +388,11 @@ public class PlayerActions : MonoBehaviour
         colliderTime = 0;
         SwordVFX.enabled = true;
         SwordVFX.Play();
+        // Play sound
+        if(currentData.maskName == "comedy")
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackComedy1");
+        else
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackTragedy1");
     }
 
     public float getDamageOutput()

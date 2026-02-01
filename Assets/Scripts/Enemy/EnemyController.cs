@@ -1,15 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
-using System.Collections;
 using System;
-using UnityEngine.VFX;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyData data;
     public EnemySpawner enemySpawner;
     public PlayerActions playerRef;
+    public GameObject hitVFX;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -167,6 +166,7 @@ public class EnemyController : MonoBehaviour
 
         // Otherwise, take damage as normal
         currentHealth -= amount;
+        Instantiate(hitVFX,transform.position + Vector3.up, Quaternion.identity,transform);
 
         //UpdateUI();
         if (currentHealth <= 0) Die();

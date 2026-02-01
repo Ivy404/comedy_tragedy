@@ -50,6 +50,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 84d70fb0ccedd43a6bb90034215314aa, type: 2}
   enemySpawner: {fileID: 0}
   playerRef: {fileID: 0}
+  hitVFX: {fileID: 6778075791048373430, guid: de3dd4ed163ed504da864c048c443638, type: 3}
   separationDistance: 1.5
   separationForce: 5
   playerEscapeDistance: 25
