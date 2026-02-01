@@ -69,7 +69,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public float modeSwitchCD = 3;
     [SerializeField] public float crescendoDamage = 20;
     [SerializeField] public float iFrames=0.5f;
-    private maskData currentData;
+    [SerializeField] private maskData currentData;
 
     //attack control
     private bool attacking;
@@ -212,9 +212,9 @@ public class PlayerActions : MonoBehaviour
             {
                 comedyMaskData.maxHealth += baseComedy.maxHealth*upg.maxHealth;
                 comedyMaskData.speed += baseComedy.speed*upg.speed;
-                comedyMaskData.attackSpeed += baseComedy.attackSpeed*+upg.attackSpeed;
+                comedyMaskData.attackSpeed += baseComedy.attackSpeed*upg.attackSpeed;
                 comedyMaskData.range += baseComedy.range*upg.range;
-                comedyMaskData.arc += baseComedy.arc*+upg.arc;
+                comedyMaskData.arc += baseComedy.arc*upg.arc;
                 comedyMaskData.damage += baseComedy.damage*upg.damage;
                 
             }
