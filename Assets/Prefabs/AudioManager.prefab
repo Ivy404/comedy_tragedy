@@ -68,14 +68,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: attackComedy1
     clip: {fileID: 8300000, guid: e3aa99818a7504736812d05c16e4c3cc, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: attackTragedy1
     clip: {fileID: 8300000, guid: 3f0fa3c01fe2a42138c2f6fbf2e197cb, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
@@ -124,63 +124,63 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: hitComedy1
     clip: {fileID: 8300000, guid: 428159f1bc1064f699f22365ac68da05, type: 3}
-    volume: 1
+    volume: 0.56
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy2
     clip: {fileID: 8300000, guid: 2c305e4bdd4f045a58b544d12e5e2170, type: 3}
-    volume: 1
+    volume: 0.63
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy3
     clip: {fileID: 8300000, guid: 992bd9328c9ff4a638f376b49cd9f31b, type: 3}
-    volume: 1
+    volume: 0.42
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitComedy4
     clip: {fileID: 8300000, guid: 94b963a4ce53c48219b9e5cce3fcd22c, type: 3}
-    volume: 1
+    volume: 0.42
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: hitTragedy
     clip: {fileID: 8300000, guid: 142c19f50c43e4d56a07e15895732db3, type: 3}
-    volume: 1
+    volume: 0.49
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: enemyDeath1
     clip: {fileID: 8300000, guid: e8ad4bd9204434767a9733b019d69bae, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: enemyDeath2
     clip: {fileID: 8300000, guid: 19e6ed4d56c164706b402162ea58a7d5, type: 3}
-    volume: 1
+    volume: 0.74
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: enemyDeath3
     clip: {fileID: 8300000, guid: 63c21a23af1b2467fb517852b01cef6d, type: 3}
-    volume: 1
+    volume: 0.77
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
   - name: crescendoMaxed
     clip: {fileID: 8300000, guid: 9e5132406ba9b4eb684a662578201847, type: 3}
-    volume: 1
+    volume: 0.61
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
