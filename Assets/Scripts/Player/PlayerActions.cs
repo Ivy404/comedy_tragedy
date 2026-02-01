@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Linq;
 
 [Serializable]
 struct maskData {
@@ -12,9 +16,36 @@ struct maskData {
     public float hpRegen;
     public float speed;
     public float attackSpeed;
+    public float attackRecovery;
     public float range;
     public float arc;
     public float damage;
+   
+}
+
+[Serializable]
+public struct statUpgrade {
+    //Variable declaration
+    public string upgradeName;
+    public string maskName;
+    public float maxHealth;
+    public float speed;
+    public float attackSpeed;
+    public float range;
+    public float arc;
+    public float damage;
+
+    public statUpgrade(string upgradeName, string mask)
+    {
+        this.upgradeName=upgradeName;
+        this.maskName=mask;
+        this.maxHealth=0;
+        this.speed=0;
+        this.attackSpeed=0;
+        this.range=0;
+        this.arc=0;
+        this.damage=0;
+    }
    
 }
 
@@ -37,6 +68,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public float rotationSpeed = 10;
     [SerializeField] public float modeSwitchCD = 3;
     [SerializeField] public float crescendoDamage = 20;
+    [SerializeField] public float iFrames=0.5f;
     private maskData currentData;
 
     //attack control
@@ -54,11 +86,18 @@ public class PlayerActions : MonoBehaviour
     private float transitionBuildUp;
     private float lastSwitch;
     [SerializeField] private GameObject CharacterMaterial;
+    private float lastDmgTaken;
 
+    private maskData baseComedy;
+    private maskData baseTragedy;
     private Renderer characterRenderer;
+
+    // upgradeSystem
+    [SerializeField] List<statUpgrade> statUpgrades;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         attackTime = 0;
         closestEnemy = null;
         attacking = false;
@@ -74,6 +113,9 @@ public class PlayerActions : MonoBehaviour
         lifetime = SwordVFX.GetFloat("Light_Lifetime");
         SwordVFX.SetFloat("RotationAngle", currentData.arc);
         lastSwitch = modeSwitchCD;
+        lastDmgTaken = iFrames;
+        baseComedy = comedyMaskData;
+        baseTragedy = tragedyMaskData;
         
     }
 
@@ -81,14 +123,13 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         lastSwitch += Time.deltaTime;
+        attackTime += Time.deltaTime;
         if (attacking)
         {
-            attackTime += Time.deltaTime;
             if (attackTime > 1/currentData.attackSpeed)
             {
                 attacking = false;
                 SwordVFX.enabled = false;
-                attackTime = 0;
             }
         }
 
@@ -113,24 +154,94 @@ public class PlayerActions : MonoBehaviour
         }
         AuraVFX.SetFloat("GlowSize", 10*transitionBuildUp);
         closestEnemy = getClosestEnemyDirection();
+        lastDmgTaken += Time.deltaTime;
+        if (InputSystem.actions.FindAction("DebugUpgrade").WasPressedThisFrame())
+        {
+            applyUpgrades();
+            debugDisplayCurrentData();
+        }
     }
 
+    public void debugDisplayCurrentData()
+    {
+        Debug.Log("maxhealth " + currentData.maxHealth.ToString());
+        Debug.Log("speed " + currentData.speed.ToString());
+        Debug.Log("attackSpeed " + currentData.attackSpeed.ToString());
+        Debug.Log("range " + currentData.range.ToString());
+        Debug.Log("arc " + currentData.arc.ToString());
+        Debug.Log("damage " + currentData.damage.ToString());
+    }
+
+    public void addStatUpgrade(statUpgrade upg)
+    {
+        statUpgrades.Add(upg);
+        applyUpgrades();
+    }
+    public void applyUpgrades()
+    {
+        //initialize
+        tragedyMaskData.maxHealth = 0;
+        tragedyMaskData.speed = 0;
+        tragedyMaskData.attackSpeed = 0;
+        tragedyMaskData.range = 0;
+        tragedyMaskData.arc = 0;
+        tragedyMaskData.damage = 0;
+        //initialize
+        comedyMaskData.maxHealth = 0;
+        comedyMaskData.speed = 0;
+        comedyMaskData.attackSpeed = 0;
+        comedyMaskData.range = 0;
+        comedyMaskData.arc = 0;
+        comedyMaskData.damage = 0;
+        foreach (statUpgrade upg in statUpgrades )
+        {
+            
+            Debug.Log("applying upgrade..." + upg.maskName);
+            if(upg.maskName == "tragedy"){
+                tragedyMaskData.maxHealth += baseTragedy.maxHealth*upg.maxHealth;
+                tragedyMaskData.speed += baseTragedy.speed*upg.speed;
+                tragedyMaskData.attackSpeed += baseTragedy.attackSpeed*upg.attackSpeed;
+                tragedyMaskData.range += baseTragedy.range*upg.range;
+                tragedyMaskData.arc += baseTragedy.arc*upg.arc;
+                tragedyMaskData.damage += baseTragedy.damage*upg.damage;
+            } else if (upg.maskName == "comedy")
+            {
+                comedyMaskData.maxHealth += baseComedy.maxHealth*upg.maxHealth;
+                comedyMaskData.speed += baseComedy.speed*upg.speed;
+                comedyMaskData.attackSpeed += baseComedy.attackSpeed*+upg.attackSpeed;
+                comedyMaskData.range += baseComedy.range*upg.range;
+                comedyMaskData.arc += baseComedy.arc*+upg.arc;
+                comedyMaskData.damage += baseComedy.damage*upg.damage;
+                
+            }
+        }
+        if (currentData.maskName == "comedy") currentData = comedyMaskData;
+        else if (currentData.maskName == "tragedy") currentData = tragedyMaskData;
+    }
 
     public void takeDamage(float damage)
     {
-        // play take damage animation
-        currentData.health -= damage;
-        
-        if (currentData.health <= 0)
-        {
-            // TO DO: Inform game manager
-            Debug.Log("you lose");
-        }
+        if (lastDmgTaken > iFrames){
+            // play take damage animation    
+            StartCoroutine(LerpOverTime(iFrames, t =>
+            {
+                float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
+                characterRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
+            }));
+            currentData.health -= damage;
 
-        // Play sound
-        int randomNumber = UnityEngine.Random.Range(1, 7);
-        AudioManager.audioManagerRef.PlaySound("playerDamage"+randomNumber);
+            if (currentData.health <= 0)
+            {
+                // TO DO: Inform game manager
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            // Play sound
+            int randomNumber = UnityEngine.Random.Range(1, 7);
+            AudioManager.audioManagerRef.PlaySound("playerDamage"+randomNumber);
+        }
     }
+    
     public void regenHP()
     {
         if (currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
@@ -142,7 +253,6 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-
     public void modeSwitch()
     {
         if (!attacking && lastSwitch > modeSwitchCD){
@@ -153,6 +263,7 @@ public class PlayerActions : MonoBehaviour
                 comedyMaskData = currentData;
                 currentData = tragedyMaskData;
                 transitionBuildUp = 0.0f;
+
                 characterRenderer.material.SetFloat("_IsLight", 0.0f);
                 PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
                 ((CapsuleCollider) swordCollider).height = currentData.range;
@@ -214,7 +325,7 @@ public class PlayerActions : MonoBehaviour
 
     public void Attack()
     {
-        if (!attacking){
+        if (!attacking && attackTime > currentData.attackRecovery+1.0f/currentData.attackSpeed){
             PlayerAnimator.SetTrigger("attack");
             attackTime = 0;
             attacking = true;
@@ -278,4 +389,19 @@ public class PlayerActions : MonoBehaviour
         return currentEnemy;
     }
 
+    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            onUpdate(t);
+            yield return null;
+        }
+
+        onUpdate(1f);
+    }
 }
