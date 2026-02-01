@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     private bool isShowingUpgrades = false;
     private bool isPaused=false;
+
+    public Slider healthBarCom;
+    public Slider healthbarTrag;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -68,6 +72,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (player != null && mode != player.GetMode())
         {
             SwitchMode(player.GetMode());
@@ -108,12 +114,12 @@ public class GameManager : MonoBehaviour
     {
         if (newMode == "comedy")
         {
-            audioMixer.SetFloat("VolMusic1", -10);
+            audioMixer.SetFloat("VolMusic1", -8);
             audioMixer.SetFloat("VolMusic2", -80);
         }
         else
         {
-            audioMixer.SetFloat("VolMusic2", -10);
+            audioMixer.SetFloat("VolMusic2", -8);
             audioMixer.SetFloat("VolMusic1", -80);
         }
     }
@@ -163,13 +169,13 @@ public class GameManager : MonoBehaviour
     {
         StartScreen.SetActive(false);
         Time.timeScale = 1;
-        //HUD.SetActive(true);
+        HUD.SetActive(true);
     }
 
     public void ResumeGame()
     {
         PauseScreen.SetActive(false);
-        //HUD.SetActive(true);
+        HUD.SetActive(true);
         UpgradeScreen.SetActive(false);
         Time.timeScale = 1;
         if(isShowingUpgrades){
