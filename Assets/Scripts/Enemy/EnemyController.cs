@@ -4,12 +4,15 @@ using UnityEngine.AI;
 using System.Collections;
 using System;
 using UnityEngine.VFX;
+using Unity.Mathematics;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyData data;
     public EnemySpawner enemySpawner;
     public PlayerActions playerRef;
+    public GameObject hitVFX;
+    public Renderer enemyRenderer;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -173,6 +176,13 @@ public class EnemyController : MonoBehaviour
             return; // Exit the function so no damage is taken
         }*/
 
+        Instantiate(hitVFX, transform.position, Quaternion.identity, transform);
+        // play take damage animation    
+        StartCoroutine(LerpOverTime(1.0f, t =>
+        {
+            float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
+            enemyRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
+        }));
         // Otherwise, take damage as normal
         currentHealth -= amount;
 
@@ -190,6 +200,23 @@ public class EnemyController : MonoBehaviour
             AudioManager.audioManagerRef.PlaySoundWithRandomPitch("hitTragedy");
         }
     }
+
+    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            onUpdate(t);
+            yield return null;
+        }
+
+        onUpdate(1f);
+    }
+
     void Die()
     {
         // Notify death
