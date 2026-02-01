@@ -11,11 +11,24 @@ public class GameManager : MonoBehaviour
 
     //UI stuff
     public GameObject UpgradeScreen;
+    public GameObject upgrade1;
+    public GameObject upgrade2;
+    public GameObject upgrade3;
     public UpgradeSystem upgrades;
+
+    public GameObject HUD;
+    public GameObject StartScreen;
+    public GameObject PauseScreen;
+
+    private statUpgrade upg1;
+    private statUpgrade upg2;
+    private statUpgrade upg3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        upgradeUION();
+        Debug.Log("Game start");
         if (player != null)
         {
             mode = player.GetMode();
@@ -71,12 +84,60 @@ public class GameManager : MonoBehaviour
     public void upgradeUION()
     {
         UpgradeScreen.SetActive(true);
-        statUpgrade upg = upgrades.getRandomStatUpgrade();
-        Debug.Log(upg.upgradeName);
+
+        upg1 = upgrades.getRandomStatUpgrade();
+        Debug.Log(upg1.maskName);
+        upgrade1.GetComponent<SetUpgradeUI>().setUI(upg1.upgradeName, upg1.maskName, upg1.rarity);
+
+        upg2 = upgrades.getRandomStatUpgrade();
+        Debug.Log(upg2.maskName);
+        upgrade2.GetComponent<SetUpgradeUI>().setUI(upg2.upgradeName, upg2.maskName, upg2.rarity);
+
+        upg3 = upgrades.getRandomStatUpgrade();
+        Debug.Log(upg3.maskName);
+        upgrade3.GetComponent<SetUpgradeUI>().setUI(upg3.upgradeName, upg3.maskName, upg3.rarity);
+
+    }
+
+    public void SetUpgrade1()
+    {
+        player.addStatUpgrade(upg1);
+    }
+
+    public void SetUpgrade2()
+    {
+        player.addStatUpgrade(upg2);
+    }
+
+    public void SetUpgrade3()
+    {
+        player.addStatUpgrade(upg3);
     }
 
     public void upgradeUIOFF()
     {
         UpgradeScreen.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        StartScreen.SetActive(false);
+        HUD.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        PauseScreen.SetActive(false);
+        HUD.SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+        PauseScreen.SetActive(true);
+    }
+
+    public void TriggerUpgrades()
+    {
+        UpgradeScreen.SetActive(true);
     }
 }
