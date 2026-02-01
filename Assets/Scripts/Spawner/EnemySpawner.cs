@@ -86,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
         // Notify death
         if(waveManager != null)
         {
-            waveManager.EnemyDied();
+            waveManager.EnemyDied(enemy);
         }else
         {
             Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
