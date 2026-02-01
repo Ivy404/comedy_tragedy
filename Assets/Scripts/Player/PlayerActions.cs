@@ -82,12 +82,12 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public GameObject enemiesObject;
     
     
-    // transition contorl
+    // transition control
     private float transitionBuildUp;
     private float lastSwitch;
+    private bool crescendoMaxed = false;
     [SerializeField] private GameObject CharacterMaterial;
     private float lastDmgTaken;
-
     private maskData baseComedy;
     private maskData baseTragedy;
     private Renderer characterRenderer;
@@ -151,6 +151,15 @@ public class PlayerActions : MonoBehaviour
         if (transitionBuildUp < 1.0)
         {
             transitionBuildUp = Math.Min(1.0f, transitionBuildUp+crescendoBuildupRate*Time.deltaTime);
+        }
+        else
+        {
+            if(!crescendoMaxed)
+            {
+                crescendoMaxed = true;
+                // Play sound
+                AudioManager.audioManagerRef.PlaySound("crescendoMaxed");
+            }
         }
         AuraVFX.SetFloat("GlowSize", 10*transitionBuildUp);
         closestEnemy = getClosestEnemyDirection();
@@ -351,6 +360,14 @@ public class PlayerActions : MonoBehaviour
                 col.gameObject.GetComponent<EnemyController>().TakeDamage(crescendoDamage*scale, Iposition);
             }
         }
+
+        crescendoMaxed = false;
+
+        // Play sound
+        if(GetMode() == "comedy")
+            AudioManager.audioManagerRef.PlaySound("crescendoReleaseComedy");
+        else
+            AudioManager.audioManagerRef.PlaySound("crescendoReleaseTragedy");
     }
 
     public void performDmg()

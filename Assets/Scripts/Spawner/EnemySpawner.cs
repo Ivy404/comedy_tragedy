@@ -7,7 +7,6 @@ public class EnemySpawner : MonoBehaviour
 {
     public SpawnerData spawnerData;
     public GameObject enemiesObject;
-
     public WaveManager waveManager;
     // DEGUB
      //InputAction debugAction;
@@ -92,5 +91,14 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
         }
+    }
+
+    public void Respawn(EnemyController enemy)
+    {
+        // TO DO: Notify Wave Manager moving needed
+        waveManager.updateSpawnerPosition(this);
+
+        // TO DO: Respawn enemy
+        enemy.transform.position = transform.position;
     }
 }

@@ -83,7 +83,7 @@ public class WaveManager : MonoBehaviour
         EndWave();
     }
 
-    private void updateSpawnerPosition(EnemySpawner spawner)
+    public void updateSpawnerPosition(EnemySpawner spawner)
     {
         Vector3 randomPos = Random.insideUnitSphere * spawnRadius;
         randomPos += transform.position;
