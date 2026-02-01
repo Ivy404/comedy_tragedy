@@ -253,7 +253,7 @@ public class PlayerActions : MonoBehaviour
             if (currentData.health <= 0)
             {
                 // TO DO: Inform game manager
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
             // Play sound
@@ -280,6 +280,9 @@ public class PlayerActions : MonoBehaviour
             {
                 AuraVFX.SetBool("IsComedy", false);
                 SwordVFX.SetBool("IsLight", false);
+                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
+                DecrescendoVFX.Play();
+                StartCoroutine(crescendo(transitionBuildUp, transform.position));
                 comedyMaskData = currentData;
                 currentData = tragedyMaskData;
                 transitionBuildUp = 0.0f;
@@ -290,9 +293,6 @@ public class PlayerActions : MonoBehaviour
                 lifetime = SwordVFX.GetFloat("Dark_Lifetime");
                 DecrescendoVFX.enabled = true;
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
-                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
-                DecrescendoVFX.Play();
-                StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
@@ -307,6 +307,7 @@ public class PlayerActions : MonoBehaviour
                 CrescendoVFX.enabled = true;
                 CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
                 CrescendoVFX.Play();
+
                 StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 tragedyMaskData = currentData;
