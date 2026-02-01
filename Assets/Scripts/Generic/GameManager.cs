@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
         upgrade1btn = InputSystem.actions.FindAction("UpgradeLeft");
         upgrade2btn = InputSystem.actions.FindAction("UpgradeUp");
-        upgradre3btn = InputSystem.actions.FindAction("UpgradeRight");
+        upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
         pauseBtn = InputSystem.actions.FindAction("Pause");
 
         Time.timeScale = 0;
