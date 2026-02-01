@@ -25,6 +25,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public Animator PlayerAnimator;
     [SerializeField] public VisualEffect AuraVFX;
     [SerializeField] public VisualEffect SwordVFX;
+    [SerializeField] public VisualEffect CrescendoVFX;
 
     // character stats
     [SerializeField] private maskData comedyMaskData;
@@ -34,6 +35,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public Transform swordPivot;
     [SerializeField] public float lockRadius = 5;
     [SerializeField] public float rotationSpeed = 10;
+    [SerializeField] public float modeSwitchCD = 3;
     private maskData currentData;
 
     //attack control
@@ -49,6 +51,7 @@ public class PlayerActions : MonoBehaviour
     
     // transition contorl
     private float transitionBuilup;
+    private float lastSwitch;
     [SerializeField] private GameObject CharacterMaterial;
 
     private Renderer characterRenderer;
@@ -69,12 +72,14 @@ public class PlayerActions : MonoBehaviour
         ((CapsuleCollider) swordCollider).height = currentData.range;
         lifetime = SwordVFX.GetFloat("Light_Lifetime");
         SwordVFX.SetFloat("RotationAngle", currentData.arc);
+        lastSwitch = modeSwitchCD;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        lastSwitch += Time.deltaTime;
         if (attacking)
         {
             attackTime += Time.deltaTime;
@@ -140,30 +145,38 @@ public class PlayerActions : MonoBehaviour
 
     public void modeSwitch()
     {
-        if ( currentData.maskName == "comedy")
-        {
-            AuraVFX.SetBool("IsComedy", false);
-            SwordVFX.SetBool("IsLight", false);
-            comedyMaskData = currentData;
-            currentData = tragedyMaskData;
-            transitionBuilup = 0.0f;
-            characterRenderer.material.SetFloat("_IsLight", 0.0f);
-            PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-            ((CapsuleCollider) swordCollider).height = currentData.range;
-            lifetime = SwordVFX.GetFloat("Dark_Lifetime");
-            SwordVFX.SetFloat("RotationAngle", currentData.arc);
-        } else
-        {
-            AuraVFX.SetBool("IsComedy", true);
-            SwordVFX.SetBool("IsLight", true);
-            tragedyMaskData = currentData;
-            currentData = comedyMaskData;
-            transitionBuilup = 0.0f;
-            characterRenderer.material.SetFloat("_IsLight", 1.0f);
-            PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-            ((CapsuleCollider) swordCollider).height = currentData.range;
-            lifetime = SwordVFX.GetFloat("Light_Lifetime");
-            SwordVFX.SetFloat("RotationAngle", currentData.arc);
+        if (!attacking && lastSwitch > modeSwitchCD){
+            if ( currentData.maskName == "comedy")
+            {
+                AuraVFX.SetBool("IsComedy", false);
+                SwordVFX.SetBool("IsLight", false);
+                comedyMaskData = currentData;
+                currentData = tragedyMaskData;
+                transitionBuilup = 0.0f;
+                characterRenderer.material.SetFloat("_IsLight", 0.0f);
+                PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
+                ((CapsuleCollider) swordCollider).height = currentData.range;
+                lifetime = SwordVFX.GetFloat("Dark_Lifetime");
+                SwordVFX.SetFloat("RotationAngle", currentData.arc);
+                //CrescendoVFX.SetFloat("Scale",transitionBuilup*10);
+                //CrescendoVFX.Play();
+            } else
+            {
+                AuraVFX.SetBool("IsComedy", true);
+                SwordVFX.SetBool("IsLight", true);
+                CrescendoVFX.SetFloat("Scale",transitionBuilup*10f);
+                CrescendoVFX.Play();
+
+                tragedyMaskData = currentData;
+                currentData = comedyMaskData;
+                transitionBuilup = 0.0f;
+                characterRenderer.material.SetFloat("_IsLight", 1.0f);
+                PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
+                ((CapsuleCollider) swordCollider).height = currentData.range;
+                lifetime = SwordVFX.GetFloat("Light_Lifetime");
+                SwordVFX.SetFloat("RotationAngle", currentData.arc);
+            }
+            lastSwitch = 0;
         }
     }
 
@@ -186,14 +199,6 @@ public class PlayerActions : MonoBehaviour
                 enemyDir.y = 0;
                 PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
             }
-            /**if (!attacking && !colliderDmg || closestEnemy == null)
-                PlayerTransform.rotation = Quaternion.LookRotation(movedir);
-            else {
-                Vector3 enemyDir = closestEnemy.transform.position - transform.position;
-                Debug.Log(enemyDir.normalized);
-                enemyDir.y = 0;
-                PlayerTransform.rotation = Quaternion.LookRotation(enemyDir.normalized);
-            }**/
         } else
         {
             PlayerAnimator.SetBool("walk", false);
