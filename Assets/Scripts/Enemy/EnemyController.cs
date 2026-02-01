@@ -1,22 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using System.Collections;
 using System;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyData data;
     public EnemySpawner enemySpawner;
-	private Transform enemyTransform;
-    private NavMeshAgent agent;
     public PlayerActions playerRef;
-    private float lastAttackTime;
-    private float currentHealth;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
     public float separationForce = 5f;
-    public GameObject deathVFX;
+
+    [Header("Visuals")]
+    public GameObject deathVFXPrefab;
+	private Transform enemyTransform;
+    private NavMeshAgent agent;
+    private float lastAttackTime;
+    private float currentHealth;
 
     // DEGUB
     InputAction debugAction;
@@ -77,7 +80,7 @@ public class EnemyController : MonoBehaviour
             }
         }
         // DEBUG
-        if (debugAction.WasPressedThisFrame()) Die();
+        //if (debugAction.WasPressedThisFrame()) Die();
     }
 
     void MoveAndAvoid()
@@ -176,6 +179,14 @@ public class EnemyController : MonoBehaviour
         }else
         {
             Debug.LogError("Enemy Spawner reference not set to an enemy of type "+data.enemyName+"! Please, set it up correctly");
+        }
+
+        if(deathVFXPrefab != null)
+        {
+            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+        } else
+        {
+            Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
         }
 
         // TO DO: disable the enemy
