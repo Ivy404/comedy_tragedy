@@ -61,6 +61,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect SwordVFX;
     [SerializeField] public VisualEffect CrescendoVFX;
     [SerializeField] public VisualEffect DecrescendoVFX;
+    [SerializeField] public GameObject ComedyAsset;
+    [SerializeField] public GameObject TragedyAsset;
 
     // character stats
     [SerializeField] public maskData comedyMaskData;
@@ -127,6 +129,9 @@ public class PlayerActions : MonoBehaviour
 
         cameraShake = mainCamera.gameObject.GetComponent<CameraShake>();
         AmbientLight.colorTemperature = tempComedy;
+
+        ComedyAsset.SetActive(true);
+        TragedyAsset.SetActive(false);
         
     }
 
@@ -293,6 +298,8 @@ public class PlayerActions : MonoBehaviour
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
                 }));
+                ComedyAsset.SetActive(false);
+                TragedyAsset.SetActive(true);
             } else
             {
                 AuraVFX.SetBool("IsComedy", true);
@@ -314,6 +321,8 @@ public class PlayerActions : MonoBehaviour
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, t);
                 }));
+                ComedyAsset.SetActive(true);
+                TragedyAsset.SetActive(false);
             }
             lastSwitch = 0;
         }
