@@ -287,6 +287,8 @@ public class PlayerActions : MonoBehaviour
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
                 DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
                 DecrescendoVFX.Play();
+                StartCoroutine(crescendo(transitionBuildUp, transform.position));
+
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
