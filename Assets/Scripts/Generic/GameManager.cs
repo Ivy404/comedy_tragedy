@@ -43,10 +43,7 @@ public class GameManager : MonoBehaviour
     {
         //upgradeUION();
         Debug.Log("Game start");
-        if (player != null)
-        {
-            mode = player.GetMode();
-        }
+        
         // Initialize the starting mode
 
 
@@ -67,16 +64,17 @@ public class GameManager : MonoBehaviour
         upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
         pauseBtn = InputSystem.actions.FindAction("Pause");
 
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
+        Debug.Log("i was in mode " + mode);
+        Debug.Log("im in mode " + player.GetMode());
         if (player != null && mode != player.GetMode())
         {
+            Debug.Log("wtf");
             SwitchMode(player.GetMode());
         }
         if ( isShowingUpgrades){
