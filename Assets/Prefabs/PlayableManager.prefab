@@ -1187,7 +1187,7 @@ MonoBehaviour:
     attackSpeed: 0
     range: 0
     arc: 0
-    damage: 0.2
+    damage: 1
     rarity: uncommon
     special: 
   - upgradeName: Damage Boost II
@@ -1197,7 +1197,7 @@ MonoBehaviour:
     attackSpeed: 0
     range: 0
     arc: 0
-    damage: 0.2
+    damage: 1
     rarity: uncommon
     special: 
   - upgradeName: Damage Boost III
@@ -1207,7 +1207,7 @@ MonoBehaviour:
     attackSpeed: 0
     range: 0
     arc: 0
-    damage: 0.5
+    damage: 2
     rarity: rare
     special: 
   - upgradeName: Damage Boost III
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     attackSpeed: 0
     range: 0
     arc: 0
-    damage: 0.5
+    damage: 2
     rarity: rare
     special: 
   - upgradeName: Attack Speed Boost I
@@ -1282,7 +1282,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost I
     maskName: comedy
-    maxHealth: 0.1
+    maxHealth: 5
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1292,7 +1292,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost I
     maskName: tragedy
-    maxHealth: 0.1
+    maxHealth: 5
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1302,7 +1302,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost II
     maskName: comedy
-    maxHealth: 0.2
+    maxHealth: 10
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1312,7 +1312,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost II
     maskName: tragedy
-    maxHealth: 0.2
+    maxHealth: 10
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1322,7 +1322,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost III
     maskName: comedy
-    maxHealth: 0.5
+    maxHealth: 20
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost III
     maskName: tragedy
-    maxHealth: 0.5
+    maxHealth: 20
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1343,20 +1343,60 @@ MonoBehaviour:
   - upgradeName: Movement Speed Boost
     maskName: comedy
     maxHealth: 0
-    speed: 0.05
+    speed: 0.2
     attackSpeed: 0
     range: 0
     arc: 0
     damage: 0
-    rarity: uncommon
+    rarity: rare
     special: 
   - upgradeName: Movement Speed Boost
     maskName: tragedy
     maxHealth: 0
-    speed: 0.05
+    speed: 0.2
     attackSpeed: 0
     range: 0
     arc: 0
+    damage: 0
+    rarity: rare
+    special: 
+  - upgradeName: Longer Weapon Less Damage
+    maskName: tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: 0
+    range: 0
+    arc: 60
+    damage: -0.2
+    rarity: Rare
+    special: 
+  - upgradeName: Slow But Strong
+    maskName: tragedy
+    maxHealth: 0
+    speed: -0.2
+    attackSpeed: 0
+    range: 0
+    arc: 0
+    damage: 3
+    rarity: Rare
+    special: 
+  - upgradeName: Fast But Slow Attacks
+    maskName: comedy
+    maxHealth: 0
+    speed: -0.2
+    attackSpeed: -0.2
+    range: 0
+    arc: 0
+    damage: 0
+    rarity: Rare
+    special: 
+  - upgradeName: Longer Weapon
+    maskName: Tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: 0
+    range: 0
+    arc: 20
     damage: 0
     rarity: uncommon
     special: 
