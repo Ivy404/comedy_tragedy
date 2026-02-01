@@ -153,12 +153,14 @@ public class WaveManager : MonoBehaviour
             Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
 
             currentXPIndex++;
-            ShowUpgrades();
+            StartCoroutine(ShowUpgrades());
         }
     }
 
-    void ShowUpgrades()
+    IEnumerator ShowUpgrades()
     {
+        yield return new WaitForSeconds(1);
+
         gameManager.upgradeUION();
     }
 
