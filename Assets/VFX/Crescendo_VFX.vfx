@@ -84,16 +84,7 @@ MonoBehaviour:
       y: -890
       width: 475
       height: 1437
-    contents:
-    - model: {fileID: 8926484042661614905}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614912}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614943}
-      id: 0
-      isStickyNote: 0
+    contents: []
   - title: Floating Notes
     position:
       serializedVersion: 2
@@ -101,19 +92,7 @@ MonoBehaviour:
       y: -342.85706
       width: 475
       height: 2587
-    contents:
-    - model: {fileID: 8926484042661615324}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615329}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615367}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615407}
-      id: 0
-      isStickyNote: 0
+    contents: []
   - title: Floating Notes
     position:
       serializedVersion: 2
@@ -121,19 +100,7 @@ MonoBehaviour:
       y: -278.42438
       width: 475
       height: 2587
-    contents:
-    - model: {fileID: 8926484042661615637}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615644}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615682}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615727}
-      id: 0
-      isStickyNote: 0
+    contents: []
   stickyNoteInfos: []
   categories: []
   uiBounds:
@@ -180,38 +147,6 @@ MonoBehaviour:
   - {fileID: 8926484042661614887}
   - {fileID: 8926484042661614889}
   - {fileID: 8926484042661614893}
-  - {fileID: 8926484042661614905}
-  - {fileID: 8926484042661614912}
-  - {fileID: 8926484042661614943}
-  - {fileID: 8926484042661614951}
-  - {fileID: 8926484042661614987}
-  - {fileID: 8926484042661615023}
-  - {fileID: 8926484042661615031}
-  - {fileID: 8926484042661615069}
-  - {fileID: 8926484042661615103}
-  - {fileID: 8926484042661615105}
-  - {fileID: 8926484042661615109}
-  - {fileID: 8926484042661615113}
-  - {fileID: 8926484042661615121}
-  - {fileID: 8926484042661615152}
-  - {fileID: 8926484042661615154}
-  - {fileID: 8926484042661615197}
-  - {fileID: 8926484042661615221}
-  - {fileID: 8926484042661615242}
-  - {fileID: 8926484042661615273}
-  - {fileID: 8926484042661615275}
-  - {fileID: 8926484042661615296}
-  - {fileID: 8926484042661615303}
-  - {fileID: 8926484042661615324}
-  - {fileID: 8926484042661615329}
-  - {fileID: 8926484042661615367}
-  - {fileID: 8926484042661615407}
-  - {fileID: 8926484042661615538}
-  - {fileID: 8926484042661615560}
-  - {fileID: 8926484042661615637}
-  - {fileID: 8926484042661615644}
-  - {fileID: 8926484042661615682}
-  - {fileID: 8926484042661615727}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -234,22 +169,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: TubeColor_Tragedy
-    path: TubeColor_Tragedy
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":46.41333770751953,"g":35.22275924682617,"b":22.456043243408204,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: Scale
     path: Scale
     tooltip: 
@@ -264,6 +183,22 @@ MonoBehaviour:
       m_SerializableObject: 10
     min: 1
     max: 10
+    enumValues: []
+    descendantCount: 0
+  - name: TubeColor_Tragedy
+    path: TubeColor_Tragedy
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Vector4f
+    realType: Color
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":46.41333770751953,"g":35.22275924682617,"b":22.456043243408204,"a":1.0}'
+    min: -Infinity
+    max: Infinity
     enumValues: []
     descendantCount: 0
   m_ImportDependencies: []
@@ -1397,7 +1332,6 @@ MonoBehaviour:
   - {fileID: 8926484042661614633}
   - {fileID: 8926484042661614660}
   - {fileID: 8926484042661614587}
-  - {fileID: 8926484042661614900}
   - {fileID: 8926484042661614594}
   m_UIPosition: {x: 1642, y: 720}
   m_UICollapsed: 0
@@ -5075,7 +5009,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614814}
   m_ExposedName: Scale
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -6583,7 +6517,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614876}
   m_ExposedName: TubeColor_Tragedy
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
