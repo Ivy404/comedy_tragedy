@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
         if (pauseBtn.WasPressedThisFrame())
         {
-            if (isPaused)
+            if (!isPaused)
             PauseGame();
             else
             ResumeGame();
