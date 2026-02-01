@@ -50,11 +50,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 400216f8ae0344e6288b2aaa3621e2a1, type: 2}
   - {fileID: 11400000, guid: bbd47d488ced82d41be6af8b11abbe5b, type: 2}
   - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
-  - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
-  - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
-  - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
-  - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
-  - {fileID: 11400000, guid: 6af912f0daa802947911f85df4d4a47e, type: 2}
+  - {fileID: 11400000, guid: 220b79b5c073f8741bafaf53f8c5b56a, type: 2}
+  - {fileID: 11400000, guid: 495fc5cfa6fdd8e4b98d574dd193cf48, type: 2}
+  - {fileID: 11400000, guid: 673351ed80ca77540ada842bc183246a, type: 2}
+  - {fileID: 11400000, guid: 1e45ec4354b28ef48a03221b30e11fee, type: 2}
+  - {fileID: 11400000, guid: e7ca2099970492e41903323d537c7f12, type: 2}
   enemiesObject: {fileID: 0}
   gameManager: {fileID: 0}
   baseSpawner: {fileID: 3281095269401376510, guid: 504867036cc5c415a9e6d5a7f5b1e84f, type: 3}

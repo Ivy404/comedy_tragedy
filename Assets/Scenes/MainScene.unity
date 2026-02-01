@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1794643869108584510, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 45e1b61f8bb8c254cb6be2a0f45cd3a9, type: 3}
+    - target: {fileID: 2213027599415168551, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2921840428063110052, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 61.000004
@@ -220,6 +228,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 971877945}
+    - target: {fileID: 6249538877289542313, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9daff466884bdea4cad2bf47a511b439, type: 3}
     - target: {fileID: 6587447455356851056, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1030,194 +1042,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.size
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].arc
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].arc
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[18].speed
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[19].speed
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[21].speed
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].speed
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[2].damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[3].damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[4].damage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[5].damage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[18].rarity
-      value: rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[19].rarity
-      value: rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].damage
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].rarity
-      value: Rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[21].damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[21].rarity
-      value: Rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].damage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].rarity
-      value: Rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].rarity
-      value: uncommon
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].maskName
-      value: tragedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[21].maskName
-      value: tragedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].maskName
-      value: comedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].maskName
-      value: Tragedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[12].maxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[13].maxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[14].maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[15].maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[16].maxHealth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[17].maxHealth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[20].upgradeName
-      value: Longer Weapon Less Damage
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[21].upgradeName
-      value: Slow But Strong
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].attackSpeed
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[22].upgradeName
-      value: Fast But Slow Attacks
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].attackSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[23].upgradeName
-      value: Longer Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].arc
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].range
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].maskName
-      value: comedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[1].maskName
-      value: tragedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].maxHealth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: statUpgrades.Array.data[0].attackSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5094472139538977347, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Name
       value: PlayableManager
