@@ -178,3 +178,31 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     source: {fileID: 0}
+  - name: crescendoReady
+    clip: {fileID: 8300000, guid: 9e5132406ba9b4eb684a662578201847, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoReleaseComedy
+    clip: {fileID: 8300000, guid: 1e5cd51152d3f4854afa3ea65fdba33a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoReleaseTragedy
+    clip: {fileID: 8300000, guid: a060a1a18d1994ab98c8d520316017c6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoReleaseComedy
+    clip: {fileID: 8300000, guid: 1e5cd51152d3f4854afa3ea65fdba33a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
