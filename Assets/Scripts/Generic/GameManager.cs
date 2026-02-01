@@ -114,12 +114,12 @@ public class GameManager : MonoBehaviour
     {
         if (newMode == "comedy")
         {
-            audioMixer.SetFloat("VolMusic1", -10);
+            audioMixer.SetFloat("VolMusic1", -8);
             audioMixer.SetFloat("VolMusic2", -80);
         }
         else
         {
-            audioMixer.SetFloat("VolMusic2", -10);
+            audioMixer.SetFloat("VolMusic2", -8);
             audioMixer.SetFloat("VolMusic1", -80);
         }
     }
