@@ -11,7 +11,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] public List<statUpgrade> statUpgrades;
 
     private float[] weights;
-    void Start()
+    void Awake()
     {
         weights = new float[statUpgrades.Count];
         float cummulativeSum = 0, cWeight = 0;
