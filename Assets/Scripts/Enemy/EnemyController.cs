@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
-    public float separationForce = 5f;
+    public float separationForce = 1f;
 
     [Header("Visuals")]
     public GameObject deathVFXPrefab;
@@ -70,14 +70,14 @@ public class EnemyController : MonoBehaviour
     {
         if(playerRef != null)
         {
-            float distance = Vector3.Distance(transform.position, playerRef.transform.position);
-            if (distance > agent.stoppingDistance)
-            {
+            //float distance = Vector3.Distance(transform.position, playerRef.transform.position);
+            //if (distance > agent.stoppingDistance)
+            //{
                 MoveAndAvoid();
-            }else
-            {
-                 TryAttack();
-            }
+            //}else
+            //{
+                // TryAttack();
+            //}
         }
         // DEBUG
         //if (debugAction.WasPressedThisFrame()) Die();
@@ -88,36 +88,22 @@ public class EnemyController : MonoBehaviour
         // 1. Calculate Chase Vector
         Vector3 directionToPlayer = (playerRef.transform.position - transform.position).normalized;
         
-        // 2. Calculate Separation Vector (Mutual Avoidance)
-        Vector3 separationVector = Vector3.zero;
-        Collider[] nearbyEnemies = Physics.OverlapSphere(transform.position, separationDistance);
-
-        foreach (var col in nearbyEnemies)
-        {
-            if (col.gameObject != this.gameObject && col.CompareTag("Enemy"))
-            {
-                // Push away from neighbors
-                Vector3 diff = transform.position - col.transform.position;
-                separationVector += diff.normalized / diff.magnitude; // Stronger push when closer
-            }
-        }
-
-        // 3. Combine and Move
-        Vector3 finalMove = (directionToPlayer + (separationVector * separationForce)).normalized;
-        
-        // Ensure they stay on the floor (keep Y consistent)
-        finalMove.y = 0;
-
-        // Move towards player
-        transform.position += finalMove * data.speed * Time.deltaTime;
-        //agent.SetDestination(player.position);
-        //agent.SetDestination(transform.position + finalMove * data.speed * Time.deltaTime);
-        
         // 4. Rotate to face movement
-        if (finalMove != Vector3.zero)
+        if (directionToPlayer != Vector3.zero)
         {
-            transform.forward = Vector3.Slerp(transform.forward, finalMove, Time.deltaTime * 10f);
+            transform.forward = Vector3.Slerp(transform.forward, directionToPlayer, Math.Max(data.rotationSpeed,1f) * Time.deltaTime);
         }
+
+        // Ensure they stay on the floor (keep Y consistent)
+        directionToPlayer.y = 0;
+        // Update movement if far or try attacking
+        float distance = Vector3.Distance(transform.position, playerRef.transform.position);
+        
+        if (distance > agent.stoppingDistance)
+            transform.position += directionToPlayer * Math.Min(data.speed * Time.deltaTime, distance);
+        else
+            TryAttack();
+
     }
 
     void TryAttack()
