@@ -810,6 +810,7 @@ GameObject:
   - component: {fileID: 508604614}
   - component: {fileID: 508604613}
   - component: {fileID: 508604612}
+  - component: {fileID: 508604615}
   m_Layer: 5
   m_Name: UPG2
   m_TagString: Untagged
@@ -923,6 +924,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508604610}
   m_CullTransparentMesh: 1
+--- !u!114 &508604615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508604610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598ad5e82dfd13d409526d525bb7acb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetUpgradeUI
+  Name: {fileID: 1401591034}
+  mask: {fileID: 169319719}
+  maskTypes:
+  - {fileID: 21300000, guid: 9daff466884bdea4cad2bf47a511b439, type: 3}
+  - {fileID: 21300000, guid: 45e1b61f8bb8c254cb6be2a0f45cd3a9, type: 3}
+  rare: {fileID: 1707267337}
 --- !u!1 &607601228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c72fb024d29831408875195856d640d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b852eb778c8fca74cb2b64ccaa84a6b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1450,6 +1469,7 @@ GameObject:
   - component: {fileID: 862219679}
   - component: {fileID: 862219678}
   - component: {fileID: 862219677}
+  - component: {fileID: 862219680}
   m_Layer: 5
   m_Name: UPG3
   m_TagString: Untagged
@@ -1563,6 +1583,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862219675}
   m_CullTransparentMesh: 1
+--- !u!114 &862219680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862219675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598ad5e82dfd13d409526d525bb7acb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetUpgradeUI
+  Name: {fileID: 1197164054}
+  mask: {fileID: 1291546006}
+  maskTypes:
+  - {fileID: 21300000, guid: 9daff466884bdea4cad2bf47a511b439, type: 3}
+  - {fileID: 21300000, guid: 45e1b61f8bb8c254cb6be2a0f45cd3a9, type: 3}
+  rare: {fileID: 610542428}
 --- !u!1 &1123949959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2515,7 @@ GameObject:
   - component: {fileID: 1487259030}
   - component: {fileID: 1487259029}
   - component: {fileID: 1487259028}
+  - component: {fileID: 1487259031}
   m_Layer: 5
   m_Name: UPG1
   m_TagString: Untagged
@@ -2590,6 +2629,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487259026}
   m_CullTransparentMesh: 1
+--- !u!114 &1487259031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487259026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598ad5e82dfd13d409526d525bb7acb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetUpgradeUI
+  Name: {fileID: 1902959061}
+  mask: {fileID: 1687149003}
+  maskTypes:
+  - {fileID: 21300000, guid: 9daff466884bdea4cad2bf47a511b439, type: 3}
+  - {fileID: 21300000, guid: 45e1b61f8bb8c254cb6be2a0f45cd3a9, type: 3}
+  rare: {fileID: 1123949959}
 --- !u!1 &1620315289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,7 +3128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c72fb024d29831408875195856d640d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d306294d63bd792409d9fcf82e07fc21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3141,247 +3198,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 777552748}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: upgrade1
+      value: 
+      objectReference: {fileID: 1487259026}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: upgrade2
+      value: 
+      objectReference: {fileID: 508604610}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: upgrade3
+      value: 
+      objectReference: {fileID: 862219675}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: upgrades
+      value: 
+      objectReference: {fileID: 1787814170}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 380817623}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: StartScreen
+      value: 
+      objectReference: {fileID: 607601228}
+    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: UpgradeScreen
+      value: 
+      objectReference: {fileID: 1857101171}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7192190649388089804, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1787814172}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
 --- !u!114 &1787814170 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
   m_PrefabInstance: {fileID: 1787814169}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787814171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d7449f776812f4eb2682218abd2613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
---- !u!1 &1787814171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7192190649388089804, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-  m_PrefabInstance: {fileID: 1787814169}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1787814172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787814171}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7272970ad147f524bb419879fc5a485d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeSystem
-  commonWeight: 5
-  uncommonWeight: 3
-  rareWeight: 1
-  playerActions: {fileID: 1787814170}
-  statUpgrades:
-  - upgradeName: Damage Boost I
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost I
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost II
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.2
-    rarity: uncommon
-    special: 
-  - upgradeName: Damage Boost II
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.2
-    rarity: uncommon
-    special: 
-  - upgradeName: Damage Boost III
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.5
-    rarity: rare
-    special: 
-  - upgradeName: Damage Boost III
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.5
-    rarity: rare
-    special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.1
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.1
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost I
-    maskName: comedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost I
-    maskName: tragedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost II
-    maskName: comedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost II
-    maskName: tragedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost III
-    maskName: comedy
-    maxHealth: 0.5
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost III
-    maskName: tragedy
-    maxHealth: 0.5
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: comedy
-    maxHealth: 0
-    speed: 0.05
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0.05
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
 --- !u!1 &1857101171
 GameObject:
   m_ObjectHideFlags: 0
