@@ -16,6 +16,7 @@ MonoBehaviour:
   health: 10
   damage: 2
   speed: 5
+  rotationSpeed: 10
   mass: 15
   stoppingDistance: 0.75
   attackCooldown: 1.5

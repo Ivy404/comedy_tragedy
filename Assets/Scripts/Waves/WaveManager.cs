@@ -6,9 +6,10 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> waves; // Wave data objects
+    [SerializeField] private GameObject enemiesObject;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
-    public float spawnRadius = 20f;
+    public float spawnRadius = 15f;
     public PlayerActions playerRef;
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;
@@ -50,6 +51,7 @@ public class WaveManager : MonoBehaviour
                 spawner.spawnerData = wave.spawnersInWave[i];
             }
             spawner.waveManager = this;
+            spawner.enemiesObject = enemiesObject;
             
             // Move spawner
             updateSpawnerPosition(spawner);
@@ -81,7 +83,7 @@ public class WaveManager : MonoBehaviour
         EndWave();
     }
 
-    private void updateSpawnerPosition(EnemySpawner spawner)
+    public void updateSpawnerPosition(EnemySpawner spawner)
     {
         Vector3 randomPos = Random.insideUnitSphere * spawnRadius;
         randomPos += transform.position;
