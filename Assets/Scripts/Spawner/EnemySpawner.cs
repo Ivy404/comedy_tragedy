@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class EnemySpawner : MonoBehaviour
 {
     public SpawnerData spawnerData;
-
+    public GameObject enemiesObject;
     public WaveManager waveManager;
     // DEGUB
      //InputAction debugAction;
@@ -58,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
         // 4. Instantiate (same as before)
         if (selectedData != null)
         {
-            GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(selectedData.visualPrefab, transform.position, Quaternion.identity, enemiesObject.transform);
             // Set the data
             EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
             if (enemyController != null)
@@ -91,5 +91,14 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
         }
+    }
+
+    public void Respawn(EnemyController enemy)
+    {
+        // TO DO: Notify Wave Manager moving needed
+        waveManager.updateSpawnerPosition(this);
+
+        // TO DO: Respawn enemy
+        enemy.transform.position = transform.position;
     }
 }

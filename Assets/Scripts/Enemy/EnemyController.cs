@@ -1,21 +1,27 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using System.Collections;
+using System;
+using UnityEngine.VFX;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyData data;
     public EnemySpawner enemySpawner;
-	private Transform enemyTransform;
-    private NavMeshAgent agent;
     public PlayerActions playerRef;
-    private float lastAttackTime;
-    private float currentHealth;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
-    public float separationForce = 5f;
-    
+    public float separationForce = 1f;
+    public float playerEscapeDistance = 25f;
+
+    [Header("Visuals")]
+    public GameObject deathVFXPrefab;
+	private Transform enemyTransform;
+    private NavMeshAgent agent;
+    private float lastAttackTime;
+    private float currentHealth;
 
     // DEGUB
     InputAction debugAction;
@@ -66,17 +72,10 @@ public class EnemyController : MonoBehaviour
     {
         if(playerRef != null)
         {
-            float distance = Vector3.Distance(transform.position, playerRef.transform.position);
-            if (distance > agent.stoppingDistance)
-            {
-                MoveAndAvoid();
-            }else
-            {
-                 TryAttack();
-            }
+            MoveAndAvoid();
         }
         // DEBUG
-        if (debugAction.WasPressedThisFrame()) Die();
+        //if (debugAction.WasPressedThisFrame()) Die();
     }
 
     void MoveAndAvoid()
@@ -84,36 +83,31 @@ public class EnemyController : MonoBehaviour
         // 1. Calculate Chase Vector
         Vector3 directionToPlayer = (playerRef.transform.position - transform.position).normalized;
         
-        // 2. Calculate Separation Vector (Mutual Avoidance)
-        Vector3 separationVector = Vector3.zero;
-        Collider[] nearbyEnemies = Physics.OverlapSphere(transform.position, separationDistance);
-
-        foreach (var col in nearbyEnemies)
-        {
-            if (col.gameObject != this.gameObject && col.CompareTag("Enemy"))
-            {
-                // Push away from neighbors
-                Vector3 diff = transform.position - col.transform.position;
-                separationVector += diff.normalized / diff.magnitude; // Stronger push when closer
-            }
-        }
-
-        // 3. Combine and Move
-        Vector3 finalMove = (directionToPlayer + (separationVector * separationForce)).normalized;
-        
-        // Ensure they stay on the floor (keep Y consistent)
-        finalMove.y = 0;
-
-        // Move towards player
-        transform.position += finalMove * data.speed * Time.deltaTime;
-        //agent.SetDestination(player.position);
-        //agent.SetDestination(transform.position + finalMove * data.speed * Time.deltaTime);
-        
         // 4. Rotate to face movement
-        if (finalMove != Vector3.zero)
+        if (directionToPlayer != Vector3.zero)
         {
-            transform.forward = Vector3.Slerp(transform.forward, finalMove, Time.deltaTime * 10f);
+            transform.forward = Vector3.Slerp(transform.forward, directionToPlayer, Math.Max(data.rotationSpeed,1f) * Time.deltaTime);
         }
+
+        // Ensure they stay on the floor (keep Y consistent)
+        directionToPlayer.y = 0;
+        // Update movement if far or try attacking
+        float distance = Vector3.Distance(transform.position, playerRef.transform.position);
+        
+        if (distance > playerEscapeDistance)
+        {
+            enemySpawner.Respawn(this);
+            Debug.Log("Enemy "+data.name +" respawned");
+        }
+        else if (distance > agent.stoppingDistance)
+        {
+            transform.position += directionToPlayer * Math.Min(data.speed * Time.deltaTime, distance);
+        }
+        else
+        {
+            TryAttack();
+        }
+
     }
 
     void TryAttack()
@@ -142,17 +136,29 @@ public class EnemyController : MonoBehaviour
         // If the result is > 0.5, the attacker is roughly in front of the enemy
         float dot = Vector3.Dot(transform.forward, directionToAttacker);
 
-        if ((data.enemyName == "ShieldEnemy1" || data.enemyName == "ShieldEnemy2") && dot > 0.5f)
+        /*if ((data.enemyName == "ShieldEnemy1" || data.enemyName == "ShieldEnemy2") && dot > 0.5f)
         {
             Debug.Log("Blocked by shield!");
             // TO DO: Play a 'clink' sound or spark effect here
             return; // Exit the function so no damage is taken
-        }
+        }*/
 
         // Otherwise, take damage as normal
         currentHealth -= amount;
+
         //UpdateUI();
         if (currentHealth <= 0) Die();
+
+        // Play sound
+        if(playerRef.GetMode() == "comedy")
+        {
+            int randomNumber = UnityEngine.Random.Range(1, 5);
+            AudioManager.audioManagerRef.PlaySound("hitComedy"+randomNumber);
+        }
+        else
+        {
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("hitTragedy");
+        }
     }
     void Die()
     {
@@ -165,7 +171,27 @@ public class EnemyController : MonoBehaviour
             Debug.LogError("Enemy Spawner reference not set to an enemy of type "+data.enemyName+"! Please, set it up correctly");
         }
 
+        if(deathVFXPrefab != null)
+        {
+             GameObject deathVFX = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
+        } else
+        {
+            Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
+        }
+
         // TO DO: disable the enemy
         Destroy(gameObject);
+
+        // Play sound
+        int randomNumber = UnityEngine.Random.Range(1, 4);
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("enemyDeath"+randomNumber);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Sword")
+        {
+            TakeDamage(playerRef.getDamageOutput(), other.transform.position);
+        }
     }
 }
