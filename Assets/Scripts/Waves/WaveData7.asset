@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47f87dd533aa14f778bc4fc7451ddf00, type: 2}
   totalToSpawn: 20
   spawnRate: 2
-  nextWaveDelay: 16
+  nextWaveDelay: 14
