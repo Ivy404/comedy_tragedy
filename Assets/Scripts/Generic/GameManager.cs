@@ -193,5 +193,6 @@ public class GameManager : MonoBehaviour
     {
         isPaused=true;
         PauseScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }
