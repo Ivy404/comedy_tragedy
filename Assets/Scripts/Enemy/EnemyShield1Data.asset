@@ -20,10 +20,5 @@ MonoBehaviour:
   mass: 15
   stoppingDistance: 1
   attackCooldown: 1.25
-<<<<<<< Updated upstream
-  xp: 2
-  visualPrefab: {fileID: 7696555456731064999, guid: de2d67538a16b4949a9525eb5fa31fdf, type: 3}
-=======
   xp: 20
-  visualPrefab: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
->>>>>>> Stashed changes
+  visualPrefab: {fileID: 7696555456731064999, guid: de2d67538a16b4949a9525eb5fa31fdf, type: 3}
