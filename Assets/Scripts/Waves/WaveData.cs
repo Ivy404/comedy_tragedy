@@ -7,4 +7,5 @@ public class WaveData : ScriptableObject
     public SpawnerData[] spawnersInWave; // Which types appear in this wave
     public int totalToSpawn;          // Total count before wave ends
     public float spawnRate;           // Time between spawns
+    public int nextWaveDelay;
 }
