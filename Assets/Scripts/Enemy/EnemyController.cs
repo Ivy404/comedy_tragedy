@@ -143,17 +143,29 @@ public class EnemyController : MonoBehaviour
         // If the result is > 0.5, the attacker is roughly in front of the enemy
         float dot = Vector3.Dot(transform.forward, directionToAttacker);
 
-        if ((data.enemyName == "ShieldEnemy1" || data.enemyName == "ShieldEnemy2") && dot > 0.5f)
+        /*if ((data.enemyName == "ShieldEnemy1" || data.enemyName == "ShieldEnemy2") && dot > 0.5f)
         {
             Debug.Log("Blocked by shield!");
             // TO DO: Play a 'clink' sound or spark effect here
             return; // Exit the function so no damage is taken
-        }
+        }*/
 
         // Otherwise, take damage as normal
         currentHealth -= amount;
+
         //UpdateUI();
         if (currentHealth <= 0) Die();
+
+        // Play sound
+        if(playerRef.GetMode() == "comedy")
+        {
+            int randomNumber = UnityEngine.Random.Range(1, 5);
+            AudioManager.audioManagerRef.PlaySound("hitComedy"+randomNumber);
+        }
+        else
+        {
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("hitTragedy");
+        }
     }
     void Die()
     {
@@ -168,17 +180,22 @@ public class EnemyController : MonoBehaviour
 
         // TO DO: disable the enemy
         Destroy(gameObject);
+
+        // Play sound
+        int randomNumber = UnityEngine.Random.Range(1, 4);
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("enemyDeath"+randomNumber);
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            currentHealth = Math.Max(currentHealth-playerRef.getDamageOutput(),0);
+            TakeDamage(playerRef.getDamageOutput(), other.transform.position);
+            /*currentHealth = Math.Max(currentHealth-playerRef.getDamageOutput(),0);
             if (currentHealth <= 0)
             {
                 Die();
-            }
+            }*/
         }
     }
 }
