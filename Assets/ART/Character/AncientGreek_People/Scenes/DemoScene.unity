@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 6007140524088677221, guid: dece36e9abffee14eb26e13c83972b4e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3792a5fb7224249b092aa7970ef02118, type: 2}
+      objectReference: {fileID: 2100000, guid: 8cf42766911c5904e821cc8b5f3d49c5, type: 2}
     - target: {fileID: 8606633117531796493, guid: dece36e9abffee14eb26e13c83972b4e, type: 3}
       propertyPath: m_Name
       value: Background (1)
