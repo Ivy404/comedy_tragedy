@@ -48,6 +48,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 59749a74249014046bfb92b3393790e4, type: 2}
   - {fileID: 11400000, guid: 6ab03a5aa44cd4ce2b9cac1e8bb371c4, type: 2}
   - {fileID: 11400000, guid: 400216f8ae0344e6288b2aaa3621e2a1, type: 2}
+  enemiesObject: {fileID: 0}
   baseSpawner: {fileID: 3281095269401376510, guid: 504867036cc5c415a9e6d5a7f5b1e84f, type: 3}
   spawnRadius: 20
   playerRef: {fileID: 0}
+  lastRandomizeWaves: 5
+  XPPowerFactor: 3
