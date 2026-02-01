@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
         pauseBtn = InputSystem.actions.FindAction("Pause");
 
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour
 
         if (player != null && mode != player.GetMode())
         {
-            Debug.Log("wtf");
             SwitchMode(player.GetMode());
         }
         if ( isShowingUpgrades){

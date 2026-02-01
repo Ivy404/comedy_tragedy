@@ -180,6 +180,8 @@ public class PlayerActions : MonoBehaviour
         AuraVFX.SetFloat("GlowSize", 10*transitionBuildUp);
         closestEnemy = getClosestEnemyDirection();
         lastDmgTaken += Time.deltaTime;
+        if (currentData.maskName == "comedy") comedyMaskData.health = currentData.health;
+        else if (currentData.maskName == "tragedy") tragedyMaskData.health = currentData.health;
     }
 
     public void debugDisplayCurrentData()
