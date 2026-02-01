@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
     public float separationForce = 1f;
-    public float playerEscapeDistance = 25f;
+    public float playerEscapeDistance = 30f;
 
     [Header("Visuals")]
     public GameObject deathVFXPrefab;
@@ -105,7 +105,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Enemy "+data.name +" respawned");
 
             if(enemyAnimator != null)
-                enemyAnimator.SetBool("walking",false);
+                enemyAnimator.SetBool("walking",true);
             else 
                 Debug.LogError("Enemy animator not setup for an enemy!");
         }

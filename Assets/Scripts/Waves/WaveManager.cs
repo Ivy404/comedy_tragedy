@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public GameManager gameManager;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
-    public float spawnRadius = 15f;
+    public float spawnRadius = 20f;
     public PlayerActions playerRef;
     public int lastRandomizeWaves = 5;
     private int _currentWaveIndex = 0;
@@ -159,7 +159,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator ShowUpgrades()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
         gameManager.upgradeUION();
     }
