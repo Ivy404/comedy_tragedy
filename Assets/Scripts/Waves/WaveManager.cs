@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;
 
-    public float XPPowerFactor;
+    public float XPPowerFactor = 3;
     private int currentXPIndex = 0;
     private float accumulatedXP = 0;
 
@@ -90,10 +90,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(wave.spawnRate);
         }
 
-        // TO DO: Change this for wait seconds. Add it as a wave property
-        // Wait until the player clears the board
-        //while (enemiesRemaining > 0) yield return null;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(wave.nextWaveDelay);
 
         EndWave();
     }
@@ -148,7 +145,9 @@ public class WaveManager : MonoBehaviour
     void CheckXPLevelUp()
     {
         // If level up needed show upgrades
-        if(accumulatedXP > Math.Pow(currentXPIndex, XPPowerFactor))
+        double toCheck = 100*Math.Pow(1.5f, currentXPIndex);
+
+        if(accumulatedXP >  toCheck)
         {
 
             Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
