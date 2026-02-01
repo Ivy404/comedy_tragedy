@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        upgradeUION();
+        //upgradeUION();
         Debug.Log("Game start");
         if (player != null)
         {
@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
     }
 
     //UI STUFF
+
+    //Use this to turn on UI Upgrade Screen
     public void upgradeUION()
     {
         UpgradeScreen.SetActive(true);
@@ -102,16 +104,19 @@ public class GameManager : MonoBehaviour
     public void SetUpgrade1()
     {
         player.addStatUpgrade(upg1);
+        UpgradeScreen.SetActive(false);
     }
 
     public void SetUpgrade2()
     {
         player.addStatUpgrade(upg2);
+        UpgradeScreen.SetActive(false);
     }
 
     public void SetUpgrade3()
     {
         player.addStatUpgrade(upg3);
+        UpgradeScreen.SetActive(false);
     }
 
     public void upgradeUIOFF()
