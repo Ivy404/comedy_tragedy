@@ -33,6 +33,7 @@ public struct statUpgrade {
     public float arc;
     public float damage;
     public string rarity;
+    public string special;
 
     public statUpgrade(string upgradeName, string mask)
     {
@@ -45,6 +46,7 @@ public struct statUpgrade {
         this.arc=0;
         this.damage=0;
         this.rarity="";
+        this.special="";
     }
    
 }
