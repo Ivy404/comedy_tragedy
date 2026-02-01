@@ -247,7 +247,7 @@ public class PlayerActions : MonoBehaviour
             if (currentData.health <= 0)
             {
                 // TO DO: Inform game manager
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
             // Play sound
@@ -287,8 +287,7 @@ public class PlayerActions : MonoBehaviour
                 //CrescendoVFX.Play();
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
-                    float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
-                    AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, easedT);
+                    AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
                 }));
             } else
             {
@@ -309,8 +308,7 @@ public class PlayerActions : MonoBehaviour
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
                 StartCoroutine(LerpOverTime(0.5f, t =>
                 {
-                    float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
-                    AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, easedT);
+                    AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, t);
                 }));
             }
             lastSwitch = 0;
