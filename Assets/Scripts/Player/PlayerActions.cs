@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -165,7 +166,7 @@ public class PlayerActions : MonoBehaviour
                 SwordVFX.SetBool("IsLight", true);
                 CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
                 CrescendoVFX.Play();
-                crescendo(transitionBuildUp);
+                StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 tragedyMaskData = currentData;
                 currentData = comedyMaskData;
@@ -226,16 +227,17 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-    public void crescendo(float scale)
+    IEnumerator crescendo(float scale, Vector3 Iposition)
     {
+        yield return new WaitForSeconds(0.5f);
         float radius = scale*7+2;
-        Collider[] nearbyEnemies = Physics.OverlapSphere(transform.position, radius);
+        Collider[] nearbyEnemies = Physics.OverlapSphere(Iposition, radius);
 
         foreach (var col in nearbyEnemies)
         {
             if (col.gameObject != this.gameObject && col.CompareTag("Enemy"))
             {
-                col.gameObject.GetComponent<EnemyController>().TakeDamage(crescendoDamage*scale, transform.position);
+                col.gameObject.GetComponent<EnemyController>().TakeDamage(crescendoDamage*scale, Iposition);
             }
         }
     }
