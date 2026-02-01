@@ -14,7 +14,6 @@ public class InputManager : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         attackAction = InputSystem.actions.FindAction("Attack");
         switchAction = InputSystem.actions.FindAction("Switch");
-        debugAction = InputSystem.actions.FindAction("Crouch");
     }
 
     void Update()
@@ -29,11 +28,6 @@ public class InputManager : MonoBehaviour
         if (switchAction.WasPressedThisFrame())
         {
             PlayerActions.modeSwitch();
-        }
-        // debugging
-        if (debugAction.WasPressedThisFrame())
-        {
-            PlayerActions.takeDamage(20);
         }
     }
 

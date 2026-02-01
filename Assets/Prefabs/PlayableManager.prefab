@@ -872,6 +872,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1992045961095825914}
+    - target: {fileID: 239338680268867627, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
+      propertyPath: upgrades
+      value: 
+      objectReference: {fileID: 357207732767150875}
+    - target: {fileID: 239338680268867627, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
+      propertyPath: waveManager
+      value: 
+      objectReference: {fileID: 5889666424013688447}
     - target: {fileID: 240130268950401829, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1786995
@@ -921,6 +929,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
+--- !u!114 &5920706994391328124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 239338680268867627, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
+  m_PrefabInstance: {fileID: 5870687196279893335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd50836f56a12473a9636fc98db33471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!4 &5921604398435925618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 240130268950401829, guid: 2070d77f686d64833914b190b7080bdd, type: 3}
@@ -934,6 +953,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5382996156213979034}
     m_Modifications:
+    - target: {fileID: 1913712520337010241, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913712520337010241, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Name
+      value: IsLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913712520337010241, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2338081647409185785, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4157298
@@ -1095,9 +1126,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4365871481376239700, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       insertIndex: -1
       addedObject: {fileID: 357207732767150875}
-    - targetCorrespondingSourceObject: {fileID: 4365871481376239700, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6474829209677231186}
   m_SourcePrefab: {fileID: 100100000, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
 --- !u!114 &1992045961095825914 stripped
 MonoBehaviour:
@@ -1332,223 +1360,6 @@ MonoBehaviour:
     damage: 0
     rarity: uncommon
     special: 
---- !u!114 &6474829209677231186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7192190649388089804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7272970ad147f524bb419879fc5a485d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeSystem
-  commonWeight: 5
-  uncommonWeight: 3
-  rareWeight: 1
-  playerActions: {fileID: 1992045961095825914}
-  statUpgrades:
-  - upgradeName: Damage Boost I
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost I
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost II
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.2
-    rarity: uncommon
-    special: 
-  - upgradeName: Damage Boost II
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.2
-    rarity: uncommon
-    special: 
-  - upgradeName: Damage Boost III
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.5
-    rarity: rare
-    special: 
-  - upgradeName: Damage Boost III
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.5
-    rarity: rare
-    special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.1
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.1
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost I
-    maskName: comedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost I
-    maskName: tragedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost II
-    maskName: comedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost II
-    maskName: tragedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost III
-    maskName: comedy
-    maxHealth: 0.5
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost III
-    maskName: tragedy
-    maxHealth: 0.5
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: comedy
-    maxHealth: 0
-    speed: 0.05
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0.05
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
 --- !u!4 &9163685528413336161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2338081647409185785, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
@@ -1566,6 +1377,10 @@ PrefabInstance:
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 1992045961095825914}
+    - target: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 5920706994391328124}
     - target: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
       propertyPath: enemiesObject
       value: 
@@ -1624,3 +1439,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7446145944305024614, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
   m_PrefabInstance: {fileID: 7282780836831700547}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5889666424013688447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
+  m_PrefabInstance: {fileID: 7282780836831700547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9970e3ecde849ae8d23ada13747808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveManager

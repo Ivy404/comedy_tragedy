@@ -8,6 +8,7 @@ public class WaveManager : MonoBehaviour
 {
     public List<WaveData> waves; // Wave data objects
     [SerializeField] private GameObject enemiesObject;
+    [SerializeField] public GameManager gameManager;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
     public float spawnRadius = 15f;
@@ -159,13 +160,10 @@ public class WaveManager : MonoBehaviour
 
     void ShowUpgrades()
     {
-        Debug.Log("Level up! Pick an upgrade.");
-        // TO DO: Stop time
-        // TO DO: Wait for player to choose
-        ContinueAfterUpgrading();
+        gameManager.upgradeUION();
     }
 
-    void ContinueAfterUpgrading()
+    public void ContinueAfterUpgrading()
     {
         Debug.Log("Upgrade chosen.");
         // TO DO: Resume time

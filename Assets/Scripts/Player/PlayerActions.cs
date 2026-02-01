@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine.Experimental.GlobalIllumination;
 
 [Serializable]
-struct maskData {
+public struct maskData {
     //Variable declaration
     public string maskName;
     public float maxHealth;
@@ -63,8 +63,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect DecrescendoVFX;
 
     // character stats
-    [SerializeField] private maskData comedyMaskData;
-    [SerializeField] private maskData tragedyMaskData;
+    [SerializeField] public maskData comedyMaskData;
+    [SerializeField] public maskData tragedyMaskData;
     [SerializeField] public float crescendoBuildupRate = 0.01f;
     [SerializeField] public Collider swordCollider;
     [SerializeField] public Transform swordPivot;
@@ -147,7 +147,7 @@ public class PlayerActions : MonoBehaviour
         if (colliderDmg)
         {
             colliderTime+=Time.deltaTime;
-            Vector3 newAngles = new Vector3(0,Mathf.LerpAngle(-currentData.arc/2, currentData.arc/2, colliderTime/lifetime),0);
+            Vector3 newAngles = new Vector3(0,Mathf.Lerp(-currentData.arc*1.2f/2, currentData.arc*1.2f/2, colliderTime/lifetime),0);
             swordPivot.localEulerAngles = newAngles;
             if (colliderTime > lifetime)
             {
@@ -331,6 +331,7 @@ public class PlayerActions : MonoBehaviour
             PlayerAnimator.SetBool("walk", true);
             Vector3 movedir = new Vector3(direction.x, 0, direction.y);
             PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
+            if (!colliderDmg && !attacking)
             if (closestEnemy == null)
                 PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
             else {
