@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8876628123999929917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9151103946503910525}
+  - component: {fileID: 3245501443976983365}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9151103946503910525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876628123999929917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1786995, y: 0, z: -0.8853893}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3245501443976983365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876628123999929917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b247877cae66b4638a1e4339709b0c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: ComedyMusic
+    clip: {fileID: 8300000, guid: e49195401183940b2b7bd0f418a8598f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 7427721350529101861, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: TragedyMusic
+    clip: {fileID: 8300000, guid: 56f5098f7176a47a4b950e90007c7fb9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -7438580139324194020, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: ModeSwitch
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: attackComedy1
+    clip: {fileID: 8300000, guid: e3aa99818a7504736812d05c16e4c3cc, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: attackTragedy1
+    clip: {fileID: 8300000, guid: 3f0fa3c01fe2a42138c2f6fbf2e197cb, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage1
+    clip: {fileID: 8300000, guid: 70d6c33236724413289f5eaa848a3356, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage2
+    clip: {fileID: 8300000, guid: eb2d67c231a5a4c2aa174c0e7c76edae, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage3
+    clip: {fileID: 8300000, guid: 2367f6f7e2bb3449a86d77cf4d7d2646, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage4
+    clip: {fileID: 8300000, guid: 8ecef0615e90e45249e27b4bc68f243c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage5
+    clip: {fileID: 8300000, guid: a9a9561740fec42d1bb373f08a1d81fc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: playerDamage6
+    clip: {fileID: 8300000, guid: 9e2ae2c54eb54499abaf04a5c1ce3959, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: hitComedy1
+    clip: {fileID: 8300000, guid: 428159f1bc1064f699f22365ac68da05, type: 3}
+    volume: 0.56
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: hitComedy2
+    clip: {fileID: 8300000, guid: 2c305e4bdd4f045a58b544d12e5e2170, type: 3}
+    volume: 0.63
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: hitComedy3
+    clip: {fileID: 8300000, guid: 992bd9328c9ff4a638f376b49cd9f31b, type: 3}
+    volume: 0.42
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: hitComedy4
+    clip: {fileID: 8300000, guid: 94b963a4ce53c48219b9e5cce3fcd22c, type: 3}
+    volume: 0.42
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: hitTragedy
+    clip: {fileID: 8300000, guid: 142c19f50c43e4d56a07e15895732db3, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: enemyDeath1
+    clip: {fileID: 8300000, guid: e8ad4bd9204434767a9733b019d69bae, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: enemyDeath2
+    clip: {fileID: 8300000, guid: 19e6ed4d56c164706b402162ea58a7d5, type: 3}
+    volume: 0.74
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: enemyDeath3
+    clip: {fileID: 8300000, guid: 63c21a23af1b2467fb517852b01cef6d, type: 3}
+    volume: 0.77
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoMaxed
+    clip: {fileID: 8300000, guid: 9e5132406ba9b4eb684a662578201847, type: 3}
+    volume: 0.61
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoReleaseTragedy
+    clip: {fileID: 8300000, guid: a060a1a18d1994ab98c8d520316017c6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
+  - name: crescendoReleaseComedy
+    clip: {fileID: 8300000, guid: 1e5cd51152d3f4854afa3ea65fdba33a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    source: {fileID: 0}
