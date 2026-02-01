@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,8 +36,8 @@ public class GameManager : MonoBehaviour
     private bool isShowingUpgrades = false;
     private bool isPaused=false;
 
-    public Slider healthBarCom;
-    public Slider healthbarTrag;
+    public GameObject healthBarCom;
+    public GameObject healthbarTrag;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,8 +71,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("i was in mode " + mode);
-        Debug.Log("im in mode " + player.GetMode());
+        string comhelth = player.comedyMaskData.health.ToString();
+        string traghelth = player.tragedyMaskData.health.ToString();
+
+        healthbarTrag.GetComponent<TextMeshProUGUI>().text = traghelth;
+        healthBarCom.GetComponent<TextMeshProUGUI>().text = comhelth;
+
         if (player != null && mode != player.GetMode())
         {
             Debug.Log("wtf");
