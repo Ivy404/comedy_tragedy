@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.Experimental.GlobalIllumination;
 
 [Serializable]
 struct maskData {
@@ -72,6 +73,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public float crescendoDamage = 20;
     [SerializeField] public float iFrames=0.5f;
     [SerializeField] private maskData currentData;
+    [SerializeField] private Light AmbientLight;
+    [SerializeField] private float tempComedy;
+    [SerializeField] private float tempTragedy;
 
     //attack control
     private bool attacking;
@@ -93,6 +97,7 @@ public class PlayerActions : MonoBehaviour
     private maskData baseComedy;
     private maskData baseTragedy;
     private Renderer characterRenderer;
+    private CameraShake cameraShake;
 
     // upgradeSystem
     [SerializeField] List<statUpgrade> statUpgrades;
@@ -118,6 +123,9 @@ public class PlayerActions : MonoBehaviour
         lastDmgTaken = iFrames;
         baseComedy = comedyMaskData;
         baseTragedy = tragedyMaskData;
+
+        cameraShake = mainCamera.gameObject.GetComponent<CameraShake>();
+        AmbientLight.colorTemperature = tempComedy;
         
     }
 
@@ -277,6 +285,11 @@ public class PlayerActions : MonoBehaviour
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
                 //CrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
                 //CrescendoVFX.Play();
+                StartCoroutine(LerpOverTime(0.5f, t =>
+                {
+                    float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
+                    AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, easedT);
+                }));
             } else
             {
                 AuraVFX.SetBool("IsComedy", true);
@@ -294,6 +307,11 @@ public class PlayerActions : MonoBehaviour
                 CrescendoVFX.enabled = true;
                 lifetime = SwordVFX.GetFloat("Light_Lifetime");
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
+                StartCoroutine(LerpOverTime(0.5f, t =>
+                {
+                    float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
+                    AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, easedT);
+                }));
             }
             lastSwitch = 0;
         }
@@ -347,6 +365,7 @@ public class PlayerActions : MonoBehaviour
     IEnumerator crescendo(float scale, Vector3 Iposition)
     {
         yield return new WaitForSeconds(0.5f);
+        cameraShake.AddTrauma(1,1/scale);
         float radius = scale*7+2;
         Collider[] nearbyEnemies = Physics.OverlapSphere(Iposition, radius);
 
