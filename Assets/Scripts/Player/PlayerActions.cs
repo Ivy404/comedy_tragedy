@@ -1,5 +1,4 @@
 using System;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -127,9 +126,8 @@ public class PlayerActions : MonoBehaviour
         }
 
         // Play sound
-
-        //int randomNumber = Random.ange(0, totalWeight);
-        //AudioManager.audioManagerRef.PlaySound
+        int randomNumber = UnityEngine.Random.Range(1, 7);
+        AudioManager.audioManagerRef.PlaySound("playerDamage"+randomNumber);
     }
     public void regenHP()
     {
