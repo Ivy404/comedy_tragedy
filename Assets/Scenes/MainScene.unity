@@ -1184,7 +1184,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: statUpgrades.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].arc
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[1].maskName
+      value: tragedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].maxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[0].attackSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5094472139538977347, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Name
