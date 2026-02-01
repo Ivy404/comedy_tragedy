@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
 
     // Audio stuff
     public AudioMixer audioMixer;
-    
+
+    //UI stuff
+    public GameObject UpgradeScreen;
+    public UpgradeSystem upgrades;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(player != null)
+        if (player != null)
         {
             mode = player.GetMode();
         }
@@ -24,8 +28,8 @@ public class GameManager : MonoBehaviour
         // Start default music
         AudioManager.audioManagerRef.PlaySound("ComedyMusic");
         AudioManager.audioManagerRef.PlaySound("TragedyMusic");
-        
-        if(audioMixer != null)
+
+        if (audioMixer != null)
         {
             audioMixer.SetFloat("VolMusic1", -80);
             audioMixer.SetFloat("VolMusic2", -80);
@@ -35,7 +39,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player != null && mode != player.GetMode())
+        if (player != null && mode != player.GetMode())
         {
             SwitchMode(player.GetMode());
         }
@@ -51,14 +55,28 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicTrack(string newMode)
     {
-        if(newMode == "comedy")
+        if (newMode == "comedy")
         {
             audioMixer.SetFloat("VolMusic1", -10);
             audioMixer.SetFloat("VolMusic2", -80);
-        }else
+        }
+        else
         {
             audioMixer.SetFloat("VolMusic2", -10);
             audioMixer.SetFloat("VolMusic1", -80);
         }
+    }
+
+    //UI STUFF
+    public void upgradeUION()
+    {
+        UpgradeScreen.SetActive(true);
+        statUpgrade upg = upgrades.getRandomStatUpgrade();
+        Debug.Log(upg.upgradeName);
+    }
+
+    public void upgradeUIOFF()
+    {
+        UpgradeScreen.SetActive(false);
     }
 }
