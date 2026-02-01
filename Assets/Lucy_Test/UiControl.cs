@@ -6,6 +6,9 @@ public class UiControl : MonoBehaviour
     public GameObject StartScreen;
     public GameObject PauseScreen;
 
+    public GameObject UpgradeScreen;
+
+
     public void StartGame()
     {
         StartScreen.SetActive(false);
@@ -14,10 +17,7 @@ public class UiControl : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseScreen.SetActive(true);
-        }
+
     }
 
     public void ResumeGame()
@@ -28,5 +28,10 @@ public class UiControl : MonoBehaviour
     public void PauseGame()
     {
         PauseScreen.SetActive(true);
+    }
+
+    public void TriggerUpgrades()
+    {
+        UpgradeScreen.SetActive(true);
     }
 }
