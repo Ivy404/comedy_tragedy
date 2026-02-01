@@ -18,10 +18,12 @@ public class EnemyController : MonoBehaviour
 
     [Header("Visuals")]
     public GameObject deathVFXPrefab;
+    public Animator enemyAnimator;
 	private Transform enemyTransform;
     private NavMeshAgent agent;
     private float lastAttackTime;
     private float currentHealth;
+
 
     // DEGUB
     InputAction debugAction;
@@ -93,18 +95,33 @@ public class EnemyController : MonoBehaviour
         directionToPlayer.y = 0;
         // Update movement if far or try attacking
         float distance = Vector3.Distance(transform.position, playerRef.transform.position);
-        
+
         if (distance > playerEscapeDistance)
         {
             enemySpawner.Respawn(this);
             Debug.Log("Enemy "+data.name +" respawned");
+
+            if(enemyAnimator != null)
+                enemyAnimator.SetBool("walking",false);
+            else 
+                Debug.LogError("Enemy animator not setup for an enemy!");
         }
         else if (distance > agent.stoppingDistance)
         {
             transform.position += directionToPlayer * Math.Min(data.speed * Time.deltaTime, distance);
+
+            if(enemyAnimator != null)
+                enemyAnimator.SetBool("walking",true);
+            else 
+                Debug.LogError("Enemy animator not setup for an enemy!");
         }
         else
         {
+            if(enemyAnimator != null)
+                enemyAnimator.SetBool("walking",false);
+            else 
+                Debug.LogError("Enemy animator not setup for an enemy!");
+
             TryAttack();
         }
 
@@ -116,6 +133,11 @@ public class EnemyController : MonoBehaviour
         if (Time.time >= lastAttackTime + 1.5f) 
         {
             Debug.Log($"Attacking player for {data.damage} damage!");
+
+            if(enemyAnimator != null)
+                enemyAnimator.SetTrigger("attack");
+            else 
+                Debug.LogError("Enemy animator not setup for an enemy!");
 
             playerRef.takeDamage(data.damage);
             

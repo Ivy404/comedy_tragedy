@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 4365871481376239700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70711, y: 0.49498, z: 0.70711}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -136,9 +136,10 @@ MonoBehaviour:
     maxHealth: 100
     health: 100
     hpRegen: 0.5
-    speed: 10
-    attackSpeed: 5
-    range: 1.5
+    speed: 2.6
+    attackSpeed: 2
+    attackRecovery: 0
+    range: 2
     arc: 90
     damage: 5
   tragedyMaskData:
@@ -146,19 +147,34 @@ MonoBehaviour:
     maxHealth: 100
     health: 100
     hpRegen: 0.5
-    speed: 8
-    attackSpeed: 2
+    speed: 2
+    attackSpeed: 1.4
+    attackRecovery: 0
     range: 3
     arc: 180
-    damage: 10
+    damage: 5
   crescendoBuildupRate: 0.01
   swordCollider: {fileID: 1421571550301723495}
   swordPivot: {fileID: 6354950797688921036}
   lockRadius: 5
   rotationSpeed: 10
   modeSwitchCD: 3
+  crescendoDamage: 20
+  iFrames: 0.5
+  currentData:
+    maskName: 
+    maxHealth: 0
+    health: 0
+    hpRegen: 0
+    speed: 0
+    attackSpeed: 0
+    attackRecovery: 0
+    range: 0
+    arc: 0
+    damage: 0
   enemiesObject: {fileID: 0}
   CharacterMaterial: {fileID: 3317380041188264505}
+  statUpgrades: []
 --- !u!1 &4958942903232577940
 GameObject:
   m_ObjectHideFlags: 0

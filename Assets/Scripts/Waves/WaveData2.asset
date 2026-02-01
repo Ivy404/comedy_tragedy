@@ -15,6 +15,10 @@ MonoBehaviour:
   waveName: Wave2
   spawnersInWave:
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
   - {fileID: 11400000, guid: 9625f4f6a690d48e2adf1f03c5568933, type: 2}
-  totalToSpawn: 3
-  spawnRate: 5
+  totalToSpawn: 10
+  spawnRate: 7
+  nextWaveDelay: 0

@@ -54,6 +54,7 @@ MonoBehaviour:
   separationForce: 5
   playerEscapeDistance: 25
   deathVFXPrefab: {fileID: 1182762515801079994, guid: 0c2e91fef862fe047a1cdd7a7bb61627, type: 3}
+  enemyAnimator: {fileID: 5103096664976393078}
 --- !u!195 &-2009838880938448656
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,6 +160,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7514076089033030562, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6c09aa7d36f5f4ec79837c43f74971b4, type: 2}
+    - target: {fileID: 7514076089033030562, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5816409557007067004, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
@@ -168,5 +177,10 @@ PrefabInstance:
 --- !u!4 &1166990536076941580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4514701055957410264, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
+  m_PrefabInstance: {fileID: 3357023427527964884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5103096664976393078 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7514076089033030562, guid: e75bf1fc8537e664f98a6abd1826d19d, type: 3}
   m_PrefabInstance: {fileID: 3357023427527964884}
   m_PrefabAsset: {fileID: 0}
