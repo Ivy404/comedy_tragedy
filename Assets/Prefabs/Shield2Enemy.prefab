@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+      propertyPath: Shield
+      value: 
+      objectReference: {fileID: 8347790572837453466}
     - target: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: m_Name
       value: Shield2Enemy
@@ -125,5 +129,10 @@ PrefabInstance:
 --- !u!4 &4935769798671828893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3070044673507363586, guid: 0034e36f265564055af68e40f926d690, type: 3}
+  m_PrefabInstance: {fileID: 7990965901548784799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8347790572837453466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106790080277885445, guid: 0034e36f265564055af68e40f926d690, type: 3}
   m_PrefabInstance: {fileID: 7990965901548784799}
   m_PrefabAsset: {fileID: 0}

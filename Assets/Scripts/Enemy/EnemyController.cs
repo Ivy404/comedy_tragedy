@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public PlayerActions playerRef;
     public GameObject hitVFX;
     public Renderer enemyRenderer;
+    public GameObject Shield;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -48,18 +49,18 @@ public class EnemyController : MonoBehaviour
     {
         if(data == null)
         {
-            Debug.LogError("An EnemyController is missing the EnemyData config!");
+            //Debug.LogError("An EnemyController is missing the EnemyData config!");
             return;
         }
         // Set up the enemy based on the data
-        Debug.Log($"Spawned {data.enemyName} with {data.health} HP");
+        //Debug.Log($"Spawned {data.enemyName} with {data.health} HP");
 
         // restore health
         currentHealth = data.health;
 
         if(agent == null)
         {
-            Debug.LogError("An EnemyController is missing the Nav Mesh Agent component!");
+            //Debug.LogError("An EnemyController is missing the Nav Mesh Agent component!");
             return;
         }
         agent.speed = data.speed;
@@ -67,6 +68,19 @@ public class EnemyController : MonoBehaviour
         if(data.enemyName == "BigEnemy1")
             agent.avoidancePriority = 1;
         
+        // shield enemy
+        if (data.enemyName == "ShieldEnemy1")
+        {
+            Debug.Log("shieldEnemy1");
+            if (playerRef.GetMode() == "tragedy") Shield.SetActive(false);
+            else Shield.SetActive(true);
+        }
+        if (data.enemyName == "ShieldEnemy2")
+        {
+            Debug.Log("shieldEnemy2");
+            if (playerRef.GetMode() == "tragedy") Shield.SetActive(true);
+            else Shield.SetActive(false);
+        }
         // Multiply base stats by the current wave index
         //int waveLevel = FindFirstObjectByType<WaveManager>().currentWaveIndex;
         //float difficultyMultiplier = 1f + (waveLevel * 0.2f); // +20% per wave
@@ -104,12 +118,15 @@ public class EnemyController : MonoBehaviour
         if (distance > playerEscapeDistance)
         {
             enemySpawner.Respawn(this);
-            Debug.Log("Enemy "+data.name +" respawned");
+            //Debug.Log("Enemy "+data.name +" respawned");
 
             if(enemyAnimator != null)
                 enemyAnimator.SetBool("walking",true);
-            else 
-                Debug.LogError("Enemy animator not setup for an enemy!");
+            else
+            {
+                //Debug.LogError("Enemy animator not setup for an enemy!");
+                
+            }
         }
         else if (distance > agent.stoppingDistance)
         {
@@ -117,15 +134,19 @@ public class EnemyController : MonoBehaviour
 
             if(enemyAnimator != null)
                 enemyAnimator.SetBool("walking",true);
-            else 
+            else
+            {
                 Debug.LogError("Enemy animator not setup for an enemy!");
+            }
         }
         else
         {
             if(enemyAnimator != null)
                 enemyAnimator.SetBool("walking",false);
-            else 
-                Debug.LogError("Enemy animator not setup for an enemy!");
+            else
+            {
+                //Debug.LogError("Enemy animator not setup for an enemy!")
+            }
 
             TryAttack();
         }
@@ -137,12 +158,12 @@ public class EnemyController : MonoBehaviour
         // Simple attack cooldown using data.attackRate (add this to your ScriptableObject!)
         if (Time.time >= lastAttackTime + 1.5f) 
         {
-            Debug.Log($"Attacking player for {data.damage} damage!");
+            //Debug.Log($"Attacking player for {data.damage} damage!");
 
             if(enemyAnimator != null)
                 enemyAnimator.SetTrigger("attack");
             else 
-                Debug.LogError("Enemy animator not setup for an enemy!");
+                //Debug.LogError("Enemy animator not setup for an enemy!");
 
             //attacking = true;
             //playerRef.takeDamage(data.damage);
@@ -165,18 +186,23 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float amount, Vector3 attackerPosition)
     {
         // 1. Calculate the direction from the enemy to the attacker
-        Vector3 directionToAttacker = (attackerPosition - transform.position).normalized;
+        Vector3 directionToAttacker = (new Vector3(playerRef.transform.position.x,0,playerRef.transform.position.z) - new Vector3(transform.position.x,0,transform.position.z)).normalized;
 
         // 2. Use Dot Product to check the angle
         // If the result is > 0.5, the attacker is roughly in front of the enemy
-        float dot = Vector3.Dot(transform.forward, directionToAttacker);
+        float dot = Vector3.Dot(new Vector3(transform.forward.x, 0, transform.forward.z), directionToAttacker);
 
-        /*if ((data.enemyName == "ShieldEnemy1" || data.enemyName == "ShieldEnemy2") && dot > 0.5f)
+        if (((data.enemyName == "ShieldEnemy1" && playerRef.GetMode() == "comedy") 
+        || (data.enemyName == "ShieldEnemy2" && playerRef.GetMode() == "tragedy")) 
+        && dot > 0.5f)
         {
             Debug.Log("Blocked by shield!");
             // TO DO: Play a 'clink' sound or spark effect here
+            
+            int randomNumber = UnityEngine.Random.Range(1, 3);
+            AudioManager.audioManagerRef.PlaySound("shieldHit"+randomNumber);
             return; // Exit the function so no damage is taken
-        }*/
+        }
 
         Instantiate(hitVFX, transform.position+Vector3.up, Quaternion.identity, transform);
         // play take damage animation    
@@ -227,7 +253,7 @@ public class EnemyController : MonoBehaviour
             enemySpawner.EnemyDied(this);
         }else
         {
-            Debug.LogError("Enemy Spawner reference not set to an enemy of type "+data.enemyName+"! Please, set it up correctly");
+            //Debug.LogError("Enemy Spawner reference not set to an enemy of type "+data.enemyName+"! Please, set it up correctly");
         }
 
         if(deathVFXPrefab != null)
@@ -246,7 +272,7 @@ public class EnemyController : MonoBehaviour
             }
         } else
         {
-            Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
+            //Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
         }
 
         // TO DO: disable the enemy
@@ -262,6 +288,21 @@ public class EnemyController : MonoBehaviour
         if (other.tag == "Sword")
         {
             TakeDamage(playerRef.getDamageOutput(), other.transform.position);
+        }
+    }
+
+    public void ModeSwitchEnemy()
+    {
+        // shield enemy
+        if (data.enemyName == "ShieldEnemy1")
+        {
+            if (playerRef.GetMode() == "tragedy") Shield.SetActive(false);
+            else Shield.SetActive(true);
+        }
+        if (data.enemyName == "ShieldEnemy2")
+        {
+            if (playerRef.GetMode() == "tragedy") Shield.SetActive(true);
+            else Shield.SetActive(false);
         }
     }
 }

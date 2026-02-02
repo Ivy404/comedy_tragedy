@@ -40,12 +40,12 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("WaveManager is missing the player reference in the scene!");
+            //Debug.LogError("WaveManager is missing the player reference in the scene!");
         }
     }
     IEnumerator PlayWave(WaveData wave)
     {
-        Debug.Log($"Starting {wave.waveName}!");
+        //Debug.Log($"Starting {wave.waveName}!");
 
         // Check if more spawners are needed and update them
         for (int i = 0; i < wave.spawnersInWave.Count(); i++)
@@ -111,7 +111,7 @@ public class WaveManager : MonoBehaviour
         randomPos.z = Mathf.Sin(dotProductAngle * (UnityEngine.Random.value > 0.5f ? 1f : -1f)) * spawnRadius + transform.position.z;
         
         spawner.gameObject.transform.position = randomPos;
-        Debug.Log("Update spawner position "+spawner.spawnerData.spawnerName);
+        //Debug.Log("Update spawner position "+spawner.spawnerData.spawnerName);
     }
     public void EnemyDied(EnemyController enemy)
     {
@@ -125,7 +125,7 @@ public class WaveManager : MonoBehaviour
     void EndWave()
     {
         // Trigger Rogue-like Power-up UI here!
-        Debug.Log("Wave "+waves[_currentWaveIndex].waveName!+" cleared!");
+        //Debug.Log("Wave "+waves[_currentWaveIndex].waveName!+" cleared!");
 
         _currentWaveIndex++;
         
@@ -134,7 +134,7 @@ public class WaveManager : MonoBehaviour
             // We reached the end of the waves, let's recycle among the last 5
             int randomWave = UnityEngine.Random.Range(Math.Max(waves.Count - 1 - lastRandomizeWaves,0),waves.Count - 1);
 
-            Debug.Log("Final wave cleared! Randomizing to "+randomWave);
+            //Debug.Log("Final wave cleared! Randomizing to "+randomWave);
 
             _currentWaveIndex = randomWave;
         }
@@ -150,7 +150,7 @@ public class WaveManager : MonoBehaviour
         if(accumulatedXP >  toCheck)
         {
 
-            Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
+            //Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
 
             currentXPIndex++;
             StartCoroutine(ShowUpgrades());
@@ -166,7 +166,7 @@ public class WaveManager : MonoBehaviour
 
     public void ContinueAfterUpgrading()
     {
-        Debug.Log("Upgrade chosen.");
+        //Debug.Log("Upgrade chosen.");
         // TO DO: Resume time
 
         CheckXPLevelUp();

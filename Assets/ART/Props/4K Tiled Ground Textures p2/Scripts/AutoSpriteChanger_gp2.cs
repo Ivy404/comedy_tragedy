@@ -15,7 +15,7 @@ public class AutoSpriteChanger_gp2 : MonoBehaviour
 
         if (sprites.Length == 0)
         {
-            Debug.LogWarning("No sprites assigned. Add sprites to the array in the inspector.");
+            //Debug.LogWarning("No sprites assigned. Add sprites to the array in the inspector.");
             return;
         }
 

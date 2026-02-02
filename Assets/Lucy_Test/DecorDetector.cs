@@ -44,7 +44,7 @@ public class DecorDetector : MonoBehaviour
             spawnedobj.transform.position = other.transform.position;
             other.transform.parent = spawnedobj.transform;
 
-            Debug.Log("Exit");
+            //Debug.Log("Exit");
             other.gameObject.SetActive(false);
         }*/
     }

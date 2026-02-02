@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
+            //Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
         s.source.Play();
@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
+            //Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
         s.source.pitch = UnityEngine.Random.Range(0.9f, 1.3f);
@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
         {
-            Debug.LogWarning("StopSound: " + name + " not found!");
+            //Debug.LogWarning("StopSound: " + name + " not found!");
             return;
         }
         s.source.Stop();

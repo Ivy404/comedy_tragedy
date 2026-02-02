@@ -73,6 +73,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca5a16f1de31482d90fcea27055327d, type: 3}
+--- !u!1 &2146595553746918733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106790080277885445, guid: eca5a16f1de31482d90fcea27055327d, type: 3}
+  m_PrefabInstance: {fileID: 69505774094856008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3056838585865970762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3070044673507363586, guid: eca5a16f1de31482d90fcea27055327d, type: 3}
@@ -126,6 +131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+      propertyPath: Shield
+      value: 
+      objectReference: {fileID: 2146595553746918733}
     - target: {fileID: 8783082749075640448, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: m_Name
       value: Shield1Enemy

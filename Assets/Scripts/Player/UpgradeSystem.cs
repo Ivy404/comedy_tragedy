@@ -45,14 +45,14 @@ public class UpgradeSystem : MonoBehaviour
     public statUpgrade getRandomStatUpgrade()
     {
         float prob = Random.Range(0.0f,1.0f);
-        Debug.Log(prob);
+        //Debug.Log(prob);
         int indexToUse = 0;
         for(int j=0; j < weights.Length;j++)
         {
             if (prob < weights[j]) break;
             indexToUse = j;
         }
-        Debug.Log(statUpgrades[indexToUse].upgradeName);
+        //Debug.Log(statUpgrades[indexToUse].upgradeName);
         return statUpgrades[indexToUse];
     }
 
