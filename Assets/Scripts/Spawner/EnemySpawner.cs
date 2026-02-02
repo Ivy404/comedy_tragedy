@@ -21,12 +21,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if(spawnerData == null)
         {
-            Debug.LogError("Spawner missing Spawner data!");
+            //Debug.LogError("Spawner missing Spawner data!");
             return;
         }
         if(spawnerData.enemiesInWave.Count() != spawnerData.enemyWeights.Count())
         {
-            Debug.LogError("Spawner " + spawnerData.spawnerName + " has a mismatch is enemy types and waves. They should be the same size!");
+            //Debug.LogError("Spawner " + spawnerData.spawnerName + " has a mismatch is enemy types and waves. They should be the same size!");
             return;
         }
 
@@ -67,10 +67,11 @@ public class EnemySpawner : MonoBehaviour
                 // Update / set the spawner reference
                 enemyController.enemySpawner = this;
                 enemyController.playerRef = waveManager.playerRef;
+                waveManager.playerRef.onModeSwitch.AddListener(enemyController.ModeSwitchEnemy);
             }
             else
             {
-                Debug.LogError("Wrong prefab set to an Enemy Spawner, the prefab needs to have an EnemyController");
+                //Debug.LogError("Wrong prefab set to an Enemy Spawner, the prefab needs to have an EnemyController");
             }
         }
     }
@@ -89,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
             waveManager.EnemyDied(enemy);
         }else
         {
-            Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
+            //Debug.LogError("Wave Manager reference not set to an enemy of type "+spawnerData.name+"! Please, set it up correctly");
         }
     }
 

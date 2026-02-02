@@ -13,7 +13,7 @@ public class SetUpgradeUI : MonoBehaviour
     {
         Name.GetComponent<TextMeshProUGUI>().text = UpgradeName;
 
-        Debug.Log("UPGRADENAME!!" + UpgradeName);
+        //Debug.Log("UPGRADENAME!!" + UpgradeName);
         if (maskName == "comedy")
         {
             mask.GetComponent<Image>().sprite = maskTypes[0];

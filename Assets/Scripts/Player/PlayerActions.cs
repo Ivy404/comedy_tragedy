@@ -5,6 +5,7 @@ using UnityEngine.VFX;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Events;
 
 [Serializable]
 public struct maskData {
@@ -80,6 +81,8 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private float tempComedy;
     [SerializeField] private float tempTragedy;
 
+    private Rigidbody pRigid;
+
     //attack control
     private bool attacking;
     private float attackTime;
@@ -101,6 +104,8 @@ public class PlayerActions : MonoBehaviour
     private maskData baseTragedy;
     private Renderer characterRenderer;
     private CameraShake cameraShake;
+
+    public UnityEvent onModeSwitch;
 
     // upgradeSystem
     [SerializeField] List<statUpgrade> statUpgrades;
@@ -132,6 +137,7 @@ public class PlayerActions : MonoBehaviour
 
         ComedyAsset.SetActive(true);
         TragedyAsset.SetActive(false);
+        pRigid = this.gameObject.GetComponent<Rigidbody>();
         
     }
 
@@ -186,12 +192,12 @@ public class PlayerActions : MonoBehaviour
 
     public void debugDisplayCurrentData()
     {
-        Debug.Log("maxhealth " + currentData.maxHealth.ToString());
-        Debug.Log("speed " + currentData.speed.ToString());
-        Debug.Log("attackSpeed " + currentData.attackSpeed.ToString());
-        Debug.Log("range " + currentData.range.ToString());
-        Debug.Log("arc " + currentData.arc.ToString());
-        Debug.Log("damage " + currentData.damage.ToString());
+        //Debug.Log("maxhealth " + currentData.maxHealth.ToString());
+        //Debug.Log("speed " + currentData.speed.ToString());
+        //Debug.Log("attackSpeed " + currentData.attackSpeed.ToString());
+        //Debug.Log("range " + currentData.range.ToString());
+        //Debug.Log("arc " + currentData.arc.ToString());
+        //Debug.Log("damage " + currentData.damage.ToString());
     }
 
     public void addStatUpgrade(statUpgrade upg)
@@ -218,7 +224,7 @@ public class PlayerActions : MonoBehaviour
         foreach (statUpgrade upg in statUpgrades )
         {
             
-            Debug.Log("applying upgrade..." + upg.maskName);
+            //Debug.Log("applying upgrade..." + upg.maskName);
             if(upg.maskName == "tragedy"){
                 tragedyMaskData.maxHealth += baseTragedy.maxHealth*upg.maxHealth;
                 tragedyMaskData.speed += baseTragedy.speed*upg.speed;
@@ -328,6 +334,7 @@ public class PlayerActions : MonoBehaviour
                 TragedyAsset.SetActive(false);
             }
             lastSwitch = 0;
+            onModeSwitch.Invoke();
         }
     }
 
@@ -342,21 +349,29 @@ public class PlayerActions : MonoBehaviour
         {
             PlayerAnimator.SetBool("walk", true);
             Vector3 movedir = new Vector3(direction.x, 0, direction.y);
-            PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
+
+            pRigid.linearVelocity = movedir * currentData.speed;
+
+            //PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
             if (!colliderDmg && !attacking)
             if (closestEnemy == null)
-                PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
+                pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime));
+                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
             else {
                 Vector3 enemyDir = closestEnemy.transform.position - transform.position;
                 enemyDir.y = 0;
-                PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
+                pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime));
+                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
             }
         } else
         {
+            pRigid.linearVelocity = Vector3.zero;  
             if (closestEnemy != null){
                 Vector3 enemyDir = closestEnemy.transform.position - transform.position;
                 enemyDir.y = 0;
-                PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
+                pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime));
+                
+                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
             }
             PlayerAnimator.SetBool("walk", false);
         }

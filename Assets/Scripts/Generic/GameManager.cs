@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //upgradeUION();
-        Debug.Log("Game start");
+        //Debug.Log("Game start");
         
         // Initialize the starting mode
 
@@ -137,15 +137,15 @@ public class GameManager : MonoBehaviour
         UpgradeScreen.SetActive(true);
 
         upg1 = upgrades.getRandomStatUpgrade();
-        Debug.Log(upg1.maskName);
+        //Debug.Log(upg1.maskName);
         upgrade1.GetComponent<SetUpgradeUI>().setUI(upg1.upgradeName, upg1.maskName, upg1.rarity);
 
         upg2 = upgrades.getRandomStatUpgrade();
-        Debug.Log(upg2.maskName);
+        //Debug.Log(upg2.maskName);
         upgrade2.GetComponent<SetUpgradeUI>().setUI(upg2.upgradeName, upg2.maskName, upg2.rarity);
 
         upg3 = upgrades.getRandomStatUpgrade();
-        Debug.Log(upg3.maskName);
+        //Debug.Log(upg3.maskName);
         upgrade3.GetComponent<SetUpgradeUI>().setUI(upg3.upgradeName, upg3.maskName, upg3.rarity);
 
     }
