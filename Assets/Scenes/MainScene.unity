@@ -1042,6 +1042,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 662268802033076512, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: m_ClearFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113045965063017967, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -1181,6 +1189,10 @@ PrefabInstance:
     - target: {fileID: 8767517223250827062, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804568273216538317, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

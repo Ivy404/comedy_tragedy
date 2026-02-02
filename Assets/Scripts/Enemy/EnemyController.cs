@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public GameObject hitVFX;
     public Renderer enemyRenderer;
     public GameObject Shield;
+    public HealthBarEnemy healthBar;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -204,6 +205,11 @@ public class EnemyController : MonoBehaviour
             return; // Exit the function so no damage is taken
         }
 
+        // after dmg
+        if (!healthBar.gameObject.activeInHierarchy)
+        {
+            healthBar.gameObject.SetActive(true);
+        }
         Instantiate(hitVFX, transform.position+Vector3.up, Quaternion.identity, transform);
         // play take damage animation    
         StartCoroutine(LerpOverTime(1.0f, t =>
@@ -215,6 +221,7 @@ public class EnemyController : MonoBehaviour
         currentHealth -= amount;
 
         //UpdateUI();
+        healthBar.setHPPercentage(currentHealth/data.health);
         if (currentHealth <= 0) Die();
 
         // Play sound
