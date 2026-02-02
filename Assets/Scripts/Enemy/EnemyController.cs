@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public GameObject hitVFX;
     public Renderer enemyRenderer;
     public GameObject Shield;
+    public HealthBarEnemy healthBar;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -204,6 +205,11 @@ public class EnemyController : MonoBehaviour
             return; // Exit the function so no damage is taken
         }
 
+        // after dmg
+        if (!healthBar.gameObject.activeInHierarchy)
+        {
+            healthBar.gameObject.SetActive(true);
+        }
         Instantiate(hitVFX, transform.position+Vector3.up, Quaternion.identity, transform);
         // play take damage animation    
         StartCoroutine(LerpOverTime(1.0f, t =>
@@ -212,9 +218,19 @@ public class EnemyController : MonoBehaviour
             enemyRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
         }));
         // Otherwise, take damage as normal
+
         currentHealth -= amount;
 
+        // controller rumble
+        if (Gamepad.current != null) StartCoroutine(LerpOverTime(0.5f, t =>
+        {
+            float easedT = 1f - Mathf.Pow(1f - t, 2f);
+            float speedValues = Mathf.Lerp(0.3f, 0, t);
+            Gamepad.current.SetMotorSpeeds(speedValues, speedValues);
+        }));
+
         //UpdateUI();
+        healthBar.setHPPercentage(currentHealth/data.health);
         if (currentHealth <= 0) Die();
 
         // Play sound
