@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 [Serializable]
 public struct maskData {
@@ -291,6 +292,7 @@ public class PlayerActions : MonoBehaviour
                 DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
                 DecrescendoVFX.Play();
                 StartCoroutine(crescendo(transitionBuildUp, transform.position));
+
                 comedyMaskData = currentData;
                 currentData = tragedyMaskData;
                 transitionBuildUp = 0.0f;
@@ -315,7 +317,7 @@ public class PlayerActions : MonoBehaviour
                 CrescendoVFX.enabled = true;
                 CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
                 CrescendoVFX.Play();
-
+                
                 StartCoroutine(crescendo(transitionBuildUp, transform.position));
 
                 tragedyMaskData = currentData;
@@ -403,14 +405,19 @@ public class PlayerActions : MonoBehaviour
         }
 
         crescendoMaxed = false;
-
+        if (Gamepad.current != null) StartCoroutine(LerpOverTime(scale, t =>
+        {
+            float easedT = 1f - Mathf.Pow(1f - t, 2f);
+            float speedValues = Mathf.Lerp(scale, 0, t);
+            Gamepad.current.SetMotorSpeeds(speedValues, speedValues);
+        }));
         // Play sound
         if(GetMode() == "comedy")
             AudioManager.audioManagerRef.PlaySound("crescendoReleaseComedy");
         else
             AudioManager.audioManagerRef.PlaySound("crescendoReleaseTragedy");
     }
-
+    
     public void performDmg()
     {
         swordCollider.enabled = true;

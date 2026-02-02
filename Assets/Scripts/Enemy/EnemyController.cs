@@ -218,7 +218,16 @@ public class EnemyController : MonoBehaviour
             enemyRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
         }));
         // Otherwise, take damage as normal
+
         currentHealth -= amount;
+
+        // controller rumble
+        if (Gamepad.current != null) StartCoroutine(LerpOverTime(0.5f, t =>
+        {
+            float easedT = 1f - Mathf.Pow(1f - t, 2f);
+            float speedValues = Mathf.Lerp(0.3f, 0, t);
+            Gamepad.current.SetMotorSpeeds(speedValues, speedValues);
+        }));
 
         //UpdateUI();
         healthBar.setHPPercentage(currentHealth/data.health);
