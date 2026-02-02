@@ -15,10 +15,10 @@ MonoBehaviour:
   enemyName: BigEnemy1
   health: 50
   damage: 20
-  speed: 1.25
+  speed: 2
   rotationSpeed: 10
   mass: 15
-  stoppingDistance: 0.75
+  stoppingDistance: 1
   attackCooldown: 1.5
   xp: 100
   visualPrefab: {fileID: 4319350125171999890, guid: 070eabea1d62147b195cd4fe168d92d5, type: 3}

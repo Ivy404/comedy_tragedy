@@ -64,6 +64,8 @@ public class EnemyController : MonoBehaviour
         }
         agent.speed = data.speed;
         agent.stoppingDistance = data.stoppingDistance;
+        if(data.enemyName == "BigEnemy1")
+            agent.avoidancePriority = 1;
         
         // Multiply base stats by the current wave index
         //int waveLevel = FindFirstObjectByType<WaveManager>().currentWaveIndex;
@@ -231,7 +233,6 @@ public class EnemyController : MonoBehaviour
         if(deathVFXPrefab != null)
         {
             GameObject deathVFX = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
-            
             
             VisualEffect effect = deathVFX.GetComponent<VisualEffect>();
             
