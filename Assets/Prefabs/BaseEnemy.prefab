@@ -325,6 +325,7 @@ MonoBehaviour:
   healthBar: {fileID: 3622137004629100125}
   xpOrb: {fileID: 2071031384976539673, guid: 2725a17943fed7a409e9047257c66f90, type: 3}
   xpObject: {fileID: 0}
+  dmgObject: {fileID: 2244811128254149591, guid: 46c40c97e3ae2374ca0a5b29122d0d10, type: 3}
   separationDistance: 1.5
   separationForce: 5
   playerEscapeDistance: 25

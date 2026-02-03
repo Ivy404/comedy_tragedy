@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public HealthBarEnemy healthBar;
     public GameObject xpOrb;
     public GameObject xpObject;
+    public GameObject dmgObject;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -204,12 +205,17 @@ public class EnemyController : MonoBehaviour
             return; // Exit the function so no damage is taken
         }
 
-        // after dmg
+        // ------------------------
+        // Enemy will take damage
         if (!healthBar.gameObject.activeInHierarchy)
         {
             healthBar.gameObject.SetActive(true);
         }
         Instantiate(hitVFX, transform.position+Vector3.up, Quaternion.identity, transform);
+        TextParticle dmgO = Instantiate(dmgObject, transform.position+Vector3.up, Quaternion.identity).GetComponent<TextParticle>();
+        dmgO.floatDistance = dmgO.floatDistance*UnityEngine.Random.Range(0.8f, 1.2f);
+        dmgO.floatDuration= dmgO.floatDuration*UnityEngine.Random.Range(0.8f, 1.2f);
+        dmgO.SetText(string.Format("-{0:0.##}", amount));
         // play take damage animation    
         StartCoroutine(LerpOverTime(1.0f, t =>
         {
