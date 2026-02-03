@@ -32,4 +32,9 @@ public class TextParticle : MonoBehaviour
     {
         text.text = txt;
     }
+
+    public void SetColor(Color c)
+    {
+        text.color = c;
+    }
 }

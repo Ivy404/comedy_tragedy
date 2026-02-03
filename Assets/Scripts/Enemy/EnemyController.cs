@@ -215,7 +215,7 @@ public class EnemyController : MonoBehaviour
         TextParticle dmgO = Instantiate(dmgObject, transform.position+Vector3.up, Quaternion.identity).GetComponent<TextParticle>();
         dmgO.floatDistance = dmgO.floatDistance*UnityEngine.Random.Range(0.8f, 1.2f);
         dmgO.floatDuration= dmgO.floatDuration*UnityEngine.Random.Range(0.8f, 1.2f);
-        dmgO.SetText(string.Format("-{0:0.##}", amount));
+        dmgO.SetText(string.Format("{0:0.}", amount));
         // play take damage animation    
         StartCoroutine(LerpOverTime(1.0f, t =>
         {

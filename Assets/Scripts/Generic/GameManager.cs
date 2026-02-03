@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public GameObject healthBarCom;
     public GameObject healthbarTrag;
 
+    private float lastComedyHP;
+    private float lastTragedyHP;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -72,12 +75,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string comhelth = ((int)player.comedyMaskData.health).ToString();
-        string traghelth = ((int)player.tragedyMaskData.health).ToString();
-
-        healthbarTrag.GetComponent<TextMeshProUGUI>().text = traghelth;
-        healthBarCom.GetComponent<TextMeshProUGUI>().text = comhelth;
-
+        if (lastComedyHP != player.comedyMaskData.health) {
+            hudManager.setHPComedy(player.comedyMaskData.health,player.comedyMaskData.maxHealth);
+            lastComedyHP = player.comedyMaskData.health;
+        }
+        if (lastTragedyHP != player.tragedyMaskData.health) {
+            hudManager.setHPTragedy(player.tragedyMaskData.health,player.tragedyMaskData.maxHealth);
+            lastComedyHP = player.tragedyMaskData.health;
+        }
+        
         if (player != null && mode != player.GetMode())
         {
             SwitchMode(player.GetMode());

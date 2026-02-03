@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,11 @@ public class HUDManager : MonoBehaviour
 
     public Image xpBar;
     public TextMeshProUGUI xpText;
+    public Animator maskAnim;
+    public Image comedyBar;
+    public Image tragedyBar;
+    public TextMeshProUGUI comedyHP;
+    public TextMeshProUGUI tragedyHP;
     public float updateRate = 0.2f;
     private float xpP;
     private float lastUpdate;
@@ -36,5 +42,36 @@ public class HUDManager : MonoBehaviour
     public void setLevel(int level)
     {
         xpText.text = level.ToString();
+    }
+
+    public void setHPComedy(float hp, float maxHp)
+    {
+        comedyBar.fillAmount = hp/maxHp;
+        comedyHP.text = string.Format("{0:0}/{1:0}",hp,maxHp);
+    }
+    public void setHPTragedy(float hp, float maxHp)
+    {
+        tragedyBar.fillAmount = hp/maxHp;
+        tragedyHP.text = string.Format("{0:0}/{1:0}",hp,maxHp);
+    }
+
+    public void onModeSwitch()
+    {
+        maskAnim.SetBool("isComedy", !maskAnim.GetBool("isComedy"));
+    }
+    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            onUpdate(t);
+            yield return null;
+        }
+
+        onUpdate(1f);
     }
 }

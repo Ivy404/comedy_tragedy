@@ -227,14 +227,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6985620315467627460, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 3cf81723347739d4e98ac10d09c669cb, type: 2}
-    - target: {fileID: 6985620315467627460, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8893329710009705580, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -358,11 +350,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &726052178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8701211780222643516, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
-  m_PrefabInstance: {fileID: 649866141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &971877945 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
@@ -451,11 +438,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7192190649388089804, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
   m_PrefabInstance: {fileID: 7724409633192831404}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1883964713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8801768313166259139, guid: 553a43d2d6a6bea48b74d20bc7b16db6, type: 3}
-  m_PrefabInstance: {fileID: 649866141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4667520178813830875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,6 +503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1208605551}
     - target: {fileID: 5094472139538977347, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Name
       value: PlayableManager
@@ -594,17 +580,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 649866148}
     - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: healthBarCom
-      value: 
-      objectReference: {fileID: 726052178}
-    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: UpgradeScreen
       value: 
       objectReference: {fileID: 649866145}
-    - target: {fileID: 5920706994391328124, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
-      propertyPath: healthbarTrag
-      value: 
-      objectReference: {fileID: 1883964713}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
