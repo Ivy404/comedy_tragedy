@@ -192,6 +192,7 @@ Transform:
   - {fileID: 3317720647642937373}
   - {fileID: 8531044680735637675}
   - {fileID: 5921604398435925618}
+  - {fileID: 3193436005390481956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6211058694726228259
@@ -303,7 +304,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -776,7 +777,7 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_TaaSettings:
     m_Quality: 3
-    m_FrameInfluence: 0.1
+    m_FrameInfluence: 0.100000024
     m_JitterScale: 1
     m_MipBias: 0
     m_VarianceClampScale: 0.9
@@ -798,6 +799,37 @@ MonoBehaviour:
   frequency: 25
   recoverySpeed: 1.5
   trauma: 0
+--- !u!1 &9141258467184882328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3193436005390481956}
+  m_Layer: 0
+  m_Name: Experience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3193436005390481956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141258467184882328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5382996156213979034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &620119601877988566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -806,6 +838,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5382996156213979034}
     m_Modifications:
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 74f32281288a0fd4fbe3e7209036ee90, type: 3}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[22].name
+      value: shieldHit1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5595ced9b079771408f6a7e863fe6e4a, type: 3}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[23].name
+      value: shieldHit2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[22].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[23].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[22].outputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
+    - target: {fileID: 3245501443976983365, guid: f4d9089c4868c442283f58dab4335219, type: 3}
+      propertyPath: sounds.Array.data[23].outputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2661405978440890063, guid: 5a909201d9fc4409685a754686892a7f, type: 2}
     - target: {fileID: 8876628123999929917, guid: f4d9089c4868c442283f58dab4335219, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1136,6 +1212,7 @@ MonoBehaviour:
   commonWeight: 5
   uncommonWeight: 3
   rareWeight: 1
+  gameManager: {fileID: 5920706994391328124}
   playerActions: {fileID: 1992045961095825914}
   statUpgrades:
   - upgradeName: Damage Boost I
@@ -1402,8 +1479,8 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 68
+  m_Interpolate: 1
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &155932074015985598
 CapsuleCollider:
@@ -1441,6 +1518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5382996156213979034}
     m_Modifications:
+    - target: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
+      propertyPath: xpObject
+      value: 
+      objectReference: {fileID: 9141258467184882328}
     - target: {fileID: 3795952834499946556, guid: 0dfe142cfeb3c425eb7a06a6505372ae, type: 3}
       propertyPath: playerRef
       value: 

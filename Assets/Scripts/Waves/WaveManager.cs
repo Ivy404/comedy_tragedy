@@ -8,6 +8,7 @@ public class WaveManager : MonoBehaviour
 {
     public List<WaveData> waves; // Wave data objects
     [SerializeField] private GameObject enemiesObject;
+    [SerializeField] private GameObject xpObject;
     [SerializeField] public GameManager gameManager;
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
     public GameObject baseSpawner;  // Reference to get basic spawner
@@ -16,10 +17,6 @@ public class WaveManager : MonoBehaviour
     public int lastRandomizeWaves = 5;
     private int _currentWaveIndex = 0;
     private int enemiesRemaining;
-
-    public float XPPowerFactor = 3;
-    private int currentXPIndex = 0;
-    private float accumulatedXP = 0;
 
     public int currentWaveIndex
 	{
@@ -64,6 +61,7 @@ public class WaveManager : MonoBehaviour
             }
             spawner.waveManager = this;
             spawner.enemiesObject = enemiesObject;
+            spawner.xpObject = xpObject;
             
             // Move spawner
             updateSpawnerPosition(spawner);
@@ -116,10 +114,6 @@ public class WaveManager : MonoBehaviour
     public void EnemyDied(EnemyController enemy)
     {
         enemiesRemaining--;
-
-        // Add XP
-        accumulatedXP += enemy.data.xp;
-        CheckXPLevelUp();
     }
 
     void EndWave()
@@ -140,35 +134,5 @@ public class WaveManager : MonoBehaviour
         }
 
         StartCoroutine(PlayWave(waves[_currentWaveIndex]));
-    }
-
-    void CheckXPLevelUp()
-    {
-        // If level up needed show upgrades
-        double toCheck = 100*Math.Pow(1.5f, currentXPIndex);
-
-        if(accumulatedXP >  toCheck)
-        {
-
-            //Debug.Log("Level up! XP level "+(currentXPIndex+1)+", XP amount "+accumulatedXP);
-
-            currentXPIndex++;
-            StartCoroutine(ShowUpgrades());
-        }
-    }
-
-    IEnumerator ShowUpgrades()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        gameManager.upgradeUION();
-    }
-
-    public void ContinueAfterUpgrading()
-    {
-        //Debug.Log("Upgrade chosen.");
-        // TO DO: Resume time
-
-        CheckXPLevelUp();
     }
 }

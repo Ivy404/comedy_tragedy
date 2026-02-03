@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public AudioMixer audioMixer;
 
     //UI stuff
+    public HUDManager hudManager;
     public GameObject UpgradeScreen;
     public GameObject upgrade1;
     public GameObject upgrade2;
@@ -105,6 +106,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void setXPProgress(float xp)
+    {
+        hudManager.setXPProgress(xp);
+    }
+
+    public void setLevel(int level)
+    {
+        hudManager.setLevel(level);
+    }
     private void SwitchMode(string newMode)
     {
         // Swithc mode functionality
@@ -182,7 +192,6 @@ public class GameManager : MonoBehaviour
         UpgradeScreen.SetActive(false);
         Time.timeScale = 1;
         if(isShowingUpgrades){
-            waveManager.ContinueAfterUpgrading();
             isShowingUpgrades=false;
         }
         isPaused=false;

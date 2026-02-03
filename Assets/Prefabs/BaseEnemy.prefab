@@ -323,6 +323,8 @@ MonoBehaviour:
   enemyRenderer: {fileID: 4936630479149218952}
   Shield: {fileID: 0}
   healthBar: {fileID: 3622137004629100125}
+  xpOrb: {fileID: 2071031384976539673, guid: 2725a17943fed7a409e9047257c66f90, type: 3}
+  xpObject: {fileID: 0}
   separationDistance: 1.5
   separationForce: 5
   playerEscapeDistance: 25

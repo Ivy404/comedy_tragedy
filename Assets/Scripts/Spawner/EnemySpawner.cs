@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public SpawnerData spawnerData;
     public GameObject enemiesObject;
+    public GameObject xpObject;
     public WaveManager waveManager;
     // DEGUB
      //InputAction debugAction;
@@ -65,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 enemyController.data = selectedData;
                 // Update / set the spawner reference
+                enemyController.xpObject = xpObject;
                 enemyController.enemySpawner = this;
                 enemyController.playerRef = waveManager.playerRef;
                 waveManager.playerRef.onModeSwitch.AddListener(enemyController.ModeSwitchEnemy);

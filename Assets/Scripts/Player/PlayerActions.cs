@@ -191,6 +191,7 @@ public class PlayerActions : MonoBehaviour
         else if (currentData.maskName == "tragedy") tragedyMaskData.health = currentData.health;
     }
 
+
     public void debugDisplayCurrentData()
     {
         //Debug.Log("maxhealth " + currentData.maxHealth.ToString());
@@ -350,9 +351,9 @@ public class PlayerActions : MonoBehaviour
         if (direction != Vector2.zero)
         {
             PlayerAnimator.SetBool("walk", true);
-            Vector3 movedir = new Vector3(direction.x, 0, direction.y);
+            Vector3 movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
 
-            pRigid.linearVelocity = movedir * currentData.speed;
+            pRigid.linearVelocity = new Vector3(movedir.x, pRigid.linearVelocity.y, movedir.z );
 
             //PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
             if (!colliderDmg && !attacking)

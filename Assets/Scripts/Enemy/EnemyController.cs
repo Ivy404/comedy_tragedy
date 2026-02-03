@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public Renderer enemyRenderer;
     public GameObject Shield;
     public HealthBarEnemy healthBar;
+    public GameObject xpOrb;
+    public GameObject xpObject;
 
     [Header("Movement Settings")]
     public float separationDistance = 0.5f;
@@ -72,13 +74,11 @@ public class EnemyController : MonoBehaviour
         // shield enemy
         if (data.enemyName == "ShieldEnemy1")
         {
-            Debug.Log("shieldEnemy1");
             if (playerRef.GetMode() == "tragedy") Shield.SetActive(false);
             else Shield.SetActive(true);
         }
         if (data.enemyName == "ShieldEnemy2")
         {
-            Debug.Log("shieldEnemy2");
             if (playerRef.GetMode() == "tragedy") Shield.SetActive(true);
             else Shield.SetActive(false);
         }
@@ -197,7 +197,6 @@ public class EnemyController : MonoBehaviour
         || (data.enemyName == "ShieldEnemy2" && playerRef.GetMode() == "tragedy")) 
         && dot > 0.5f)
         {
-            Debug.Log("Blocked by shield!");
             // TO DO: Play a 'clink' sound or spark effect here
             
             int randomNumber = UnityEngine.Random.Range(1, 3);
@@ -291,12 +290,29 @@ public class EnemyController : MonoBehaviour
             //Debug.LogError("Enemy "+data.enemyName+" is missing the death VFX prefab!");
         }
 
-        // TO DO: disable the enemy
-        Destroy(gameObject);
-
         // Play sound
         int randomNumber = UnityEngine.Random.Range(1, 4);
         AudioManager.audioManagerRef.PlaySoundWithRandomPitch("enemyDeath"+randomNumber);
+        
+        int randomXpOrbs = UnityEngine.Random.Range(1, 4);
+        for (int i = 0; i < randomXpOrbs; i++)
+        {
+            GameObject exp = Instantiate(xpOrb, transform.position+Vector3.up, transform.rotation,xpObject.transform);
+            
+            ExperienceOrb xpController = exp.GetComponent<ExperienceOrb>();
+            xpController.playerRef = playerRef;
+            xpController.setXP(data.xp/(float)randomXpOrbs);
+
+            Vector3 playerDir = (transform.position-playerRef.transform.position).normalized;
+            playerDir.y = 0;
+            float angle =  UnityEngine.Random.Range(-70f, 70f);
+            Vector3 randomDir = Quaternion.AngleAxis(angle, Vector3.up) * playerDir;
+            float randomForce =  UnityEngine.Random.Range(0.5f, 1.5f);
+            exp.GetComponent<Rigidbody>().AddForce(2*Vector3.up+randomForce*randomDir);
+        }
+        // TO DO: disable the enemy
+        Destroy(gameObject);
+
     }
 
     void OnTriggerEnter(Collider other)
