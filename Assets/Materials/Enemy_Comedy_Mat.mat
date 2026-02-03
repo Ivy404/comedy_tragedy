@@ -57,16 +57,17 @@ Material:
     m_Floats:
     - _Damage_Bool: 0
     - _Enemy1: 1
-    - _FresnelBrightness: 1
-    - _FresnelPower: 10
+    - _FresnelBrightness: 1.86
+    - _FresnelPower: 8.53
     - _IsLight: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Smoothness: 0.111
     - _Transparency: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.9892183, g: 0.9532225, b: 0.9532225, a: 1}
+    - _EmissionColor: {r: 1, g: 0.123590454, b: 0.06334227, a: 1}
     - _SkinColor: {r: 0.47058824, g: 0.050980393, b: 0.050980393, a: 1}
     - _TextureColor_Dark: {r: 1, g: 1, b: 1, a: 1}
     - _TextureColor_Light: {r: 0.20784314, g: 0, b: 0, a: 1}
