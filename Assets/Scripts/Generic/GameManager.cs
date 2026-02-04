@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public UpgradeSystem upgrades;
 
     public GameObject HUD;
-    public GameObject StartScreen;
     public GameObject PauseScreen;
 
     private statUpgrade upg1;
@@ -68,8 +67,6 @@ public class GameManager : MonoBehaviour
         upgrade2btn = InputSystem.actions.FindAction("UpgradeUp");
         upgrade3btn = InputSystem.actions.FindAction("UpgradeRight");
         pauseBtn = InputSystem.actions.FindAction("Pause");
-
-        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -83,7 +80,7 @@ public class GameManager : MonoBehaviour
             hudManager.setHPTragedy(player.tragedyMaskData.health,player.tragedyMaskData.maxHealth);
             lastComedyHP = player.tragedyMaskData.health;
         }
-        
+
         if (player != null && mode != player.GetMode())
         {
             SwitchMode(player.GetMode());
@@ -182,13 +179,6 @@ public class GameManager : MonoBehaviour
     {
         player.addStatUpgrade(upg3);
         ResumeGame();
-    }
-
-    public void StartGame()
-    {
-        StartScreen.SetActive(false);
-        Time.timeScale = 1;
-        HUD.SetActive(true);
     }
 
     public void ResumeGame()
