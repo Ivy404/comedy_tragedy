@@ -1365,7 +1365,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost I
     maskName: comedy
-    maxHealth: 5
+    maxHealth: 0.05
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1375,7 +1375,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost I
     maskName: tragedy
-    maxHealth: 5
+    maxHealth: 0.05
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1385,7 +1385,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost II
     maskName: comedy
-    maxHealth: 10
+    maxHealth: 0.1
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1395,7 +1395,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost II
     maskName: tragedy
-    maxHealth: 10
+    maxHealth: 0.1
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1405,7 +1405,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost III
     maskName: comedy
-    maxHealth: 20
+    maxHealth: 0.2
     speed: 0
     attackSpeed: 0
     range: 0
@@ -1415,7 +1415,7 @@ MonoBehaviour:
     special: 
   - upgradeName: Health Boost III
     maskName: tragedy
-    maxHealth: 20
+    maxHealth: 0.2
     speed: 0
     attackSpeed: 0
     range: 0
