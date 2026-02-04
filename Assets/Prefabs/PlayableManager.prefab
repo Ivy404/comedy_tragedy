@@ -1110,6 +1110,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 873784888789123749}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: textParticle
+      value: 
+      objectReference: {fileID: 2244811128254149591, guid: 46c40c97e3ae2374ca0a5b29122d0d10, type: 3}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: enemiesObject
       value: 
       objectReference: {fileID: 726932366227461655}
@@ -1160,6 +1164,30 @@ PrefabInstance:
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: statUpgrades.Array.data[1].attackSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onModeSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HUDManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

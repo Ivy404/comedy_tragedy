@@ -85,7 +85,6 @@ public class UpgradeSystem : MonoBehaviour
             gameManager.setLevel((int)level+1);
             gameManager.upgradeUION();
         }
-        Debug.Log((totalXP-lastLevelUpXp)/(nextLevelXP-lastLevelUpXp));
         gameManager.setXPProgress((float)((totalXP-lastLevelUpXp)/(nextLevelXP-lastLevelUpXp)));
     }
 

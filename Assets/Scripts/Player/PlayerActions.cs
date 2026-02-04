@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Unity.Mathematics;
 
 [Serializable]
 public struct maskData {
@@ -65,6 +66,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] public VisualEffect DecrescendoVFX;
     [SerializeField] public GameObject ComedyAsset;
     [SerializeField] public GameObject TragedyAsset;
+    [SerializeField] public GameObject textParticle;
 
     // character stats
     [SerializeField] public maskData comedyMaskData;
@@ -259,6 +261,11 @@ public class PlayerActions : MonoBehaviour
                 characterRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
             }));
             currentData.health -= damage;
+            lastDmgTaken = 0;
+
+            TextParticle tParticle = Instantiate(textParticle, transform.position+Vector3.up*1.5f, Quaternion.identity).GetComponent<TextParticle>();
+            tParticle.SetText(string.Format("-{0:0.}", damage));
+            tParticle.SetColor(Color.red);
 
             if (currentData.health <= 0)
             {
