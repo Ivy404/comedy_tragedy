@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5311842922055808932, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3d53667da532a44883779d10d4743e6, type: 2}
     - target: {fileID: 8182489779939394196, guid: d971756cd0df242a19274a996d12ceaf, type: 3}
       propertyPath: m_Name
       value: wall 1 1
@@ -381,6 +385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5327007733775319369}
     m_Modifications:
+    - target: {fileID: 860284009134189383, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 47529778f33ea7e4aa4a48a1a0056d4f, type: 2}
     - target: {fileID: 2050343417931750931, guid: 7a32580ddcd314e1c86dbf58372ead0b, type: 3}
       propertyPath: m_Name
       value: stone panel 1 1

@@ -46,7 +46,7 @@ Material:
     - _Enemy1: 1
     - _FresnelBrightness: 26.55
     - _FresnelPower: 1.7
-    - _IsLight: 0
+    - _IsLight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Transparency: 1
