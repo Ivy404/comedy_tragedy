@@ -191,6 +191,13 @@ public class PlayerActions : MonoBehaviour
         lastDmgTaken += Time.deltaTime;
         if (currentData.maskName == "comedy") comedyMaskData.health = currentData.health;
         else if (currentData.maskName == "tragedy") tragedyMaskData.health = currentData.health;
+
+        // debug section
+
+        if (InputSystem.actions.FindAction("DebugUpgrade").WasPerformedThisFrame())
+        {
+            PlayerAnimator.SetTrigger("attackBow");
+        }
     }
 
 
@@ -355,10 +362,14 @@ public class PlayerActions : MonoBehaviour
     
     public void Move(Vector2 direction)
     {   
+        Vector3 movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
+        Vector3 relativeMove = transform.InverseTransformDirection(movedir).normalized;
+        PlayerAnimator.SetFloat("MoveX", relativeMove.x, 0.1f, Time.deltaTime);
+        PlayerAnimator.SetFloat("MoveZ", relativeMove.z, 0.1f, Time.deltaTime);
         if (direction != Vector2.zero)
         {
-            PlayerAnimator.SetBool("walk", true);
-            Vector3 movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
+            //PlayerAnimator.SetBool("walk", true);
+            movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
 
             pRigid.linearVelocity = new Vector3(movedir.x, pRigid.linearVelocity.y, movedir.z );
 
@@ -383,7 +394,7 @@ public class PlayerActions : MonoBehaviour
                 
                 //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
             }
-            PlayerAnimator.SetBool("walk", false);
+            //PlayerAnimator.SetBool("walk", false);
         }
     }
 
