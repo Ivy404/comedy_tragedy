@@ -33,6 +33,8 @@ public class EnemyController : MonoBehaviour
     private float currentHealth;
     private bool attacking = false;
 
+    private float lastHit;
+
     public bool Attacking
     {
         get { return attacking; }
@@ -83,6 +85,7 @@ public class EnemyController : MonoBehaviour
             if (playerRef.GetMode() == "tragedy") Shield.SetActive(true);
             else Shield.SetActive(false);
         }
+        lastHit = 0;
         // Multiply base stats by the current wave index
         //int waveLevel = FindFirstObjectByType<WaveManager>().currentWaveIndex;
         //float difficultyMultiplier = 1f + (waveLevel * 0.2f); // +20% per wave
@@ -187,6 +190,8 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float amount, Vector3 attackerPosition)
     {
+        if (lastHit == playerRef.lastAttackPerformedTime) return;
+        lastHit = playerRef.lastAttackPerformedTime;
         // 1. Calculate the direction from the enemy to the attacker
         Vector3 directionToAttacker = (new Vector3(playerRef.transform.position.x,0,playerRef.transform.position.z) - new Vector3(transform.position.x,0,transform.position.z)).normalized;
 
@@ -207,6 +212,7 @@ public class EnemyController : MonoBehaviour
 
         // ------------------------
         // Enemy will take damage
+
         if (!healthBar.gameObject.activeInHierarchy)
         {
             healthBar.gameObject.SetActive(true);

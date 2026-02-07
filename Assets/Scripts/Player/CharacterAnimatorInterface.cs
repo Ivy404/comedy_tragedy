@@ -6,6 +6,10 @@ public class CharacterAnimatorInterface : MonoBehaviour
 
     public void dealDmg()
     {
-        player.performDmg();
+        player.swordPerformDmg();
+    }
+    public void stopDmg()
+    {
+        player.swordStopDmg();
     }
 }

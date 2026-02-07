@@ -89,9 +89,7 @@ public class PlayerActions : MonoBehaviour
     //attack control
     private bool attacking;
     private float attackTime;
-    private float colliderTime;
 
-    private bool colliderDmg;
     private float lifetime;
     private GameObject closestEnemy;
     [SerializeField] public GameObject enemiesObject;
@@ -110,6 +108,7 @@ public class PlayerActions : MonoBehaviour
 
     public UnityEvent onModeSwitch;
 
+    public float lastAttackPerformedTime { get; set; }
     // upgradeSystem
     [SerializeField] List<statUpgrade> statUpgrades;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -126,10 +125,9 @@ public class PlayerActions : MonoBehaviour
         characterRenderer.material.SetFloat("_IsLight", 1.0f);
         SwordVFX.SetBool("IsLight", true);
         PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-        colliderDmg = false;
-        ((CapsuleCollider) swordCollider).height = currentData.range;
+        //((CapsuleCollider) swordCollider).height = currentData.range;
         lifetime = SwordVFX.GetFloat("Light_Lifetime");
-        SwordVFX.SetFloat("RotationAngle", currentData.arc);
+        //SwordVFX.SetFloat("RotationAngle", currentData.arc);
         lastSwitch = modeSwitchCD;
         lastDmgTaken = iFrames;
         baseComedy = comedyMaskData;
@@ -141,6 +139,7 @@ public class PlayerActions : MonoBehaviour
         ComedyAsset.SetActive(true);
         TragedyAsset.SetActive(false);
         pRigid = this.gameObject.GetComponent<Rigidbody>();
+        lastAttackPerformedTime = 0;
         
     }
 
@@ -149,28 +148,14 @@ public class PlayerActions : MonoBehaviour
     {
         lastSwitch += Time.deltaTime;
         attackTime += Time.deltaTime;
-        if (attacking)
+        /**if (attacking)
         {
             if (attackTime > 1/currentData.attackSpeed)
             {
                 attacking = false;
                 SwordVFX.enabled = false;
             }
-        }
-
-        if (colliderDmg)
-        {
-            colliderTime+=Time.deltaTime;
-            Vector3 newAngles = new Vector3(0,Mathf.Lerp(-currentData.arc*1.2f/2, currentData.arc*1.2f/2, colliderTime/lifetime),0);
-            swordPivot.localEulerAngles = newAngles;
-            if (colliderTime > lifetime)
-            {
-                colliderDmg = false;
-                swordCollider.enabled = false;
-                swordPivot.localEulerAngles = new Vector3(0,-currentData.arc/2,0);
-            }
-        }
-
+        }**/
 
         regenHP();
         if (transitionBuildUp < 1.0)
@@ -314,7 +299,7 @@ public class PlayerActions : MonoBehaviour
 
                 characterRenderer.material.SetFloat("_IsLight", 0.0f);
                 PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-                ((CapsuleCollider) swordCollider).height = currentData.range;
+                //((CapsuleCollider) swordCollider).height = currentData.range;
                 lifetime = SwordVFX.GetFloat("Dark_Lifetime");
                 DecrescendoVFX.enabled = true;
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
@@ -340,7 +325,7 @@ public class PlayerActions : MonoBehaviour
                 transitionBuildUp = 0.0f;
                 characterRenderer.material.SetFloat("_IsLight", 1.0f);
                 PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-                ((CapsuleCollider) swordCollider).height = currentData.range;
+                //((CapsuleCollider) swordCollider).height = currentData.range;
                 lifetime = SwordVFX.GetFloat("Light_Lifetime");
                 SwordVFX.SetFloat("RotationAngle", currentData.arc);
                 StartCoroutine(LerpOverTime(0.5f, t =>
@@ -374,7 +359,7 @@ public class PlayerActions : MonoBehaviour
             pRigid.linearVelocity = new Vector3(movedir.x, pRigid.linearVelocity.y, movedir.z );
 
             //PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
-            if (!colliderDmg && !attacking)
+            if (!attacking)
             if (closestEnemy == null)
                 pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime));
                 //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
@@ -404,6 +389,7 @@ public class PlayerActions : MonoBehaviour
             PlayerAnimator.SetTrigger("attack");
             attackTime = 0;
             attacking = true;
+            lastAttackPerformedTime = Time.time;
 
         }
     }
@@ -437,11 +423,10 @@ public class PlayerActions : MonoBehaviour
             AudioManager.audioManagerRef.PlaySound("crescendoReleaseTragedy");
     }
     
-    public void performDmg()
+    public void swordPerformDmg()
     {
         swordCollider.enabled = true;
-        colliderDmg = true;
-        colliderTime = 0;
+        // TODO Change VFX
         SwordVFX.enabled = true;
         SwordVFX.Play();
         // Play sound
@@ -449,6 +434,13 @@ public class PlayerActions : MonoBehaviour
             AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackComedy1");
         else
             AudioManager.audioManagerRef.PlaySoundWithRandomPitch("attackTragedy1");
+    }
+
+    public void swordStopDmg()
+    {
+        attacking = false;
+        swordCollider.enabled = false;
+        SwordVFX.enabled = false;
     }
 
     public float getDamageOutput()
