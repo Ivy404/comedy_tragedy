@@ -1142,10 +1142,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
-      propertyPath: tragedyMaskData.attackRecovery
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: statUpgrades.Array.data[1].range
       value: 1
       objectReference: {fileID: 0}
@@ -1172,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
+      propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4970936661615048802, guid: a8ff688901478e047b4e75ec5bfe6770, type: 3}
       propertyPath: onModeSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1237,33 +1237,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7272970ad147f524bb419879fc5a485d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeSystem
-  commonWeight: 5
+  commonWeight: 5.5
   uncommonWeight: 3
-  rareWeight: 1
+  rareWeight: 1.5
   gameManager: {fileID: 5920706994391328124}
   playerActions: {fileID: 1992045961095825914}
   statUpgrades:
-  - upgradeName: Damage Boost I
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost I
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0.1
-    rarity: common
-    special: 
-  - upgradeName: Damage Boost II
+  - upgradeName: Sharpen (+Damage)
     maskName: comedy
     maxHealth: 0
     speed: 0
@@ -1271,9 +1251,9 @@ MonoBehaviour:
     range: 0
     arc: 0
     damage: 1
-    rarity: uncommon
+    rarity: common
     special: 
-  - upgradeName: Damage Boost II
+  - upgradeName: Sharpen (+Damage)
     maskName: tragedy
     maxHealth: 0
     speed: 0
@@ -1281,30 +1261,90 @@ MonoBehaviour:
     range: 0
     arc: 0
     damage: 1
-    rarity: uncommon
+    rarity: common
     special: 
-  - upgradeName: Damage Boost III
+  - upgradeName: 'Fortify [+Max HP]'
+    maskName: comedy
+    maxHealth: 12
+    speed: 0
+    attackSpeed: 0
+    range: 0
+    arc: 0
+    damage: 0
+    rarity: common
+    special: 
+  - upgradeName: 'Fortify [+Max HP]'
+    maskName: tragedy
+    maxHealth: 12
+    speed: 0
+    attackSpeed: 0
+    range: 0
+    arc: 0
+    damage: 0
+    rarity: common
+    special: 
+  - upgradeName: 'Swift Feet [+Move Speed]'
+    maskName: comedy
+    maxHealth: 0
+    speed: 0.15
+    attackSpeed: 0
+    range: 0
+    arc: 0
+    damage: 0
+    rarity: rare
+    special: 
+  - upgradeName: 'Swift Feet [+Move Speed]'
+    maskName: tragedy
+    maxHealth: 0
+    speed: 0.15
+    attackSpeed: 0
+    range: 0
+    arc: 0
+    damage: 0
+    rarity: rare
+    special: 
+  - upgradeName: Extend (+Sword Range)
+    maskName: Tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: 0
+    range: 0.3
+    arc: 0
+    damage: 0
+    rarity: common
+    special: 
+  - upgradeName: Extend (+Sword Range)
+    maskName: Comedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: 0
+    range: 0.3
+    arc: 0
+    damage: 0
+    rarity: common
+    special: 
+  - upgradeName: 'Widen [+Sword Arc]'
     maskName: comedy
     maxHealth: 0
     speed: 0
     attackSpeed: 0
     range: 0
-    arc: 0
-    damage: 2
-    rarity: rare
+    arc: 12
+    damage: 0
+    rarity: common
     special: 
-  - upgradeName: Damage Boost III
+  - upgradeName: 'Widen [+Sword Arc]'
     maskName: tragedy
     maxHealth: 0
     speed: 0
     attackSpeed: 0
     range: 0
-    arc: 0
-    damage: 2
-    rarity: rare
+    arc: 12
+    damage: 0
+    rarity: common
     special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: comedy
+  - upgradeName: Accelerate (+Attack speed)
+    maskName: tragedy
     maxHealth: 0
     speed: 0
     attackSpeed: 0.1
@@ -1313,8 +1353,8 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
-  - upgradeName: Attack Speed Boost I
-    maskName: tragedy
+  - upgradeName: Accelerate (+Attack speed)
+    maskName: comedy
     maxHealth: 0
     speed: 0
     attackSpeed: 0.1
@@ -1322,126 +1362,6 @@ MonoBehaviour:
     arc: 0
     damage: 0
     rarity: common
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost II
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: comedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Attack Speed Boost III
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0.5
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost I
-    maskName: comedy
-    maxHealth: 0.05
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost I
-    maskName: tragedy
-    maxHealth: 0.05
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: common
-    special: 
-  - upgradeName: Health Boost II
-    maskName: comedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost II
-    maskName: tragedy
-    maxHealth: 0.1
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: uncommon
-    special: 
-  - upgradeName: Health Boost III
-    maskName: comedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Health Boost III
-    maskName: tragedy
-    maxHealth: 0.2
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: comedy
-    maxHealth: 0
-    speed: 0.2
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
-    special: 
-  - upgradeName: Movement Speed Boost
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0.2
-    attackSpeed: 0
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: rare
     special: 
   - upgradeName: Longer Weapon Less Damage
     maskName: tragedy
@@ -1453,35 +1373,45 @@ MonoBehaviour:
     damage: -0.2
     rarity: Rare
     special: 
-  - upgradeName: Slow But Strong
-    maskName: tragedy
-    maxHealth: 0
-    speed: -0.2
+  - upgradeName: Glass Cannon (+Damage, -HP)
+    maskName: comedy
+    maxHealth: -15
+    speed: 0
     attackSpeed: 0
     range: 0
     arc: 0
     damage: 3
     rarity: Rare
     special: 
-  - upgradeName: Fast But Slow Attacks
-    maskName: comedy
-    maxHealth: 0
-    speed: -0.2
-    attackSpeed: -0.2
-    range: 0
-    arc: 0
-    damage: 0
-    rarity: Rare
-    special: 
-  - upgradeName: Longer Weapon
-    maskName: Tragedy
-    maxHealth: 0
+  - upgradeName: Glass Cannon (+Damage, -HP)
+    maskName: tragedy
+    maxHealth: -15
     speed: 0
     attackSpeed: 0
     range: 0
-    arc: 20
+    arc: 0
+    damage: 3
+    rarity: Rare
+    special: 
+  - upgradeName: Giant's Reach (+Arc, +Range, -Attack Speed)
+    maskName: tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: -0.12
+    range: 0.5
+    arc: 25
     damage: 0
-    rarity: uncommon
+    rarity: Rare
+    special: 
+  - upgradeName: Giant's Reach (+Arc, +Range, -Attack Speed)
+    maskName: tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: -0.12
+    range: 0.5
+    arc: 25
+    damage: 0
+    rarity: Rare
     special: 
 --- !u!54 &8767517223250827062
 Rigidbody:

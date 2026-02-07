@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemySmallData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: SmallEnemy
-  health: 10
+  health: 5
   damage: 5
-  speed: 2
+  speed: 2.5
   rotationSpeed: 10
-  mass: 15
+  mass: 5
   stoppingDistance: 0.75
   attackCooldown: 0.75
-  xp: 100
+  xp: 15
   visualPrefab: {fileID: 4319350125171999890, guid: 329c517f0df89457891ed77139a8ad5f, type: 3}

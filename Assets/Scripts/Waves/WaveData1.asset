@@ -16,6 +16,10 @@ MonoBehaviour:
   spawnersInWave:
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  totalToSpawn: 8
-  spawnRate: 2
-  nextWaveDelay: 12
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  totalToSpawn: 6
+  spawnRate: 0.1
+  nextWaveDelay: 6

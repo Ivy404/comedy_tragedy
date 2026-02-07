@@ -494,6 +494,266 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].speed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[27].speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].rarity
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].rarity
+      value: uncommon
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].rarity
+      value: uncommon
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].rarity
+      value: rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].rarity
+      value: rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].rarity
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].rarity
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].rarity
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[27].rarity
+      value: common
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].maskName
+      value: tragedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[27].maskName
+      value: tragedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].maxHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].maxHealth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].maxHealth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].maxHealth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].maxHealth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[19].upgradeName
+      value: Attack Speed Boost III
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[20].upgradeName
+      value: Health Boost II
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[21].upgradeName
+      value: Health Boost II
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[22].upgradeName
+      value: Health Boost III
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[23].upgradeName
+      value: Health Boost III
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[24].upgradeName
+      value: Fast But Slow Attacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[25].upgradeName
+      value: Fast But Slow Attacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].attackSpeed
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[26].upgradeName
+      value: Fast But Slow Attacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[27].attackSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[27].upgradeName
+      value: Accelerate (+Attack speed)
+      objectReference: {fileID: 0}
     - target: {fileID: 434702627089381887, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4214386e-10

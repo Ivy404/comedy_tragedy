@@ -137,26 +137,26 @@ MonoBehaviour:
   textParticle: {fileID: 0}
   comedyMaskData:
     maskName: comedy
-    maxHealth: 100
-    health: 100
-    hpRegen: 0.5
-    speed: 2.6
-    attackSpeed: 2
+    maxHealth: 80
+    health: 80
+    hpRegen: 1
+    speed: 2.8
+    attackSpeed: 2.2
     attackRecovery: 0
     range: 2
-    arc: 90
-    damage: 5
+    arc: 75
+    damage: 4
   tragedyMaskData:
     maskName: tragedy
-    maxHealth: 100
-    health: 100
-    hpRegen: 0.5
-    speed: 2
-    attackSpeed: 1.4
-    attackRecovery: 0
-    range: 3
-    arc: 180
-    damage: 5
+    maxHealth: 120
+    health: 120
+    hpRegen: 1
+    speed: 1.8
+    attackSpeed: 1
+    attackRecovery: 0.35
+    range: 3.5
+    arc: 210
+    damage: 8
   crescendoBuildupRate: 0.01
   swordCollider: {fileID: 1421571550301723495}
   swordPivot: {fileID: 6354950797688921036}
@@ -183,7 +183,19 @@ MonoBehaviour:
   CharacterMaterial: {fileID: 3317380041188264505}
   onModeSwitch:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: onModeSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   statUpgrades:
   - upgradeName: 
     maskName: comedy

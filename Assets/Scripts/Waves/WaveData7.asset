@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   waveName: Wave7
   spawnersInWave:
-  - {fileID: 11400000, guid: 9625f4f6a690d48e2adf1f03c5568933, type: 2}
-  - {fileID: 11400000, guid: 9625f4f6a690d48e2adf1f03c5568933, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
+  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
   - {fileID: 11400000, guid: 9625f4f6a690d48e2adf1f03c5568933, type: 2}
   - {fileID: 11400000, guid: 47f87dd533aa14f778bc4fc7451ddf00, type: 2}
-  - {fileID: 11400000, guid: 47f87dd533aa14f778bc4fc7451ddf00, type: 2}
-  - {fileID: 11400000, guid: 47f87dd533aa14f778bc4fc7451ddf00, type: 2}
-  totalToSpawn: 20
-  spawnRate: 2
-  nextWaveDelay: 14
+  totalToSpawn: 16
+  spawnRate: 2.5
+  nextWaveDelay: 5

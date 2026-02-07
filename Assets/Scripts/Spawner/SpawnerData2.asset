@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerData
   spawnerName: Spawner2
   enemiesInWave:
-  - {fileID: 11400000, guid: db7d549ff51f04cffb2297c92f88cf1b, type: 2}
+  - {fileID: 11400000, guid: 53e8766bb065b452fa1806c691813a4a, type: 2}
   enemyWeights: 64000000

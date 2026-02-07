@@ -16,14 +16,9 @@ MonoBehaviour:
   spawnersInWave:
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
   - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 462973e7f03db4f76a56647ac11b9eeb, type: 2}
-  - {fileID: 11400000, guid: 7ee1f71cf6c7a4a8e9a102bf3e796e0b, type: 2}
+  - {fileID: 11400000, guid: f00c222cfe0664bf6949696ed3574035, type: 2}
+  - {fileID: 11400000, guid: f00c222cfe0664bf6949696ed3574035, type: 2}
+  - {fileID: 11400000, guid: f00c222cfe0664bf6949696ed3574035, type: 2}
   totalToSpawn: 20
-  spawnRate: 4
-  nextWaveDelay: 12
+  spawnRate: 2.5
+  nextWaveDelay: 5

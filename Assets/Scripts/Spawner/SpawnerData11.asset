@@ -16,4 +16,4 @@ MonoBehaviour:
   enemiesInWave:
   - {fileID: 11400000, guid: 45bd392e1374b445d9265762f77533c8, type: 2}
   - {fileID: 11400000, guid: ea4324a28bcf94f0fa0cede1d5a5c3af, type: 2}
-  enemyWeights: 3200000032000000
+  enemyWeights: 280000003c000000
