@@ -38,6 +38,7 @@ public struct statUpgrade {
     public float damage;
     public string rarity;
     public string special;
+    public string additionType; // additive, multiplicative, basepercent
 
     public statUpgrade(string upgradeName, string mask)
     {
@@ -51,6 +52,7 @@ public struct statUpgrade {
         this.damage=0;
         this.rarity="";
         this.special="";
+        this.additionType="basepercent";
     }
    
 }
@@ -89,8 +91,6 @@ public class PlayerActions : MonoBehaviour
     //attack control
     private bool attacking;
     private float attackTime;
-
-    private float lifetime;
     private GameObject closestEnemy;
     [SerializeField] public GameObject enemiesObject;
     
@@ -126,7 +126,6 @@ public class PlayerActions : MonoBehaviour
         SwordVFX.SetBool("IsLight", true);
         PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
         //((CapsuleCollider) swordCollider).height = currentData.range;
-        lifetime = SwordVFX.GetFloat("Light_Lifetime");
         //SwordVFX.SetFloat("RotationAngle", currentData.arc);
         lastSwitch = modeSwitchCD;
         lastDmgTaken = iFrames;
@@ -138,7 +137,7 @@ public class PlayerActions : MonoBehaviour
 
         ComedyAsset.SetActive(true);
         TragedyAsset.SetActive(false);
-        pRigid = this.gameObject.GetComponent<Rigidbody>();
+        pRigid = gameObject.GetComponent<Rigidbody>();
         lastAttackPerformedTime = 0;
         
     }
@@ -148,14 +147,6 @@ public class PlayerActions : MonoBehaviour
     {
         lastSwitch += Time.deltaTime;
         attackTime += Time.deltaTime;
-        /**if (attacking)
-        {
-            if (attackTime > 1/currentData.attackSpeed)
-            {
-                attacking = false;
-                SwordVFX.enabled = false;
-            }
-        }**/
 
         regenHP();
         if (transitionBuildUp < 1.0)
@@ -178,83 +169,118 @@ public class PlayerActions : MonoBehaviour
         else if (currentData.maskName == "tragedy") tragedyMaskData.health = currentData.health;
 
         // debug section
-
         if (InputSystem.actions.FindAction("DebugUpgrade").WasPerformedThisFrame())
         {
             PlayerAnimator.SetTrigger("attackBow");
         }
     }
 
-
-    public void debugDisplayCurrentData()
-    {
-        //Debug.Log("maxhealth " + currentData.maxHealth.ToString());
-        //Debug.Log("speed " + currentData.speed.ToString());
-        //Debug.Log("attackSpeed " + currentData.attackSpeed.ToString());
-        //Debug.Log("range " + currentData.range.ToString());
-        //Debug.Log("arc " + currentData.arc.ToString());
-        //Debug.Log("damage " + currentData.damage.ToString());
-    }
-
     public void addStatUpgrade(statUpgrade upg)
     {
         statUpgrades.Add(upg);
+
+        // HP before applying the upgrades
+        float prevHPcomedy = comedyMaskData.maxHealth;
+        float prevHPtragedy = tragedyMaskData.maxHealth;
         applyUpgrades();
+
+        // special case for HP upgrades
+        if (upg.maxHealth != 0){
+            // if it was comedy
+            if (upg.maskName == "comedy")
+                if (comedyMaskData.maxHealth - prevHPcomedy > 0.0f) {
+                    comedyMaskData.health += comedyMaskData.maxHealth - prevHPcomedy;
+                } else if (comedyMaskData.maxHealth - prevHPcomedy < 0.0f)
+                {
+                    comedyMaskData.health = Math.Min(comedyMaskData.health, comedyMaskData.maxHealth);
+                }
+            // if it was tragedy
+            else if (upg.maskName == "tragedy")
+                if (tragedyMaskData.maxHealth - prevHPtragedy > 0.0f) {
+                    tragedyMaskData.health += tragedyMaskData.maxHealth - prevHPtragedy;
+                } else if (tragedyMaskData.maxHealth - prevHPtragedy < 0.0f)
+                {
+                    tragedyMaskData.health = Math.Min(tragedyMaskData.health, tragedyMaskData.maxHealth);
+                }
+        }
+
+        // set everything back
+        if (currentData.maskName == "comedy") currentData = comedyMaskData;
+        else if (currentData.maskName == "tragedy") currentData = tragedyMaskData;
+    }
+
+    private float _additiveStat(float baseD, float currentD, float addD)
+    {
+        return currentD+addD;
+    }
+    private float _multiplicativeStat(float baseD, float currentD, float multD)
+    {
+        return currentD*multD;
+    }
+    private float _basepercentStat(float baseD, float currentD, float dPerc)
+    {
+        return currentD+baseD*dPerc;
+    }
+
+    private void _applySingleUpgrade(ref maskData data, ref maskData baseData, statUpgrade upg)
+    {
+        Func<float, float, float, float> upgradeAdd = _basepercentStat; // defaults to base percent
+
+        if (upg.additionType == "additive") upgradeAdd = _additiveStat;
+        else if (upg.additionType == "multiplicative") upgradeAdd = _multiplicativeStat;
+        else if (upg.additionType == "basepercent") upgradeAdd = _basepercentStat;
+
+        data.maxHealth = upgradeAdd(baseData.maxHealth, data.maxHealth, upg.maxHealth);
+        data.speed  = upgradeAdd(baseData.speed, data.speed, upg.speed);
+        data.attackSpeed = upgradeAdd(baseData.attackSpeed, data.attackSpeed, upg.attackSpeed);
+        data.range = upgradeAdd(baseData.range, data.range, upg.range);
+        data.arc = upgradeAdd(baseData.arc, data.arc, upg.arc);
+        data.damage = upgradeAdd(baseData.damage, data.damage, upg.damage);
+    }
+
+    private void _initMaskData(ref maskData data)
+    {
+        data.maxHealth = 0;
+        data.speed = 0;
+        data.attackSpeed = 0;
+        data.range = 0;
+        data.arc = 0;
+        data.damage = 0;
     }
     public void applyUpgrades()
     {
         //initialize
-        tragedyMaskData.maxHealth = 0;
-        tragedyMaskData.speed = 0;
-        tragedyMaskData.attackSpeed = 0;
-        tragedyMaskData.range = 0;
-        tragedyMaskData.arc = 0;
-        tragedyMaskData.damage = 0;
-        //initialize
-        comedyMaskData.maxHealth = 0;
-        comedyMaskData.speed = 0;
-        comedyMaskData.attackSpeed = 0;
-        comedyMaskData.range = 0;
-        comedyMaskData.arc = 0;
-        comedyMaskData.damage = 0;
+        _initMaskData(ref tragedyMaskData);
+        _initMaskData(ref comedyMaskData);
+
         foreach (statUpgrade upg in statUpgrades )
         {
             
             //Debug.Log("applying upgrade..." + upg.maskName);
             if(upg.maskName == "tragedy"){
-                tragedyMaskData.maxHealth += baseTragedy.maxHealth*upg.maxHealth;
-                tragedyMaskData.speed += baseTragedy.speed*upg.speed;
-                tragedyMaskData.attackSpeed += baseTragedy.attackSpeed*upg.attackSpeed;
-                tragedyMaskData.range += baseTragedy.range*upg.range;
-                tragedyMaskData.arc += baseTragedy.arc*upg.arc;
-                tragedyMaskData.damage += baseTragedy.damage*upg.damage;
+                _applySingleUpgrade(ref tragedyMaskData, ref baseTragedy, upg);
             } else if (upg.maskName == "comedy")
             {
-                comedyMaskData.maxHealth += baseComedy.maxHealth*upg.maxHealth;
-                comedyMaskData.speed += baseComedy.speed*upg.speed;
-                comedyMaskData.attackSpeed += baseComedy.attackSpeed*upg.attackSpeed;
-                comedyMaskData.range += baseComedy.range*upg.range;
-                comedyMaskData.arc += baseComedy.arc*upg.arc;
-                comedyMaskData.damage += baseComedy.damage*upg.damage;
-                
+                _applySingleUpgrade(ref comedyMaskData, ref baseComedy, upg);
             }
         }
-        if (currentData.maskName == "comedy") currentData = comedyMaskData;
-        else if (currentData.maskName == "tragedy") currentData = tragedyMaskData;
+
     }
 
     public void takeDamage(float damage)
     {
         if (lastDmgTaken > iFrames){
-            // play take damage animation    
-            StartCoroutine(LerpOverTime(iFrames, t =>
+            currentData.health -= damage;
+            lastDmgTaken = 0;
+
+            // Play take damage animation    
+            StartCoroutine(LerpOverTime.lerpOverTime(iFrames, t =>
             {
                 float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
                 characterRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
             }));
-            currentData.health -= damage;
-            lastDmgTaken = 0;
 
+            // DMG Text
             TextParticle tParticle = Instantiate(textParticle, transform.position+Vector3.up*1.5f, Quaternion.identity).GetComponent<TextParticle>();
             tParticle.SetText(string.Format("-{0:0.}", damage));
             tParticle.SetColor(Color.red);
@@ -274,67 +300,57 @@ public class PlayerActions : MonoBehaviour
     public void regenHP()
     {
         if (currentData.maskName == "comedy" && tragedyMaskData.health < tragedyMaskData.maxHealth)
-        {
             tragedyMaskData.health = Math.Min(tragedyMaskData.health + tragedyMaskData.hpRegen * Time.deltaTime, tragedyMaskData.maxHealth);
-        } else if (currentData.maskName == "tragedy"  && comedyMaskData.health < comedyMaskData.maxHealth)
-        {
+        else if (currentData.maskName == "tragedy"  && comedyMaskData.health < comedyMaskData.maxHealth)
             comedyMaskData.health = Math.Min(comedyMaskData.health + comedyMaskData.hpRegen * Time.deltaTime, comedyMaskData.maxHealth);
-        }
     }
 
     public void modeSwitch()
     {
+        bool isComedy = currentData.maskName == "comedy";
+        VisualEffect transitionVFX = isComedy ? DecrescendoVFX : CrescendoVFX;
         if (!attacking && lastSwitch > modeSwitchCD){
-            if ( currentData.maskName == "comedy")
+            // data switch
+            if (isComedy)
             {
-                AuraVFX.SetBool("IsComedy", false);
-                SwordVFX.SetBool("IsLight", false);
-                DecrescendoVFX.SetFloat("Scale",transitionBuildUp*10);
-                DecrescendoVFX.Play();
-                StartCoroutine(crescendo(transitionBuildUp, transform.position));
-
                 comedyMaskData = currentData;
                 currentData = tragedyMaskData;
-                transitionBuildUp = 0.0f;
 
-                characterRenderer.material.SetFloat("_IsLight", 0.0f);
-                PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-                //((CapsuleCollider) swordCollider).height = currentData.range;
-                lifetime = SwordVFX.GetFloat("Dark_Lifetime");
-                DecrescendoVFX.enabled = true;
-                SwordVFX.SetFloat("RotationAngle", currentData.arc);
-
-                StartCoroutine(LerpOverTime(0.5f, t =>
+                StartCoroutine(LerpOverTime.lerpOverTime(0.5f, t =>
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempComedy, tempTragedy, t);
                 }));
-                ComedyAsset.SetActive(false);
-                TragedyAsset.SetActive(true);
             } else
             {
-                AuraVFX.SetBool("IsComedy", true);
-                SwordVFX.SetBool("IsLight", true);
-                CrescendoVFX.enabled = true;
-                CrescendoVFX.SetFloat("Scale",transitionBuildUp*10f);
-                CrescendoVFX.Play();
-                
-                StartCoroutine(crescendo(transitionBuildUp, transform.position));
-
                 tragedyMaskData = currentData;
                 currentData = comedyMaskData;
-                transitionBuildUp = 0.0f;
-                characterRenderer.material.SetFloat("_IsLight", 1.0f);
-                PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed);
-                //((CapsuleCollider) swordCollider).height = currentData.range;
-                lifetime = SwordVFX.GetFloat("Light_Lifetime");
-                SwordVFX.SetFloat("RotationAngle", currentData.arc);
-                StartCoroutine(LerpOverTime(0.5f, t =>
+
+                StartCoroutine(LerpOverTime.lerpOverTime(0.5f, t =>
                 {
                     AmbientLight.colorTemperature = Mathf.Lerp(tempTragedy, tempComedy, t);
                 }));
-                ComedyAsset.SetActive(true);
-                TragedyAsset.SetActive(false);
             }
+            // Transitions VFX
+            AuraVFX.SetBool("IsComedy", !isComedy);
+            SwordVFX.SetBool("IsLight", !isComedy);
+            transitionVFX.enabled = true;
+            transitionVFX.SetFloat("Scale",transitionBuildUp*10f);
+            transitionVFX.Play();
+
+            // DMG
+            StartCoroutine(crescendoAOE(transitionBuildUp, transform.position));
+            PlayerAnimator.SetFloat("speedMultiplier", currentData.attackSpeed); // attackspeed animation
+            // SwordVFX.SetFloat("RotationAngle", currentData.arc); //arc?
+
+
+            // used asset
+            ComedyAsset.SetActive(!isComedy);
+            TragedyAsset.SetActive(isComedy);
+            characterRenderer.material.SetFloat("_IsLight", isComedy ? 0.0f : 1.0f);
+
+            // Reset Variables
+            transitionBuildUp = 0.0f;
+           
             lastSwitch = 0;
             onModeSwitch.Invoke();
         }
@@ -349,38 +365,21 @@ public class PlayerActions : MonoBehaviour
     {   
         Vector3 movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
         Vector3 relativeMove = transform.InverseTransformDirection(movedir).normalized;
+        // Set animator to proper vector direction
         PlayerAnimator.SetFloat("MoveX", relativeMove.x, 0.1f, Time.deltaTime);
         PlayerAnimator.SetFloat("MoveZ", relativeMove.z, 0.1f, Time.deltaTime);
-        if (direction != Vector2.zero)
-        {
-            //PlayerAnimator.SetBool("walk", true);
-            movedir = new Vector3(direction.x, 0, direction.y)* currentData.speed;
 
-            pRigid.linearVelocity = new Vector3(movedir.x, pRigid.linearVelocity.y, movedir.z );
+        // Move RigidBody
+        pRigid.linearVelocity = new Vector3(movedir.x, pRigid.linearVelocity.y, movedir.z );
 
-            //PlayerTransform.position += movedir * currentData.speed * Time.deltaTime;
-            if (!attacking)
-            if (closestEnemy == null)
+        if (!attacking)
+            if (closestEnemy == null && movedir != Vector3.zero)
                 pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime));
-                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(movedir), rotationSpeed*Time.deltaTime);
-            else {
+            else if (closestEnemy != null) {
                 Vector3 enemyDir = closestEnemy.transform.position - transform.position;
                 enemyDir.y = 0;
                 pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime));
-                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
             }
-        } else
-        {
-            pRigid.linearVelocity = Vector3.zero;  
-            if (closestEnemy != null){
-                Vector3 enemyDir = closestEnemy.transform.position - transform.position;
-                enemyDir.y = 0;
-                pRigid.MoveRotation(Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime));
-                
-                //PlayerTransform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(enemyDir.normalized), rotationSpeed*Time.deltaTime);
-            }
-            //PlayerAnimator.SetBool("walk", false);
-        }
     }
 
     public void Attack()
@@ -394,7 +393,7 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-    IEnumerator crescendo(float scale, Vector3 Iposition)
+    IEnumerator crescendoAOE(float scale, Vector3 Iposition)
     {
         yield return new WaitForSeconds(0.5f);
         cameraShake.AddTrauma(1,1/scale);
@@ -410,7 +409,7 @@ public class PlayerActions : MonoBehaviour
         }
 
         crescendoMaxed = false;
-        if (Gamepad.current != null) StartCoroutine(LerpOverTime(scale, t =>
+        if (Gamepad.current != null) StartCoroutine(LerpOverTime.lerpOverTime(scale, t =>
         {
             float easedT = 1f - Mathf.Pow(1f - t, 2f);
             float speedValues = Mathf.Lerp(scale, 0, t);
@@ -470,19 +469,4 @@ public class PlayerActions : MonoBehaviour
         return currentEnemy;
     }
 
-    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            onUpdate(t);
-            yield return null;
-        }
-
-        onUpdate(1f);
-    }
 }

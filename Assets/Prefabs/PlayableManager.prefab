@@ -2084,6 +2084,7 @@ MonoBehaviour:
     damage: 1
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: Sharpen (+Damage)
     maskName: tragedy
     maxHealth: 0
@@ -2094,6 +2095,7 @@ MonoBehaviour:
     damage: 1
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: 'Fortify [+Max HP]'
     maskName: comedy
     maxHealth: 12
@@ -2104,6 +2106,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: 'Fortify [+Max HP]'
     maskName: tragedy
     maxHealth: 12
@@ -2114,6 +2117,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: 'Swift Feet [+Move Speed]'
     maskName: comedy
     maxHealth: 0
@@ -2124,6 +2128,7 @@ MonoBehaviour:
     damage: 0
     rarity: rare
     special: 
+    additionType: additive
   - upgradeName: 'Swift Feet [+Move Speed]'
     maskName: tragedy
     maxHealth: 0
@@ -2134,6 +2139,7 @@ MonoBehaviour:
     damage: 0
     rarity: rare
     special: 
+    additionType: additive
   - upgradeName: Extend (+Sword Range)
     maskName: Tragedy
     maxHealth: 0
@@ -2144,6 +2150,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: Extend (+Sword Range)
     maskName: Comedy
     maxHealth: 0
@@ -2154,6 +2161,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: 'Widen [+Sword Arc]'
     maskName: comedy
     maxHealth: 0
@@ -2164,6 +2172,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: 'Widen [+Sword Arc]'
     maskName: tragedy
     maxHealth: 0
@@ -2174,6 +2183,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: Accelerate (+Attack speed)
     maskName: tragedy
     maxHealth: 0
@@ -2184,6 +2194,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: Accelerate (+Attack speed)
     maskName: comedy
     maxHealth: 0
@@ -2194,6 +2205,7 @@ MonoBehaviour:
     damage: 0
     rarity: common
     special: 
+    additionType: additive
   - upgradeName: Longer Weapon Less Damage
     maskName: tragedy
     maxHealth: 0
@@ -2204,6 +2216,7 @@ MonoBehaviour:
     damage: -0.2
     rarity: Rare
     special: 
+    additionType: additive
   - upgradeName: Glass Cannon (+Damage, -HP)
     maskName: comedy
     maxHealth: -15
@@ -2214,6 +2227,7 @@ MonoBehaviour:
     damage: 3
     rarity: Rare
     special: 
+    additionType: additive
   - upgradeName: Glass Cannon (+Damage, -HP)
     maskName: tragedy
     maxHealth: -15
@@ -2224,6 +2238,7 @@ MonoBehaviour:
     damage: 3
     rarity: Rare
     special: 
+    additionType: additive
   - upgradeName: Giant's Reach (+Arc, +Range, -Attack Speed)
     maskName: tragedy
     maxHealth: 0
@@ -2234,6 +2249,7 @@ MonoBehaviour:
     damage: 0
     rarity: Rare
     special: 
+    additionType: additive
   - upgradeName: Giant's Reach (+Arc, +Range, -Attack Speed)
     maskName: tragedy
     maxHealth: 0
@@ -2244,6 +2260,7 @@ MonoBehaviour:
     damage: 0
     rarity: Rare
     special: 
+    additionType: additive
 --- !u!54 &8767517223250827062
 Rigidbody:
   m_ObjectHideFlags: 0

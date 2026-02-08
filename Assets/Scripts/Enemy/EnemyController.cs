@@ -223,7 +223,7 @@ public class EnemyController : MonoBehaviour
         dmgO.floatDuration= dmgO.floatDuration*UnityEngine.Random.Range(0.8f, 1.2f);
         dmgO.SetText(string.Format("{0:0.}", amount));
         // play take damage animation    
-        StartCoroutine(LerpOverTime(1.0f, t =>
+        StartCoroutine(LerpOverTime.lerpOverTime(1.0f, t =>
         {
             float easedT = (1f - Mathf.Cos(t * Mathf.PI)) / 2f;
             enemyRenderer.material.SetFloat("_Damage_Bool", Mathf.Lerp(1.0f, 0.0f, easedT));
@@ -233,7 +233,7 @@ public class EnemyController : MonoBehaviour
         currentHealth -= amount;
 
         // controller rumble
-        if (Gamepad.current != null) StartCoroutine(LerpOverTime(0.5f, t =>
+        if (Gamepad.current != null) StartCoroutine(LerpOverTime.lerpOverTime(0.5f, t =>
         {
             float easedT = 1f - Mathf.Pow(1f - t, 2f);
             float speedValues = Mathf.Lerp(0.3f, 0, t);
@@ -254,22 +254,6 @@ public class EnemyController : MonoBehaviour
         {
             AudioManager.audioManagerRef.PlaySoundWithRandomPitch("hitTragedy");
         }
-    }
-
-    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            onUpdate(t);
-            yield return null;
-        }
-
-        onUpdate(1f);
     }
 
     void Die()

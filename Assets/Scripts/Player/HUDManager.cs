@@ -59,19 +59,4 @@ public class HUDManager : MonoBehaviour
     {
         maskAnim.SetBool("isComedy", !maskAnim.GetBool("isComedy"));
     }
-    IEnumerator LerpOverTime(float duration, Action<float> onUpdate)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            onUpdate(t);
-            yield return null;
-        }
-
-        onUpdate(1f);
-    }
 }
