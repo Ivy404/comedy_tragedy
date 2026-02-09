@@ -1965,7 +1965,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1271605173933600649, guid: b5451d1700e084045ae9411b5cf24aa8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4553496998244078611, guid: b5451d1700e084045ae9411b5cf24aa8, type: 3}
       propertyPath: m_Name
@@ -1973,7 +1973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553496998244078611, guid: b5451d1700e084045ae9411b5cf24aa8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4939329051649897915, guid: b5451d1700e084045ae9411b5cf24aa8, type: 3}
       propertyPath: m_LocalPosition.x
