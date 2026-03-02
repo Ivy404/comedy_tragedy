@@ -780,6 +780,106 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[12].arc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].arc
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].arc
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].arc
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].range
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].range
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[12].damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].damage
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].damage
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].rarity
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[12].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[13].maskName
+      value: tragedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].maskName
+      value: comedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].maskName
+      value: tragedy
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[12].maxHealth
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].maxHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[12].upgradeName
+      value: Glass Cannon (+Damage, -HP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].attackSpeed
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[14].upgradeName
+      value: Giant's Reach (+Arc, +Range, -Attack Speed)
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].attackSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[16].upgradeName
+      value: Longer Weapon Less Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].upgradeName
+      value: Longer Weapon Less Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 357207732767150875, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: statUpgrades.Array.data[17].additionType
+      value: additive
+      objectReference: {fileID: 0}
     - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: statUpgrades.Array.data[0].additionType
       value: basepercent
