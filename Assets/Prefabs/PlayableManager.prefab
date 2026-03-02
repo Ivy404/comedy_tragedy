@@ -2206,17 +2206,6 @@ MonoBehaviour:
     rarity: common
     special: 
     additionType: additive
-  - upgradeName: Longer Weapon Less Damage
-    maskName: tragedy
-    maxHealth: 0
-    speed: 0
-    attackSpeed: 0
-    range: 0
-    arc: 60
-    damage: -0.2
-    rarity: Rare
-    special: 
-    additionType: additive
   - upgradeName: Glass Cannon (+Damage, -HP)
     maskName: comedy
     maxHealth: -15
@@ -2261,6 +2250,31 @@ MonoBehaviour:
     rarity: Rare
     special: 
     additionType: additive
+  - upgradeName: Longer Weapon Less Damage
+    maskName: comedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: 0
+    range: 0
+    arc: 60
+    damage: -0.2
+    rarity: Rare
+    special: 
+    additionType: additive
+  - upgradeName: Longer Weapon Less Damage
+    maskName: tragedy
+    maxHealth: 0
+    speed: 0
+    attackSpeed: -0.12
+    range: 0.5
+    arc: 60
+    damage: -0.2
+    rarity: Rare
+    special: 
+    additionType: additive
+  xpBase: 40
+  xpLinear: 20
+  xpQuadratic: 2
 --- !u!54 &8767517223250827062
 Rigidbody:
   m_ObjectHideFlags: 0
