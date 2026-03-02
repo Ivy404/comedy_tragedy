@@ -12,6 +12,11 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] public PlayerActions playerActions;
     [SerializeField] public List<statUpgrade> statUpgrades;
 
+    [Header("XP Curve")]
+    [SerializeField] private float xpBase = 40f;
+    [SerializeField] private float xpLinear = 20f;
+    [SerializeField] private float xpQuadratic = 2f;
+
     private float lastLevelUpXp;
     private float totalXP;
     private float level;
@@ -72,7 +77,9 @@ public class UpgradeSystem : MonoBehaviour
     private double xpAtLevel(float level)
     {
         if (level == -1) return 0;
-        return 100*Math.Pow(1.5, level);
+        double n = level;
+        return xpBase * n + (xpLinear / 2.0) * n * (n + 1) + (xpQuadratic / 3.0) * n * (n + 1) * (2 * n + 1);
+
     }
     private void XPGained(float xp)
     {
