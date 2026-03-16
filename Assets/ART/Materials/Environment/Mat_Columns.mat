@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Character
+  m_Name: Mat_Columns
   m_Shader: {fileID: -6465566751694194690, guid: 2e66566101169064b9aae0ad098bd854, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 2f90092bcbd21004ebacd45c34b25766, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1c898bb95b13b714fb0dd029b3203f3f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,16 +42,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientLightIntensity: 0.59
+    - _AmbientLightIntensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightPower: 10
-    - _Smoothness: 0.35
-    - _TextureSaturation: 0.833
+    - _Smoothness: 0.051
+    - _TextureSaturation: 0
     m_Colors:
-    - _RimLightColor: {r: 2, g: 1.8968307, b: 0.504043, a: 1}
-    - _TextureTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.9035948, g: 1, b: 0.5377358, a: 1}
+    - _RimLightColor: {r: 0.09973043, g: 0.08080186, b: 0.008467663, a: 1}
+    - _TextureTiling: {r: 3, g: 3, b: 0, a: 0}
+    - _TintColor: {r: 0.64420474, g: 0.51113117, b: 0.21791825, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7253334618136877941

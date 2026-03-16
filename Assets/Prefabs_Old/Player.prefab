@@ -180,7 +180,7 @@ MonoBehaviour:
   tempComedy: 0
   tempTragedy: 0
   enemiesObject: {fileID: 0}
-  CharacterMaterial: {fileID: 3317380041188264505}
+  CharacterMaterial: {fileID: 0}
   onModeSwitch:
     m_PersistentCalls:
       m_Calls:
@@ -207,6 +207,7 @@ MonoBehaviour:
     damage: 1
     rarity: 
     special: 
+    additionType: 
   - upgradeName: 
     maskName: tragedy
     maxHealth: 0
@@ -217,6 +218,7 @@ MonoBehaviour:
     damage: 0
     rarity: 
     special: 
+    additionType: 
 --- !u!1 &4958942903232577940
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,11 +497,6 @@ GameObject:
 --- !u!95 &3102899926989114609 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 707372815677666331, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
-  m_PrefabInstance: {fileID: 2512622495114836202}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3317380041188264505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 925229461023421139, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
   m_PrefabInstance: {fileID: 2512622495114836202}
   m_PrefabAsset: {fileID: 0}
 --- !u!2083052967 &4971864472706516279 stripped
