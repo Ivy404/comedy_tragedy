@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Ground
+  m_Name: Mat_Ground_v2
   m_Shader: {fileID: -6465566751694194690, guid: cdacbeee72f86d94f8d7392501835388, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassMainTexture:
-        m_Texture: {fileID: 2800000, guid: 1c898bb95b13b714fb0dd029b3203f3f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 032a4123839ce4e4396b29b2c8e885d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassSandMixTexture:
@@ -123,18 +123,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CobblestoneParallax: 2.68
+    - _CobblestoneParallax: -3.91
     - _CobblestoneSandBlend: 1
     - _ColorMix1Tiling: 1.25
     - _ColorMix2Tiling: -1.64
     - _Float: 0
     - _Float_1: -0.22
-    - _GrassColorMix1Tiling: 8.93
-    - _GrassColorMix2Tiling: 1.67
-    - _GrassMainTexTiling: 6.55
+    - _GrassColorMix1Tiling: 5.4
+    - _GrassColorMix2Tiling: 2.12
+    - _GrassMainTexTiling: 10.13
     - _GrassMainTextureSaturation: 0
-    - _GrassParallax: 27.06
-    - _GrassSandMixNoisePower: 2.64
+    - _GrassParallax: 12.118
+    - _GrassSandMixNoisePower: 2.15
     - _GrassSandMixNoiseScale: 8.97
     - _GrassSandMixTextureTiling: 2.34
     - _NoiseScale: 2.91
@@ -146,11 +146,11 @@ Material:
     - _PlaneScale: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SandColorMix1Tiling: 39.53
-    - _SandColorMix2Tiling: 2.48
-    - _SandMainTexTiling: 2.45
+    - _SandColorMix1Tiling: 29.78
+    - _SandColorMix2Tiling: 1.4
+    - _SandMainTexTiling: 2.63
     - _SandMainTextureSaturation: 0
-    - _SandParallax: 4.5
+    - _SandParallax: 8.3
     - _Saturation_1: 0
     - _Saturation_2: 0.231
     - _Saturation_3: 0
@@ -169,19 +169,18 @@ Material:
     - _Color_3: {r: 4.776449, g: 4.0652833, b: 1.3325133, a: 0}
     - _Color_3_1: {r: 0.304, g: 0.20266667, b: 0.063184306, a: 0}
     - _Color_3_2: {r: 0.2237196, g: 0.0866473, b: 0.026231248, a: 0}
-    - _GrassColorMix2Smoothstep: {r: 0.32, g: 1.01, b: 0, a: 0}
-    - _GrassColor_1: {r: 0.25681746, g: 0.7490196, b: 0.108012214, a: 0}
-    - _GrassColor_2: {r: 0.16875426, g: 0.53638804, b: 0.091807626, a: 0}
-    - _GrassColor_3: {r: 0.93530995, g: 0.8972167, b: 0.22563402, a: 0}
+    - _GrassColor_1: {r: 0.7970071, g: 2.3245068, b: 0.33520502, a: 0}
+    - _GrassColor_2: {r: 0.61225164, g: 1.7863051, b: 0.3647429, a: 0}
+    - _GrassColor_3: {r: 1.4565798, g: 2.3245065, b: 0.43545315, a: 0}
     - _GrassSandNoiseOffset: {r: 4.75, g: 0, b: 0, a: 0}
-    - _GrassShadowNoiseGradient: {r: 0.47, g: 1.16, b: 0, a: 0}
-    - _MixSmoothstep: {r: 0.09, g: 0.16, b: 0, a: 0}
+    - _GrassShadowNoiseGradient: {r: 0.8, g: 1.89, b: 0, a: 0}
+    - _MixSmoothstep: {r: 0.05, g: 0.16, b: 0, a: 0}
     - _NoiseOffset: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseOffset_2: {r: 0, g: 0, b: 0, a: 0}
-    - _SandColor1: {r: 1.7607977, g: 1.4067941, b: 0.13051713, a: 0}
-    - _SandColor2: {r: 1.705249, g: 1.7207954, b: 1.0552046, a: 0}
+    - _SandColor1: {r: 1.7992493, g: 1.5470583, b: 0.54517263, a: 0}
+    - _SandColor2: {r: 0.7967748, g: 0.81132066, b: 0.33130744, a: 0}
     - _SandColor3: {r: 0.94841576, g: 0.95686275, b: 0.41568628, a: 0}
-    - _SandColorMix2Smoothstep: {r: -0.12, g: 0.23, b: 0, a: 0}
+    - _SandColorMix2Smoothstep: {r: -0.1, g: 0.11, b: 0, a: 0}
     - _SandShadowNoiseGradient: {r: 0.86, g: 1.2, b: 0, a: 0}
     - _Smoothstep: {r: 0.1, g: 0.13, b: 0, a: 0}
     - _Smoothstep_2: {r: 0.41, g: 0.63, b: 0, a: 0}
