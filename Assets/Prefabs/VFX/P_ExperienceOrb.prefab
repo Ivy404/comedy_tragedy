@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 3006488231477488117}
   - component: {fileID: 6422713952777743075}
   m_Layer: 0
-  m_Name: ExperienceOrb
+  m_Name: P_ExperienceOrb
   m_TagString: Experience
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

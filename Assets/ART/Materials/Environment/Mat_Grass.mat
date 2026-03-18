@@ -56,20 +56,26 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientLightIntensity: 0.29
+    - _BendAmount: 1
+    - _BendDownAmount: 4.5
+    - _BendSideAmount: 2.3
     - _Damage_Bool: 0
+    - _Float: 3
+    - _Float_1: 5
     - _IsLight: 1
+    - _PlayerRadius: 0.7
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 1
+    - _Radius: 0.5
     - _RimLightPower: 10
     - _Smoothness: 0.1
     - _TextureSaturation: 0
     m_Colors:
     - _RimLightColor: {r: 1.5374367, g: 2.670157, b: 0.32747173, a: 1}
-    - _TextureTiling: {r: 10, g: 1, b: 0, a: 0}
+    - _TextureTiling: {r: 1, g: 1, b: 0, a: 0}
     - _TintColor: {r: 0.28314564, g: 0.61185974, b: 0.12451592, a: 1}
     - _TintColor_DarkScene: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor_LightScene: {r: 1, g: 1, b: 1, a: 1}
-    - _TrackerPosition: {r: 0, g: 0.82, b: 0, a: 0}
+    - _TrackerPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2786108502385172792}
   - component: {fileID: 4970936661615048802}
   m_Layer: 7
-  m_Name: Player
+  m_Name: P_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,9 +435,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4970936661615048802}
+    - target: {fileID: 4311076013387331475, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 671d3fb15f794cc4f9b57bf003427992, type: 2}
     - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859328610847813217, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_LocalPosition.x

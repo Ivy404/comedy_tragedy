@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5759388496539718857, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 5759388496539718857, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -94,7 +94,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7541482836790613385, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1979942373591581622, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5759388496539718857, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       insertIndex: 0
@@ -125,6 +126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1008762777496568027}
     m_Modifications:
+    - target: {fileID: -9101075920804747536, guid: 583c695ee4330024fb99e4d5ca6b34b0, type: 3}
+      propertyPath: m_Name
+      value: Minotaur_mesh
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 583c695ee4330024fb99e4d5ca6b34b0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -179,12 +184,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 583c695ee4330024fb99e4d5ca6b34b0, type: 3}
       propertyPath: m_Name
-      value: Minotaur_fbx
+      value: Minotaur
       objectReference: {fileID: 0}
     - target: {fileID: 7525605509525149794, guid: 583c695ee4330024fb99e4d5ca6b34b0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ac033d663879e0d4490bce193068b715, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ca8aa2c12f04ae4687d126ff2efdb22, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
