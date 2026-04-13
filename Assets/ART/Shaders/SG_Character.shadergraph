@@ -35,6 +35,9 @@
         },
         {
             "m_Id": "933dae7a721c4cbfb6c65f2663d26925"
+        },
+        {
+            "m_Id": "d87375152c4342faadee9dafbeea7238"
         }
     ],
     "m_Keywords": [],
@@ -109,9 +112,6 @@
             "m_Id": "a6dd6181da994754a065d188c75719d3"
         },
         {
-            "m_Id": "66dda346c47447d4aa01b8ebf065f8a3"
-        },
-        {
             "m_Id": "f94d540429534ed79b44c71613a10b72"
         },
         {
@@ -179,6 +179,9 @@
         },
         {
             "m_Id": "1b8246b4cff2431cbf350a1eddc47e1b"
+        },
+        {
+            "m_Id": "0e107517e5cf4d0da30e55b199a44bb6"
         }
     ],
     "m_GroupDatas": [],
@@ -210,6 +213,20 @@
                     "m_Id": "c44afcb6203b481da98f0d1c5eeb28ca"
                 },
                 "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "0e107517e5cf4d0da30e55b199a44bb6"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "f94d540429534ed79b44c71613a10b72"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -406,20 +423,6 @@
                     "m_Id": "8697c84579ce4816a5853b87cb999cbf"
                 },
                 "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "66dda346c47447d4aa01b8ebf065f8a3"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "f94d540429534ed79b44c71613a10b72"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -992,6 +995,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "0e107517e5cf4d0da30e55b199a44bb6",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -3426.857177734375,
+            "y": 174.85714721679688,
+            "width": 209.142822265625,
+            "height": 105.71426391601563
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "1c9148487d0a465dbc3e3c510e14c262"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "d87375152c4342faadee9dafbeea7238"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "10a1145393d6441d9b73a2a1aac20b15",
     "m_Id": 6,
@@ -1011,7 +1050,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "1199e36d3463401b84cb856244b0fcae",
     "m_Id": 0,
-    "m_DisplayName": "TextureTiling",
+    "m_DisplayName": "Texture Tiling",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1488,6 +1527,18 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientMaterialSlot",
+    "m_ObjectId": "1c9148487d0a465dbc3e3c510e14c262",
+    "m_Id": 0,
+    "m_DisplayName": "Toon Gradient",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DotProductNode",
     "m_ObjectId": "1d4c7f079d404542a9c1f9b5bdedd9a0",
     "m_Group": {
@@ -1605,10 +1656,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "RimLightColor",
+    "m_Name": "Rim Light Color",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "RimLightColor",
-    "m_DefaultReferenceName": "_RimLightColor",
+    "m_RefNameGeneratedByDisplayName": "Rim Light Color",
+    "m_DefaultReferenceName": "_Rim_Light_Color",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1676,10 +1727,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "TextureSaturation",
+    "m_Name": "Texture Saturation",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TextureSaturation",
-    "m_DefaultReferenceName": "_TextureSaturation",
+    "m_RefNameGeneratedByDisplayName": "Texture Saturation",
+    "m_DefaultReferenceName": "_Texture_Saturation",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2058,7 +2109,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "2fde058bd1654aba80d841a7000eaefe",
     "m_Id": 0,
-    "m_DisplayName": "TintColor_LightScene",
+    "m_DisplayName": "Tint Color LightScene",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2614,18 +2665,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.GradientMaterialSlot",
-    "m_ObjectId": "4c872a70d7bc48b6821721326b4da252",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "4c92a0f7593f419fa7d8dfa8975f1c23",
     "m_Group": {
@@ -2688,7 +2727,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "4d143a8c06c342fcac0b4589b2e2bf01",
     "m_Id": 0,
-    "m_DisplayName": "Damage_Bool",
+    "m_DisplayName": "Damage Bool",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2859,10 +2898,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "AmbientLightIntensity",
+    "m_Name": "Ambient Light Intensity",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "AmbientLightIntensity",
-    "m_DefaultReferenceName": "_AmbientLightIntensity",
+    "m_RefNameGeneratedByDisplayName": "Ambient Light Intensity",
+    "m_DefaultReferenceName": "_Ambient_Light_Intensity",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -3156,10 +3195,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "TextureTiling",
+    "m_Name": "Texture Tiling",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TextureTiling",
-    "m_DefaultReferenceName": "_TextureTiling",
+    "m_RefNameGeneratedByDisplayName": "Texture Tiling",
+    "m_DefaultReferenceName": "_Texture_Tiling",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -3292,7 +3331,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "64b41e35da96401b8998aa25a9d9ba8c",
     "m_Id": 0,
-    "m_DisplayName": "TintColor_DarkScene",
+    "m_DisplayName": "Tint Color DarkScene",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3346,79 +3385,6 @@
     "m_Property": {
         "m_Id": "50e2709b312b405fbb4133124f4cd3c4"
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.GradientNode",
-    "m_ObjectId": "66dda346c47447d4aa01b8ebf065f8a3",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Gradient",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -3426.857177734375,
-            "y": 174.85714721679688,
-            "width": 209.142822265625,
-            "height": 105.71426391601563
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "4c872a70d7bc48b6821721326b4da252"
-        }
-    ],
-    "synonyms": [
-        "ramp"
-    ],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Value": 0.0,
-    "m_SerializableColorKeys": [
-        {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 0.45000380277633669
-        },
-        {
-            "x": 0.1568627506494522,
-            "y": 0.1568627506494522,
-            "z": 0.1568627506494522,
-            "w": 0.4800030589103699
-        },
-        {
-            "x": 0.1568627506494522,
-            "y": 0.1568627506494522,
-            "z": 0.1568627506494522,
-            "w": 0.8500038385391235
-        },
-        {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 0.880003035068512
-        }
-    ],
-    "m_SerializableAlphaKeys": [
-        {
-            "x": 1.0,
-            "y": 0.0
-        },
-        {
-            "x": 1.0,
-            "y": 1.0
-        }
-    ],
-    "m_SerializableMode": 0
 }
 
 {
@@ -3483,7 +3449,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "6b36f972bb914af19fa9e4bcd1db07bd",
     "m_Id": 0,
-    "m_DisplayName": "AmbientLightIntensity",
+    "m_DisplayName": "Ambient Light Intensity",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3499,7 +3465,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "6f2d6248a8b94322803fb53277b8d024",
     "m_Id": 0,
-    "m_DisplayName": "RimLightPower",
+    "m_DisplayName": "Rim Light Power",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3577,6 +3543,9 @@
         },
         {
             "m_Id": "1d5c10bb9158487f845877842b9ce1bc"
+        },
+        {
+            "m_Id": "d87375152c4342faadee9dafbeea7238"
         },
         {
             "m_Id": "c99e771c002542ac88b285d44e086ca0"
@@ -3860,9 +3829,9 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "Damage_Bool",
+    "m_Name": "Damage Bool",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Damage_Bool",
+    "m_RefNameGeneratedByDisplayName": "Damage Bool",
     "m_DefaultReferenceName": "_Damage_Bool",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -4065,7 +4034,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "a478860c87144e9f931d0e31c513738b",
     "m_Id": 0,
-    "m_DisplayName": "TextureSaturation",
+    "m_DisplayName": "Texture Saturation",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -4181,10 +4150,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "RimLightPower",
+    "m_Name": "Rim Light Power",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "RimLightPower",
-    "m_DefaultReferenceName": "_RimLightPower",
+    "m_RefNameGeneratedByDisplayName": "Rim Light Power",
+    "m_DefaultReferenceName": "_Rim_Light_Power",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -4505,10 +4474,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "TintColor_LightScene",
+    "m_Name": "Tint Color LightScene",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TintColor_LightScene",
-    "m_DefaultReferenceName": "_TintColor_LightScene",
+    "m_RefNameGeneratedByDisplayName": "Tint Color LightScene",
+    "m_DefaultReferenceName": "_Tint_Color_LightScene",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -4720,6 +4689,104 @@
     },
     "m_Labels": [],
     "m_Space": 2
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientShaderProperty",
+    "m_ObjectId": "d87375152c4342faadee9dafbeea7238",
+    "m_Guid": {
+        "m_GuidSerialized": "2d1690ed-6ce5-4640-a295-f1c5483e2f07"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "Toon Gradient",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Toon Gradient",
+    "m_DefaultReferenceName": "_Toon_Gradient",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": {
+        "serializedVersion": "2",
+        "key0": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "key1": {
+            "r": 0.1568627506494522,
+            "g": 0.1568627506494522,
+            "b": 0.1568627506494522,
+            "a": 1.0
+        },
+        "key2": {
+            "r": 0.1568627506494522,
+            "g": 0.1568627506494522,
+            "b": 0.1568627506494522,
+            "a": 0.0
+        },
+        "key3": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 0.0
+        },
+        "key4": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key5": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key6": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key7": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "ctime0": 29491,
+        "ctime1": 31457,
+        "ctime2": 55705,
+        "ctime3": 57671,
+        "ctime4": 0,
+        "ctime5": 0,
+        "ctime6": 0,
+        "ctime7": 0,
+        "atime0": 0,
+        "atime1": 65535,
+        "atime2": 0,
+        "atime3": 0,
+        "atime4": 0,
+        "atime5": 0,
+        "atime6": 0,
+        "atime7": 0,
+        "m_Mode": 0,
+        "m_ColorSpace": -1,
+        "m_NumColorKeys": 4,
+        "m_NumAlphaKeys": 2
+    }
 }
 
 {
@@ -5193,7 +5260,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "ed044331d0bc449782464ccfdcb93046",
     "m_Id": 0,
-    "m_DisplayName": "RimLightColor",
+    "m_DisplayName": "Rim Light Color",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -5353,10 +5420,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "TintColor_DarkScene",
+    "m_Name": "Tint Color DarkScene",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TintColor_DarkScene",
-    "m_DefaultReferenceName": "_TintColor_DarkScene",
+    "m_RefNameGeneratedByDisplayName": "Tint Color DarkScene",
+    "m_DefaultReferenceName": "_Tint_Color_DarkScene",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
