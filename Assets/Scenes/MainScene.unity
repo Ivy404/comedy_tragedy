@@ -698,6 +698,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8843624822824961947, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
   m_PrefabInstance: {fileID: 7724409633192831404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1874810191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3446937056023643644, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+  m_PrefabInstance: {fileID: 7724409633192831404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1881405923
 Animator:
   serializedVersion: 7
@@ -790,6 +795,10 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: CharacterMaterial
+      value: 
+      objectReference: {fileID: 1874810191}
+    - target: {fileID: 1992045961095825914, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: statUpgrades.Array.data[0].additionType
       value: basepercent
       objectReference: {fileID: 0}
@@ -877,6 +886,10 @@ PrefabInstance:
       propertyPath: UpgradeScreen
       value: 
       objectReference: {fileID: 649866145}
+    - target: {fileID: 5991077854820991713, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 5441
+      objectReference: {fileID: 0}
     - target: {fileID: 6128673654482363358, guid: de17f47b8b19adb45b55423a9ee0cbf7, type: 3}
       propertyPath: m_Mesh
       value: 
