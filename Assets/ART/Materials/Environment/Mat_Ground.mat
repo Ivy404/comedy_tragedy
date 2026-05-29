@@ -77,6 +77,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 85f6ef4a2805abb4e8ac0184c63a5a72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d952c7ebfc7949ffa6e4f91dec5c861a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 434e769022d510342b4ff0210b480629, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_db738e0535404065be01aabf0f4f6637_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 99ec0f7d9f0393e4fa1280e9e09498e3, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -85,12 +89,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: a4ab742eddd39e641b56cdd73f6c4046, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SandColorMix1TextureNormal:
+        m_Texture: {fileID: 2800000, guid: 85f6ef4a2805abb4e8ac0184c63a5a72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SandColorMix2Texture:
         m_Texture: {fileID: 2800000, guid: 1db07cbd1cacac448980be1a825dba87, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SandTexture:
         m_Texture: {fileID: 2800000, guid: 1c898bb95b13b714fb0dd029b3203f3f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SandTextureNormal:
+        m_Texture: {fileID: 2800000, guid: 434e769022d510342b4ff0210b480629, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:

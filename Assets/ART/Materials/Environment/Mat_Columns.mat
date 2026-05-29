@@ -43,19 +43,25 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientLightIntensity: 0.66
+    - _Ambient_Light_Intensity: 0.2
     - _Damage_Bool: 0
     - _IsLight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightPower: 10
-    - _Smoothness: 0.051
+    - _Rim_Light_Power: 5.39
+    - _Smoothness: 0
     - _TextureSaturation: 0
+    - _Texture_Saturation: 1
     m_Colors:
     - _RimLightColor: {r: 2, g: 1.7438847, b: 0.5256063, a: 1}
+    - _Rim_Light_Color: {r: 0.051212788, g: 0.051212788, b: 0.051212788, a: 1}
     - _TextureTiling: {r: 3, g: 3, b: 0, a: 0}
+    - _Texture_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _TintColor: {r: 1, g: 0.76113105, b: 0.24123985, a: 1}
     - _TintColor_DarkScene: {r: 1, g: 0.6862745, b: 0.39215687, a: 1}
     - _TintColor_LightScene: {r: 1, g: 0.6871089, b: 0.39218324, a: 1}
+    - _Tint_Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7253334618136877941
