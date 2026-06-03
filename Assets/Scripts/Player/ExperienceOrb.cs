@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ExperienceOrb : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ExperienceOrb : MonoBehaviour
     private float experience;
     private float spawnTime;
     [SerializeField] private Rigidbody rBody;
+    [SerializeField] private VisualEffect vfx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +32,10 @@ public class ExperienceOrb : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+        if (vfx != null)
+        {
+            vfx.SetVector3("Position", transform.position);
+        }
     }
 
     public void setXP(float xp)

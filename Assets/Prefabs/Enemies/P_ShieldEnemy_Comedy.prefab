@@ -140,6 +140,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+      propertyPath: xpOrb
+      value: 
+      objectReference: {fileID: 7326538757895671879, guid: ce926d0bf566e804297892300dce863c, type: 3}
+    - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: Shield
       value: 
       objectReference: {fileID: 2146595553746918733}

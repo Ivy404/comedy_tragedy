@@ -77,6 +77,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 45bd392e1374b445d9265762f77533c8, type: 2}
     - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
+      propertyPath: xpOrb
+      value: 
+      objectReference: {fileID: 7326538757895671879, guid: 133b4b2fc7fbe2547b287e1b63d87568, type: 3}
+    - target: {fileID: 6054341517603478104, guid: 34a2d521d272a4ab88c4fff08ab8137d, type: 3}
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 1398009304074211575}

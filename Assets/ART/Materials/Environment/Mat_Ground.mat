@@ -69,6 +69,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_47de79d1aef94b37bbdab4d38a9dd08c_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e7fa51b3fc7e7a145b5e10d78d599a7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_600565ff2ce648b18bfc10966a169007_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 9327ee36eb7164449a56b1de9d84abde, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -86,11 +90,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SandColorMix1Texture:
-        m_Texture: {fileID: 2800000, guid: a4ab742eddd39e641b56cdd73f6c4046, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3271d223963936948b5e01cd55a967b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SandColorMix1TextureNormal:
-        m_Texture: {fileID: 2800000, guid: 85f6ef4a2805abb4e8ac0184c63a5a72, type: 3}
+        m_Texture: {fileID: 2800000, guid: b44f86d9239aaf346a2565cdd43c75d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SandColorMix2Texture:
@@ -143,7 +147,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CobblestoneParallax: 0.01
+    - _CobblestoneParallax: 2.14
     - _CobblestoneSandBlend: 1
     - _ColorMix1Tiling: 1.25
     - _ColorMix2Tiling: -1.64
@@ -166,10 +170,10 @@ Material:
     - _PlaneScale: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SandCobblestoneStep: 0.21
-    - _SandColorMix1Tiling: 19.9
+    - _SandCobblestoneStep: 0.1
+    - _SandColorMix1Tiling: 26.8
     - _SandColorMix2Tiling: 2.48
-    - _SandMainTexTiling: 2.45
+    - _SandMainTexTiling: 5.65
     - _SandMainTextureSaturation: 0
     - _SandParallax: 4.5
     - _Saturation_1: 0
@@ -199,10 +203,10 @@ Material:
     - _MixSmoothstep: {r: 0.09, g: 0.16, b: 0, a: 0}
     - _NoiseOffset: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseOffset_2: {r: 0, g: 0, b: 0, a: 0}
-    - _SandColor1: {r: 0.90873474, g: 1, b: 0.44099998, a: 1}
-    - _SandColor2: {r: 0.20754701, g: 0.06326064, b: 0, a: 0}
+    - _SandColor1: {r: 0.7520215, g: 0.74621254, b: 0.31925437, a: 1}
+    - _SandColor2: {r: 0.051212788, g: 0.016003996, b: 0, a: 0}
     - _SandColor3: {r: 0.94841576, g: 0.95686275, b: 0.41568628, a: 0}
-    - _SandColorMix2Smoothstep: {r: -0.5, g: 0.46, b: 0, a: 0}
+    - _SandColorMix2Smoothstep: {r: -0.66, g: 0.46, b: 0, a: 0}
     - _SandShadowNoiseGradient: {r: 0.86, g: 1.2, b: 0, a: 0}
     - _Smoothstep: {r: 0.1, g: 0.13, b: 0, a: 0}
     - _Smoothstep_2: {r: 0.41, g: 0.63, b: 0, a: 0}
