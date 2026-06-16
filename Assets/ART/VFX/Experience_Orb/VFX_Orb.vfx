@@ -419,8 +419,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Particle Spawn Rate
-    path: Particle Spawn Rate
+  - name: Particle Lifetime
+    path: Particle Lifetime
     tooltip: 
     space: -1
     spaceable: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 3
+      m_SerializableObject: 1
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -451,8 +451,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Particle Lifetime
-    path: Particle Lifetime
+  - name: Particle Spawn Rate
+    path: Particle Spawn Rate
     tooltip: 
     space: -1
     spaceable: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 3
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -570,28 +570,10 @@ MonoBehaviour:
     - model: {fileID: 114350483966674978}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 114350483966674980}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 114350483966674984}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 114350483966675002}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 114350483966676068}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 114350483966675005}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 114350483966675012}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 114350483966676279}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 114350483966675685}
       id: 0
       isStickyNote: 0
     - model: {fileID: 114350483966675364}
@@ -4040,7 +4022,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 60
+      m_SerializableObject: 30
     m_Space: -1
   m_Property:
     name: Rate
@@ -11154,7 +11136,7 @@ MonoBehaviour:
   - {fileID: 114350483966676444}
   m_ExposedName: Is Epic
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 14
   m_Category: Particles
   m_Min:
     m_Type:
@@ -11400,7 +11382,7 @@ MonoBehaviour:
   - {fileID: 114350483966676451}
   m_ExposedName: Particle Size
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 15
   m_Category: Particles
   m_Min:
     m_Type:
@@ -11484,7 +11466,7 @@ MonoBehaviour:
   - {fileID: 114350483966676453}
   m_ExposedName: Particle Lifetime
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 16
   m_Category: Particles
   m_Min:
     m_Type:
@@ -12763,7 +12745,7 @@ MonoBehaviour:
   - {fileID: 114350483966676493}
   m_ExposedName: Particle Color
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 17
   m_Category: Particles
   m_Min:
     m_Type:
@@ -12844,7 +12826,7 @@ MonoBehaviour:
   - {fileID: 114350483966676495}
   m_ExposedName: Particle Spawn Rate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 18
   m_Category: Particles
   m_Min:
     m_Type:
