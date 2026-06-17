@@ -120,9 +120,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661616531}
       id: 1
       isStickyNote: 0
-    - model: {fileID: 8926484042661616825}
-      id: 0
-      isStickyNote: 0
   - title: Outline
     position:
       serializedVersion: 2
@@ -526,18 +523,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661620197}
       id: 1
       isStickyNote: 0
-    - model: {fileID: 8926484042661617762}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617764}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617770}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617773}
-      id: 0
-      isStickyNote: 0
   - title: Charge Note with Trail
     position:
       serializedVersion: 2
@@ -625,33 +610,6 @@ MonoBehaviour:
       id: 1
       isStickyNote: 0
     - model: {fileID: 8926484042661620242}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618404}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618407}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661620485}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661620492}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618429}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618486}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618489}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618495}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618498}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661618165}
@@ -793,21 +751,6 @@ MonoBehaviour:
       isStickyNote: 0
     - model: {fileID: 8926484042661616531}
       id: 15
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619253}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619265}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619163}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619170}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619992}
-      id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661620474}
       id: 0
@@ -24542,7 +24485,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617247}
   m_ExposedName: Notes Size
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 20
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -24762,7 +24705,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617253}
   m_ExposedName: Notes Spawn Amount
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 21
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -24843,7 +24786,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617255}
   m_ExposedName: Notes Lifetime
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 22
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -25075,7 +25018,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617261}
   m_ExposedName: Notes Speed
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 23
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -40531,7 +40474,7 @@ MonoBehaviour:
   - {fileID: 8926484042661618166}
   m_ExposedName: Charge Trails Radius
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 31
   m_Category: Charge Trails
   m_Min:
     m_Type:
@@ -44473,7 +44416,7 @@ MonoBehaviour:
   - {fileID: 8926484042661618740}
   m_ExposedName: Charge Trails Height
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 32
   m_Category: Charge Trails
   m_Min:
     m_Type:
@@ -44554,7 +44497,7 @@ MonoBehaviour:
   - {fileID: 8926484042661618745}
   m_ExposedName: Charge Trails Width
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 33
   m_Category: Charge Trails
   m_Min:
     m_Type:
@@ -56262,7 +56205,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620198}
   m_ExposedName: Notes Texture
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 36
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -63468,7 +63411,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620515}
   m_ExposedName: Charge Trails Note Size
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 39
   m_Category: Charge Trails
   m_Min:
     m_Type:
@@ -64972,7 +64915,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620559}
   m_ExposedName: Particles Spawn Amount
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 40
   m_Category: Explosion Notes
   m_Min:
     m_Type:
@@ -65053,7 +64996,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620561}
   m_ExposedName: Particles Size
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 41
   m_Category: Explosion Notes
   m_Min:
     m_Type:

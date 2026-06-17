@@ -162,7 +162,7 @@ public class PlayerActions : MonoBehaviour
                 AudioManager.audioManagerRef.PlaySound("crescendoMaxed");
             }
         }
-        AuraVFX.SetFloat("GlowSize", 10*transitionBuildUp);
+        AuraVFX.SetFloat("Scale", 10*transitionBuildUp);
         closestEnemy = getClosestEnemyDirection();
         lastDmgTaken += Time.deltaTime;
         if (currentData.maskName == "comedy") comedyMaskData.health = currentData.health;

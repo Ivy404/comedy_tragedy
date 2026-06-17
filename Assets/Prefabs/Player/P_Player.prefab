@@ -302,7 +302,7 @@ VFXRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4958942903232577940}
   m_Enabled: 0
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.89
       objectReference: {fileID: 0}
+    - target: {fileID: 2922819100458880946, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3217487573068036599, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: player
       value: 
@@ -447,6 +451,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 671d3fb15f794cc4f9b57bf003427992, type: 2}
+    - target: {fileID: 5452788426729610615, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452788426729610615, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6087436969874404571, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_Name
       value: Character
@@ -494,6 +506,18 @@ PrefabInstance:
     - target: {fileID: 6859328610847813217, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359230051180035549, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773089412012837253, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_Name
+      value: Charge_VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773089412012837253, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8600380839797309106, guid: c40bd7f3b5a68ec40839fea3afda0865, type: 3}
       propertyPath: m_IsActive
